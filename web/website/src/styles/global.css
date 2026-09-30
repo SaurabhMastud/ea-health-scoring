@@ -1,0 +1,286 @@
+/* Base styles. oat.ink direction: neutral chrome, high contrast, generous
+   whitespace, system fonts, text-first. Colour is reserved for data — page
+   furniture uses ink and surface tokens only.
+
+   Every colour here is a var() from tokens.css, which is generated from
+   config/settings.yaml. A hex literal in this file would be a bug. */
+
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--ink-primary);
+  background: var(--ink-page-plane);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------------------- type ---- */
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.011em;
+}
+/* Fluid so a long heading does not stack into five lines on a narrow window and
+   does not sit undersized on a wide one. Bounds are the Design.md steps; only
+   the interpolation between them is new. */
+h1 { font-size: clamp(1.75rem, 1.25rem + 1.6vw, 2.25rem); }
+h2 { font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.375rem); margin-top: 2.5rem; }
+h3 { font-size: 1.0625rem; margin-top: 1.75rem; }
+
+p { margin: 0 0 1rem; max-width: var(--measure-prose); }
+
+a { color: var(--ink-primary); text-decoration-color: var(--ink-axis); text-underline-offset: 2px; }
+a:hover { text-decoration-color: var(--ink-primary); }
+
+/* Design.md §3 specifies muted for footnotes, but --ink-muted (#898781) is
+   3.41:1 on the light page plane — below AA 4.5 for normal text. It passes in
+   dark (5.41:1), so the failure is light-mode only and easy to miss.
+   --ink-secondary is 7.53:1 light and 10.85:1 dark, so body-level small text
+   uses that instead. This swaps between two existing tokens; it does not invent
+   a colour. --ink-muted stays on axis and tick labels, which is its primary
+   role in Design.md §2.5 and where the direct-label/table-view relief applies.
+   Flagged to the PM — the Design.md typography row should change. */
+small, .footnote { font-size: var(--size-footnote); color: var(--ink-secondary); }
+.secondary { color: var(--ink-secondary); }
+.muted { color: var(--ink-secondary); }
+
+code, .mono {
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+}
+
+/* Big standalone numbers use proportional figures; tabular only where digits
+   must align vertically (table columns, axis ticks) — dataviz marks-and-anatomy */
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* -------------------------------------------------------------- layout ---- */
+
+/* Measures. Prose keeps a readable line length; anything that is NOT prose --
+   a chart, an input, a table, a bar track -- fills its column instead of
+   inheriting a text measure it was never meant to have.
+
+   That inheritance was the bug this system replaces: panels stretched the full
+   1080px while their contents stopped around 500px, so half of every panel read
+   as unfinished rather than as deliberate whitespace. Colours are not declared
+   here -- tokens.css is generated from settings.yaml and is the only place a hex
+   may appear (Design.md 6). These are geometry only. */
+:root {
+  --measure-prose: 68ch;    /* body copy, ~62-68 characters */
+  --measure-lede: 46rem;    /* display heading: wide enough for two lines */
+  --measure-control: 34rem; /* search fields, pickers */
+  --measure-chart: 100%;    /* charts fill the column they sit in */
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+.prose { max-width: var(--measure-prose); }
+
+.stack > * + * { margin-top: 1rem; }
+.stack-lg > * + * { margin-top: 2.5rem; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; }
+
+.panel {
+  background: var(--ink-chart-surface);
+  border: 1px solid var(--ink-gridline);
+  border-radius: 8px;
+  padding: 1.25rem 1.375rem;
+}
+
+.panel-title {
+  font-size: var(--size-title);
+  font-weight: 600;
+  margin: 0 0 0.125rem;
+}
+.panel-sub {
+  font-size: var(--size-subtitle);
+  color: var(--ink-secondary);
+  margin: 0 0 1rem;
+}
+
+/* --------------------------------------------------------------- chrome --- */
+
+.topbar {
+  border-bottom: 1px solid var(--ink-gridline);
+  background: var(--ink-chart-surface);
+  position: sticky; top: 0; z-index: 20;
+}
+.topbar-inner {
+  display: flex; align-items: center; gap: 1.5rem;
+  min-height: 56px;
+}
+.brand { font-weight: 600; text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--ink-muted); font-weight: 400; }
+
+.nav { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-left: auto; align-items: center; }
+.nav a {
+  text-decoration: none;
+  color: var(--ink-secondary);
+  font-size: 0.9375rem;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--ink-primary); }
+.nav a[aria-current="page"] { color: var(--ink-primary); border-bottom-color: var(--ink-primary); }
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--ink-gridline);
+  border-radius: 6px;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8125rem;
+  padding: 0.25rem 0.6rem;
+  line-height: 1.5;
+}
+.theme-toggle:hover { color: var(--ink-primary); border-color: var(--ink-axis); }
+
+footer.site {
+  border-top: 1px solid var(--ink-gridline);
+  margin-top: 5rem;
+  padding: 2rem 0 3rem;
+  color: var(--ink-secondary);
+  font-size: var(--size-subtitle);
+}
+
+/* Keyboard users must always be able to see where they are. */
+:focus-visible {
+  outline: 2px solid var(--series-health-score);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.skip-link {
+  position: absolute; left: -9999px;
+  background: var(--ink-chart-surface); color: var(--ink-primary);
+  padding: 0.75rem 1rem; z-index: 100; border: 1px solid var(--ink-primary); border-radius: 6px;
+}
+.skip-link:focus { left: 1rem; top: 0.5rem; }
+
+/* ---------------------------------------------------------------- bands --- */
+
+/* Colour + icon + word, always. The amber band is 1.79:1 on the light surface —
+   validated and failing as a bare fill — so the word and icon are what carry it,
+   and the text sits in ink, never in the band colour (Design.md §2.4). */
+.band {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8125rem; font-weight: 600;
+  padding: 0.2rem 0.55rem 0.2rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--band-colour);
+  color: var(--ink-primary);
+  white-space: nowrap;
+}
+.band::before {
+  content: attr(data-icon);
+  color: var(--band-colour);
+  font-size: 0.9em;
+}
+.band[data-band="at-risk"]         { --band-colour: var(--status-at-risk); }
+.band[data-band="needs-attention"] { --band-colour: var(--status-needs-attention); }
+.band[data-band="healthy"]         { --band-colour: var(--status-healthy); }
+
+/* ---------------------------------------------------------------- table --- */
+
+table { border-collapse: collapse; width: 100%; font-size: var(--size-subtitle); }
+caption { text-align: left; color: var(--ink-secondary); font-size: var(--size-subtitle); padding-bottom: 0.5rem; }
+th, td { text-align: left; padding: 0.45rem 0.75rem 0.45rem 0; border-bottom: 1px solid var(--ink-gridline); }
+th { font-weight: 600; color: var(--ink-secondary); font-size: var(--size-tick); }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+
+.scroll-x { overflow-x: auto; }
+
+/* Table view is the accessibility twin of every chart, and the relief for the
+   sub-3:1 colours the validator flagged. It is always reachable, never removed. */
+details.table-view { margin-top: 0.75rem; }
+details.table-view > summary {
+  cursor: pointer; font-size: var(--size-subtitle); color: var(--ink-secondary);
+  list-style: none; display: inline-flex; align-items: center; gap: 0.35rem;
+}
+details.table-view > summary::-webkit-details-marker { display: none; }
+details.table-view > summary::before { content: '▸'; font-size: 0.75em; }
+details.table-view[open] > summary::before { content: '▾'; }
+details.table-view > summary:hover { color: var(--ink-primary); }
+details.table-view > div { margin-top: 0.75rem; }
+
+/* ---------------------------------------------------------------- notes --- */
+
+.note {
+  border-left: 2px solid var(--ink-axis);
+  padding: 0.125rem 0 0.125rem 0.875rem;
+  color: var(--ink-secondary);
+  font-size: var(--size-subtitle);
+}
+.note strong { color: var(--ink-primary); }
+
+.flag {
+  display: flex; gap: 0.6rem; align-items: baseline;
+  padding: 0.6rem 0; border-bottom: 1px solid var(--ink-gridline);
+  font-size: var(--size-subtitle);
+}
+.flag:last-child { border-bottom: none; }
+.flag-mark { color: var(--status-needs-attention); flex: none; }
+
+.empty {
+  color: var(--ink-secondary);
+  font-size: var(--size-subtitle);
+  background: var(--ink-page-plane);
+  border: 1px dashed var(--ink-gridline);
+  border-radius: 6px;
+  padding: 1rem 1.125rem;
+}
+
+/* ---------------------------------------------------------------- charts -- */
+
+svg.chart { display: block; width: 100%; height: auto; overflow: visible; }
+svg.chart text { font-family: var(--font-sans); }
+.axis-label { font-size: var(--size-tick); fill: var(--ink-muted); }
+.data-label { font-size: var(--size-tick); font-weight: 500; fill: var(--ink-secondary); }
+.gridline { stroke: var(--ink-gridline); stroke-width: 1; }
+.axis-line { stroke: var(--ink-axis); stroke-width: 1; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: var(--size-tick); color: var(--ink-secondary); margin-top: 0.5rem; }
+.legend-item { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend-key { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+
+/* Tooltips enhance, they never gate — every value is also in the table view. */
+.tip {
+  position: fixed; pointer-events: none; opacity: 0;
+  background: var(--ink-chart-surface);
+  border: 1px solid var(--ink-axis);
+  border-radius: 6px; padding: 0.5rem 0.65rem;
+  font-size: var(--size-tick); line-height: 1.5;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.12);
+  z-index: 60; max-width: 260px;
+  transition: opacity 0.1s;
+}
+.tip[data-show] { opacity: 1; }
+.tip b { font-weight: 600; }
+
+@media print {
+  .topbar, .theme-toggle, footer.site { display: none; }
+  .panel { border-color: #999; break-inside: avoid; }
+  details.table-view { display: block; }
+  details.table-view > div { display: block !important; }
+}

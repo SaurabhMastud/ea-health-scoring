@@ -1,0 +1,12 @@
+run,n_features,train_auc_roc,test_auc_roc,test_auc_pr,test_brier,gain_over_baseline,gain_ci_low,gain_ci_high
+retention · 1 review-% baseline,1,0.6389,0.6019,0.5499,0.2661,0.0,,
+retention · 2 health score only,1,0.8381,0.8101,0.7757,0.2135,0.2082,,
+retention · 3 full features,19,0.9479,0.9008,0.9036,0.1554,0.2989,,
+toxicity · 1 review-% baseline,1,0.6434,0.6486,0.4681,0.2013,0.0,,
+toxicity · 2 health score only,1,0.8217,0.8547,0.7022,0.1433,0.2061,,
+toxicity · 3 full features,19,0.9001,0.9305,0.8478,0.0996,0.2819,,
+satisfaction (robustness) · 1 review-% baseline,1,0.8935,0.9144,0.8959,0.1365,0.0,,
+satisfaction (robustness) · 2 health score only,1,0.7441,0.7054,0.5968,0.2291,-0.209,,
+satisfaction (robustness) · 3 full features,19,0.9142,0.9028,0.8879,0.1364,-0.0117,,
+retention · 4 cross-instrument (community text -> playtime),5,0.7291,0.7489,0.7496,0.2226,0.147,0.0559,0.2428
+retention · 4b cross-instrument + accrual control,6,0.7311,0.748,0.7502,0.2278,0.1461,0.0559,0.2428

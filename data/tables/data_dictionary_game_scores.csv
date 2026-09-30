@@ -1,0 +1,37 @@
+column,dtype_units,definition
+appid,int,Steam application ID. Join key to every other table.
+launch_date,datetime,"Bisected full-release date. NaT for the died-in-EA cohort, which never launched."
+cohort,str,launched | died_in_early_access. Determines whether an outcome exists at all.
+health_score_equal,float 0-100,"Health Score, equal weights (0.5 engagement / 0.5 community). The headline score."
+health_score_data_driven,float 0-100,"Health Score, weights from logistic coefficients fitted on training rows only."
+engagement_component,float 0-100,"Engagement half of the score before weighting - persistence, velocity, review trajectory."
+community_component,float 0-100,"Community half of the score before weighting - toxicity, sentiment, redaction rate."
+health_band,str,"At Risk | Needs Attention | Healthy. Cutoffs are terciles of the TRAINING score distribution, pre-committed."
+in_test_set,bool,True if the game fell in the temporal test split. False = training. Absent for the survivorship cohort.
+retention_at_risk,int 0/1,Outcome label: post-launch persistence in the bottom tercile of training. 1 = at risk.
+toxicity_at_risk,int 0/1,Outcome label: post-launch toxicity in the top tercile of training. 1 = at risk.
+ea_positive_share,float 0-1,EA positive-review share. Carried through because it is the free baseline.
+prp_median_hours,float,"Median Post-Review Persistence over EA reviewers, hours. Right-censored at the collection date."
+ea_toxicity_mean,float 0-1,Mean Detoxify toxicity over sampled EA reviews.
+post_prp_median_hours,float,"Outcome source: median persistence of post-launch reviewers, hours."
+post_toxicity_mean,float 0-1,"Outcome source: mean post-launch toxicity, EA reviewers excluded."
+post_positive_share,float 0-1,Outcome source: post-launch positive-review share.
+shap_pct_never_played_again,float (log-odds),SHAP contribution of pct_never_played_again to the retention prediction. Test-set games only.
+shap_prp_median_hours,float (log-odds),SHAP contribution of prp_median_hours to the retention prediction. Test-set games only.
+shap_prp_p75_hours,float (log-odds),SHAP contribution of prp_p75_hours to the retention prediction. Test-set games only.
+shap_playtime_at_review_median_hours,float (log-odds),SHAP contribution of playtime_at_review_median_hours to the retention prediction. Test-set games only.
+shap_ea_duration_days,float (log-odds),SHAP contribution of ea_duration_days to the retention prediction. Test-set games only.
+shap_n_ea_reviews_collected,float (log-odds),SHAP contribution of n_ea_reviews_collected to the retention prediction. Test-set games only.
+shap_ea_reviews_per_day_collected,float (log-odds),SHAP contribution of ea_reviews_per_day_collected to the retention prediction. Test-set games only.
+shap_ea_positive_share,float (log-odds),SHAP contribution of ea_positive_share to the retention prediction. Test-set games only.
+shap_ea_positive_share_trend,float (log-odds),SHAP contribution of ea_positive_share_trend to the retention prediction. Test-set games only.
+shap_ea_toxicity_mean,float (log-odds),SHAP contribution of ea_toxicity_mean to the retention prediction. Test-set games only.
+shap_ea_toxicity_share_above_half,float (log-odds),SHAP contribution of ea_toxicity_share_above_half to the retention prediction. Test-set games only.
+shap_ea_sentiment_mean,float (log-odds),SHAP contribution of ea_sentiment_mean to the retention prediction. Test-set games only.
+shap_ea_censored_rate,float (log-odds),SHAP contribution of ea_censored_rate to the retention prediction. Test-set games only.
+shap_ea_toxicity_trend,float (log-odds),SHAP contribution of ea_toxicity_trend to the retention prediction. Test-set games only.
+shap_ea_author_games_owned_median,float (log-odds),SHAP contribution of ea_author_games_owned_median to the retention prediction. Test-set games only.
+shap_ea_author_review_count_median,float (log-odds),SHAP contribution of ea_author_review_count_median to the retention prediction. Test-set games only.
+shap_ea_share_edited,float (log-odds),SHAP contribution of ea_share_edited to the retention prediction. Test-set games only.
+shap_has_ea_positive_share_trend,float (log-odds),SHAP contribution of has_ea_positive_share_trend to the retention prediction. Test-set games only.
+shap_has_ea_toxicity_trend,float (log-odds),SHAP contribution of has_ea_toxicity_trend to the retention prediction. Test-set games only.

@@ -1,0 +1,2 @@
+cutoff_source,at_risk_below,healthy_at_or_above,test_games_flagged,test_precision,test_recall,test_base_rate
+"training terciles, pre-committed",43.6,57.2,57,0.754,0.531,0.494

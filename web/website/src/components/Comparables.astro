@@ -1,0 +1,47 @@
+---
+import BandChip from './BandChip.astro';
+import { int, num, type GameDetail } from '../lib/data';
+
+interface Props { game: GameDetail; }
+const { game } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const peers = game.comparables;
+---
+<section class="panel" aria-labelledby="comp-title">
+  <h2 class="panel-title" id="comp-title">Comparable games</h2>
+  <p class="panel-sub">
+    Closest in review volume among games sharing a genre. Benchmarking, not a ranking.
+  </p>
+
+  {peers.length > 0 ? (
+    <div class="scroll-x">
+      <table>
+        <thead>
+          <tr><th>Game</th><th class="n">Score</th><th>Band</th><th class="n">EA reviews</th></tr>
+        </thead>
+        <tbody>
+          <tr class="self">
+            <td><strong>{game.name}</strong> <span class="muted">(this game)</span></td>
+            <td class="n"><strong>{num(game.score, 0)}</strong></td>
+            <td><BandChip band={game.band} /></td>
+            <td class="n">{int(game.n_ea_reviews)}</td>
+          </tr>
+          {peers.map((p) => (
+            <tr>
+              <td><a href={`${base}/games/${p.appid}/`}>{p.name}</a></td>
+              <td class="n">{num(p.score, 0)}</td>
+              <td><BandChip band={p.band} /></td>
+              <td class="n">{int(p.n_ea_reviews)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ) : (
+    <p class="empty">No scored games share a genre and a comparable review volume with this one.</p>
+  )}
+</section>
+
+<style>
+  .self td { background: var(--ink-page-plane); }
+</style>

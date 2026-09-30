@@ -1,0 +1,5 @@
+pair,spearman_rho,p_value
+prp_median_hours vs post_prp_median_hours,0.867,9.254142188666279e-167
+prp_p75_hours vs post_prp_median_hours,0.854,5.742228696851797e-156
+ea_toxicity_mean vs post_toxicity_mean,0.779,2.4760991960030613e-112
+ea_positive_share vs post_positive_share,0.812,3.858959913144289e-129

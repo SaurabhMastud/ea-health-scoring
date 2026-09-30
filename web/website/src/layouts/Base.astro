@@ -1,0 +1,107 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Which nav item to mark as current. */
+  section?: 'studios' | 'players' | 'testers' | 'compare' | 'methodology' | 'results' | 'data';
+}
+
+const { title, description = 'A community-health score for Steam early-access games, built from public review data.', section } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const nav = [
+  { href: `${base}/browse/`, label: 'Browse', key: 'players' },
+  { href: `${base}/compare/`, label: 'Compare', key: 'compare' },
+  { href: `${base}/studios/`, label: 'For studios', key: 'studios' },
+  { href: `${base}/testers/`, label: 'For testers', key: 'testers' },
+  { href: `${base}/methodology/`, label: 'Methodology', key: 'methodology' },
+  { href: `${base}/performance/`, label: 'Results', key: 'results' },
+  { href: `${base}/data/`, label: 'Data', key: 'data' },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} · Early-Access Health Score</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>▲</text></svg>" />
+  <script is:inline>
+    // Runs before first paint so the correct theme is already applied and the
+    // page never flashes the wrong one. Explicit choice wins over the OS.
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) { /* private mode: fall back to prefers-color-scheme */ }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href={`${base}/`}>Early-Access Health Score</a>
+      <nav class="nav" aria-label="Main">
+        {nav.map((n) => (
+          <a href={n.href} aria-current={section === n.key ? 'page' : undefined}>{n.label}</a>
+        ))}
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-live="polite">
+          <span aria-hidden="true">◐</span> <span id="theme-label">Theme</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" style="padding-top:2.5rem">
+    <slot />
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p style="max-width:70ch">
+        <strong>This is a research proxy, not a verdict.</strong> Scores are computed from public
+        Steam review text and playtime. Review toxicity is a measure of a game's
+        <em>community climate as expressed in reviews</em> — it is not a measure of in-game player
+        behaviour, and it is not a judgement of the developers or of the game's quality.
+      </p>
+      <p class="footnote">
+        Independent research project. Derived data only — no raw review text is redistributed.
+        <a href={`${base}/methodology/#corrections`}>Report a correction</a>.
+      </p>
+    </div>
+  </footer>
+
+  <div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+  <script>
+    const btn = document.getElementById('theme-toggle')!;
+    const label = document.getElementById('theme-label')!;
+
+    function current(): 'light' | 'dark' {
+      const explicit = document.documentElement.getAttribute('data-theme');
+      if (explicit === 'light' || explicit === 'dark') return explicit;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function sync() {
+      // The label names what the button will DO, not the state it is in.
+      label.textContent = current() === 'dark' ? 'Light' : 'Dark';
+      btn.setAttribute('aria-label', `Switch to ${current() === 'dark' ? 'light' : 'dark'} theme`);
+    }
+    btn.addEventListener('click', () => {
+      const next = current() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
+      sync();
+      // Charts read colours from CSS vars at draw time, so they need a redraw.
+      window.dispatchEvent(new CustomEvent('themechange'));
+    });
+    sync();
+  </script>
+</body>
+</html>

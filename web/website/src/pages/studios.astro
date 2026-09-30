@@ -1,0 +1,156 @@
+---
+import Base from '../layouts/Base.astro';
+import { getGames, getMeta, getModel, int, num } from '../lib/data';
+
+const games = getGames();
+const meta = getMeta();
+const model = getModel();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Ranked by how much the signal moves the model overall, not by how much any one
+// game's score moves — that is what the per-game explanation panel is for.
+const drivers = model.shap_importance.slice(0, 6);
+const maxDriver = Math.max(...drivers.map((d) => d.mean_abs_shap));
+---
+<Base title="For studios" section="studios"
+      description="What the Early-Access Health Score says about your game, and what it cannot.">
+
+  <h1>For studios</h1>
+  <p class="prose big">
+    If your game is in this dataset, there is a page for it showing its score, which signals are
+    dragging it, and how much weight that score can actually carry.
+  </p>
+
+  <section class="panel" style="margin:2rem 0">
+    <label class="search-label" for="find">Find your game</label>
+    <input type="search" id="find" placeholder="Type a game name or Steam app ID" autocomplete="off"
+           role="combobox" aria-expanded="false" aria-controls="results" aria-autocomplete="list" />
+    <ul id="results" role="listbox" aria-label="Matching games"></ul>
+    <p class="footnote" id="hint" style="margin:0.75rem 0 0">
+      {int(meta.corpus.n_games_scored)} games scored. Not finding yours? It may have had fewer
+      than {meta.frame.min_ea_reviews} early-access reviews, or no documented early-access
+      period — see <a href={`${base}/methodology/`}>inclusion criteria</a>.
+    </p>
+  </section>
+
+  <h2>How to read your score</h2>
+  <div class="grid-3">
+    <div class="panel">
+      <h3 style="margin-top:0;font-size:0.9375rem">It is a rank, not a measurement</h3>
+      <p class="secondary" style="font-size:var(--size-subtitle)">
+        There is no confidence interval — interval estimation is future work. A score of 62 is
+        meaningfully different from 30 and not meaningfully different from 65.
+      </p>
+    </div>
+    <div class="panel">
+      <h3 style="margin-top:0;font-size:0.9375rem">It is about your community, not your game</h3>
+      <p class="secondary" style="font-size:var(--size-subtitle)">
+        The community half measures how people write in reviews. It is a climate proxy. It is
+        not a quality score and not a measure of how your players actually behave in-game.
+      </p>
+    </div>
+    <div class="panel">
+      <h3 style="margin-top:0;font-size:0.9375rem">The trend matters more than the level</h3>
+      <p class="secondary" style="font-size:var(--size-subtitle)">
+        A toxicity level tells you about your genre as much as your game. A toxicity trend
+        moving the wrong way over your early-access period tells you about your game.
+      </p>
+    </div>
+  </div>
+
+  <h2>What moves the score across all games</h2>
+  <p class="prose secondary">
+    Mean absolute SHAP over the test split — how much each signal moves the model's retention
+    prediction in general. Your own game's page shows which way these push for <em>you</em>.
+  </p>
+  <div class="drivers">
+    {drivers.map((d) => (
+      <div class="driver">
+        <div class="driver-head">
+          <span>{d.label}</span>
+          <span class="tabular secondary">{num(d.mean_abs_shap, 2)}</span>
+        </div>
+        <div class="track"><div class="fill" style={`width:${(d.mean_abs_shap / maxDriver) * 100}%`}></div></div>
+      </div>
+    ))}
+  </div>
+  <p class="note" style="margin-top:1rem">
+    Persistence dominates — whether reviewers kept playing is the strongest single signal. That
+    is also the signal most affected by right-censoring, so read it with the
+    {' '}<a href={`${base}/performance/#limitations`}>limitations</a> alongside.
+  </p>
+
+  <h2>If your game is flagged At Risk</h2>
+  <p class="prose">
+    At the pre-committed cutoff the bands reach precision {num(model.bands.test_precision, 3)}
+    against a base rate of {num(model.bands.test_base_rate, 3)} — so roughly one in four flagged
+    games is a false alarm. The band is a prompt to look, not a verdict. The useful move is to
+    open the game page, read which signal is contributing most, and check whether the trajectory
+    was already moving before launch.
+  </p>
+  <p class="prose secondary">
+    If you think the score is wrong, it may well be — and the
+    {' '}<a href={`${base}/methodology/#corrections`}>correction route</a> is on the methodology
+    page. Public review data misses relaunches, app-ID changes and review-bombing episodes, and
+    those are exactly the cases where a public-data proxy goes wrong.
+  </p>
+</Base>
+
+<script>
+  // Search over the index the site already ships. No network call, no API — the
+  // whole point of a static bundle.
+  const base = document.querySelector<HTMLAnchorElement>('.brand')!.getAttribute('href')!.replace(/\/$/, '');
+  const input = document.getElementById('find') as HTMLInputElement;
+  const list = document.getElementById('results') as HTMLUListElement;
+
+  type Row = { appid: number; name: string; score: number; band: string };
+  let rows: Row[] = [];
+
+  fetch(`${base}/data/v1/games.json`)
+    .then((r) => r.json())
+    .then((d: Row[]) => { rows = d; })
+    .catch(() => { document.getElementById('hint')!.textContent = 'Game index could not be loaded.'; });
+
+  function render(matches: Row[]) {
+    list.innerHTML = matches
+      .map((m) => `<li role="option"><a href="${base}/games/${m.appid}/">
+        <span>${m.name.replace(/[<>&]/g, '')}</span>
+        <span class="r"><span class="tabular">${m.score.toFixed(0)}</span> · ${m.band}</span></a></li>`)
+      .join('');
+    input.setAttribute('aria-expanded', String(matches.length > 0));
+  }
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (q.length < 2) { list.innerHTML = ''; input.setAttribute('aria-expanded', 'false'); return; }
+    render(rows.filter((r) => r.name.toLowerCase().includes(q) || String(r.appid) === q).slice(0, 8));
+  });
+</script>
+
+<style>
+  .big { font-size: 1.0625rem; color: var(--ink-secondary); max-width: 62ch; }
+  .search-label { display: block; font-weight: 600; font-size: 0.9375rem; margin-bottom: 0.5rem; }
+  /* The field and its result list share one measure and it is a control measure,
+     not a text one -- at 460px inside a full-width panel the right half of the
+     panel read as empty. */
+  #find {
+    font: inherit; font-size: 1rem; width: 100%; max-width: var(--measure-control);
+    padding: 0.65rem 0.8rem; border: 1px solid var(--ink-axis); border-radius: 6px;
+    background: var(--ink-page-plane); color: var(--ink-primary);
+  }
+  #results { list-style: none; margin: 0.75rem 0 0; padding: 0; max-width: var(--measure-control); }
+  #results li { border-bottom: 1px solid var(--ink-gridline); }
+  #results a {
+    display: flex; justify-content: space-between; gap: 1rem; align-items: baseline;
+    padding: 0.5rem 0; text-decoration: none; font-size: var(--size-subtitle);
+  }
+  #results a:hover { text-decoration: underline; }
+  #results .r { color: var(--ink-secondary); white-space: nowrap; }
+
+  /* A bar chart is not prose. Filling the column makes the shorter bars
+     readable instead of compressing all six into half the available width. */
+  .drivers { display: grid; gap: 1rem; max-width: var(--measure-chart); }
+  .driver-head { display: flex; justify-content: space-between; font-size: var(--size-subtitle); margin-bottom: 0.25rem; }
+  .track { height: 8px; border-radius: 999px; background: var(--seq-0); }
+  .fill { height: 100%; background: var(--series-health-score); border-radius: 0 4px 4px 0; }
+</style>

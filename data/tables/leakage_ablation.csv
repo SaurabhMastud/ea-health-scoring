@@ -1,0 +1,19 @@
+outcome,features,n,test_auc_roc,test_auc_pr
+retention,A. full (all 17),17,0.9022,0.9083
+retention,B. full MINUS persistence family,13,0.7881,0.7991
+retention,C. community only,5,0.752,0.7491
+retention,D. engagement only,9,0.9099,0.9132
+retention,E. persistence family ONLY,4,0.9006,0.903
+retention,F. ea_positive_share only (baseline),1,0.6165,0.5653
+toxicity,A. full (all 17),17,0.942,0.8732
+toxicity,B. full MINUS persistence family,13,0.9448,0.8765
+toxicity,C. community only,5,0.9327,0.8717
+toxicity,D. engagement only,9,0.7259,0.4919
+toxicity,E. persistence family ONLY,4,0.6732,0.4162
+toxicity,F. ea_positive_share only (baseline),1,0.6442,0.4626
+satisfaction,A. full (all 17),17,0.9024,0.8851
+satisfaction,B. full MINUS persistence family,13,0.8954,0.8665
+satisfaction,C. community only,5,0.787,0.7376
+satisfaction,D. engagement only,9,0.9193,0.8974
+satisfaction,E. persistence family ONLY,4,0.8482,0.8287
+satisfaction,F. ea_positive_share only (baseline),1,0.9094,0.8895

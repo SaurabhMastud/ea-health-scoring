@@ -1,0 +1,1888 @@
+appid,name,still_in_ea,total_reviews,listing_date,had_early_access,ea_flags_in_probe,verdict,months_since_listing,cohort
+252490,Rust,False,1386990,2018-02-08,True,86,candidate_launched,101.9,launched
+1086940,Baldur's Gate 3,False,850979,2023-08-03,True,100,candidate_launched,36.1,launched
+739630,Phasmophobia,True,836204,2020-09-18,True,0,candidate_still_in_ea,70.6,still_in_ea
+346110,ARK: Survival Evolved,True,774509,2017-08-27,True,0,candidate_still_in_ea,107.4,still_in_ea
+242760,The Forest,False,679527,2014-05-30,True,90,candidate_launched,146.4,launched
+304930,Unturned,False,564234,2017-07-07,True,80,candidate_launched,109.1,launched
+322330,Don't Starve Together,False,540587,2016-04-21,True,68,candidate_launched,123.6,launched
+892970,Valheim,True,539371,2021-02-02,True,0,candidate_still_in_ea,66.1,still_in_ea
+1966720,Lethal Company,True,510066,2023-10-23,True,0,candidate_still_in_ea,33.4,still_in_ea
+1623730,Palworld,False,467703,2024-01-19,True,100,candidate_launched,30.5,launched
+221100,DayZ,False,466856,2013-12-16,True,86,candidate_launched,151.8,launched
+108600,Project Zomboid,True,466660,2013-11-08,True,0,candidate_still_in_ea,153.0,still_in_ea
+3241660,R.E.P.O.,True,414780,2025-02-26,True,0,candidate_still_in_ea,17.2,still_in_ea
+291550,Brawlhalla,False,410263,2017-10-17,True,71,candidate_launched,105.7,launched
+251570,7 Days to Die,False,398060,2013-12-13,True,98,candidate_launched,151.9,launched
+548430,Deep Rock Galactic,False,378614,2018-02-28,True,90,candidate_launched,101.3,launched
+648800,Inside the Backrooms,True,376497,2018-05-23,True,0,candidate_still_in_ea,98.5,still_in_ea
+632360,Risk of Rain 2,True,351068,2019-03-28,True,0,candidate_still_in_ea,88.4,still_in_ea
+444090,Paladins®,False,345376,2018-05-08,True,84,candidate_launched,99.0,launched
+1144200,Ready or Not,False,340572,2021-12-17,True,100,candidate_launched,55.6,launched
+1326470,Sons Of The Forest,False,316331,2023-02-23,True,98,candidate_launched,41.4,launched
+3164500,Schedule I,True,310815,2025-03-24,True,0,candidate_still_in_ea,16.4,still_in_ea
+261550,Mount &amp; Blade II: Bannerlord,True,294922,2022-10-25,True,0,candidate_still_in_ea,45.4,still_in_ea
+526870,Satisfactory,True,277005,2024-09-10,True,0,candidate_still_in_ea,22.8,still_in_ea
+594650,Hunt: Showdown 1896,False,276460,2018-02-22,True,89,candidate_launched,101.5,launched
+438100,VRChat,True,266584,2017-02-01,True,0,candidate_still_in_ea,114.2,still_in_ea
+1794680,Vampire Survivors,False,264434,2021-12-17,True,90,candidate_launched,55.6,launched
+393380,Squad,False,241167,2015-12-15,True,96,candidate_launched,127.8,launched
+427520,Factorio,False,232828,2016-02-25,True,93,candidate_launched,125.4,launched
+435150,Divinity: Original Sin 2 - Definitive Edition,False,204818,2017-09-14,True,73,candidate_launched,106.8,launched
+433850,Z1 Battle Royale,False,202444,2018-02-28,True,94,candidate_launched,101.3,launched
+2868840,Slay the Spire 2,True,193870,2026-03-05,True,0,candidate_still_in_ea,5.0,still_in_ea
+244210,BLOCKADE 3D,False,172694,2014-12-19,True,2,candidate_launched,139.7,launched
+1943950,Escape the Backrooms,True,159087,2022-08-11,True,0,candidate_still_in_ea,47.8,still_in_ea
+552990,World of Warships,False,155847,2017-11-15,True,60,candidate_launched,104.8,launched
+508440,Totally Accurate Battle Simulator,False,152698,2019-04-01,True,97,candidate_launched,88.2,launched
+686810,Hell Let Loose,False,148980,2021-07-27,True,1,candidate_launched,60.3,launched
+671860,BattleBit Remastered,True,146327,2023-06-15,True,0,candidate_still_in_ea,37.7,still_in_ea
+362890,Black Mesa,True,144117,2015-05-05,True,0,candidate_still_in_ea,135.2,still_in_ea
+361420,ASTRONEER,False,138855,2016-12-16,True,90,candidate_launched,115.7,launched
+1604030,V Rising,False,136328,2022-05-17,True,100,candidate_launched,50.7,launched
+1167630,Teardown,False,134284,2020-10-29,True,97,candidate_launched,69.3,launched
+244850,Space Engineers,False,134221,2013-10-23,True,87,candidate_launched,153.6,launched
+232090,Runbow,False,129210,2016-11-18,True,67,candidate_launched,116.7,launched
+513710,SCUM,False,126053,2018-08-29,True,100,candidate_launched,95.3,launched
+1962700,Subnautica 2,True,124464,2026-05-14,True,0,candidate_still_in_ea,2.7,still_in_ea
+211820,Starbound,False,123220,2016-07-22,True,72,candidate_launched,120.6,launched
+387990,Scrap Mechanic,True,120865,2016-01-20,True,0,candidate_still_in_ea,126.6,still_in_ea
+899770,Last Epoch,False,118314,2019-04-30,True,98,candidate_launched,87.3,launched
+376210,The Isle,True,117644,2015-12-02,True,0,candidate_still_in_ea,128.3,still_in_ea
+1942280,Brotato,False,117353,2022-09-27,True,99,candidate_launched,46.3,launched
+440900,Conan Exiles Enhanced,False,116941,2017-01-31,True,96,candidate_launched,114.2,launched
+2399830,ARK: Survival Ascended,False,114691,2023-10-26,True,100,candidate_launched,33.3,launched
+1304930,The Outlast Trials,False,109948,2024-03-05,True,100,candidate_launched,29.0,launched
+219990,Grim Dawn,False,108483,2016-02-25,True,68,candidate_launched,125.4,launched
+1203620,Enshrouded,True,104179,2024-01-24,True,0,candidate_still_in_ea,30.4,still_in_ea
+1217060,Gunfire Reborn,True,103513,2021-11-18,True,0,candidate_still_in_ea,56.6,still_in_ea
+815370,Green Hell,False,100649,2019-09-05,True,83,candidate_launched,83.1,launched
+962130,Grounded,True,95239,2020-07-28,True,0,candidate_still_in_ea,72.3,still_in_ea
+1046930,Dota Underlords,False,90943,2019-06-20,True,92,candidate_launched,85.6,launched
+635260,CarX Drift Racing Online,False,89101,2017-07-07,True,80,candidate_launched,109.1,launched
+766570,Russian Fishing 4,False,88943,2021-11-11,True,96,candidate_launched,56.8,launched
+602960,Barotrauma,False,88716,2019-06-05,True,100,candidate_launched,86.1,launched
+3354750,skate.,True,87796,2025-09-16,True,0,candidate_still_in_ea,10.6,still_in_ea
+1533390,Gorilla Tag,True,85096,2023-01-01,True,0,candidate_still_in_ea,43.1,still_in_ea
+2016590,Long Way,False,84674,2024-06-07,True,100,candidate_launched,25.9,launched
+2670630,Supermarket Simulator,True,83506,2024-02-20,True,0,candidate_still_in_ea,29.5,still_in_ea
+1568590,Goose Goose Duck,False,81645,2021-10-03,True,95,candidate_launched,58.1,launched
+550650,Black Squad,True,81235,2019-06-26,True,0,candidate_still_in_ea,85.4,still_in_ea
+1371980,No Rest for the Wicked,False,80213,2024-04-18,True,100,candidate_launched,27.6,launched
+2479810,Gray Zone Warfare,True,78057,2024-04-30,True,0,candidate_still_in_ea,27.2,still_in_ea
+380600,Fishing Planet,False,76556,2017-08-28,True,86,candidate_launched,107.3,launched
+620980,Beat Saber,True,76194,2018-05-01,True,0,candidate_still_in_ea,99.3,still_in_ea
+431240,Golf With Your Friends,False,74901,2020-05-19,True,81,candidate_launched,74.6,launched
+286160,Chicken Invaders 3,False,73975,2015-06-05,True,87,candidate_launched,134.2,launched
+1284190,The Planet Crafter,False,72580,2022-03-25,True,100,candidate_launched,52.4,launched
+1049590,Eternal Return,False,70182,2023-07-20,True,100,candidate_launched,36.6,launched
+386180,Crossout,False,69558,2017-07-27,True,79,candidate_launched,108.4,launched
+466560,Northgard: Definitive Edition,False,68589,2017-02-22,True,94,candidate_launched,113.5,launched
+493520,GTFO,False,66512,2019-12-09,True,95,candidate_launched,79.9,launched
+1621690,Core Keeper,False,65801,2022-03-08,True,100,candidate_launched,53.0,launched
+489520,Minion Masters,False,65282,2019-05-24,True,71,candidate_launched,86.5,launched
+246620,Plague Inc: Evolved,True,65177,2016-02-18,True,0,candidate_still_in_ea,125.7,still_in_ea
+274190,SkyScrappers,False,60900,2015-10-15,True,83,candidate_launched,129.8,launched
+573090,Stormworks: Build and Rescue,False,59478,2018-02-28,True,91,candidate_launched,101.3,launched
+504370,Battlerite,True,59244,2017-11-08,True,0,candidate_still_in_ea,105.0,still_in_ea
+552100,Brick Rigs,True,58803,2016-11-07,True,0,candidate_still_in_ea,117.0,still_in_ea
+1290000,PowerWash Simulator,False,58485,2022-07-14,True,93,candidate_launched,48.8,launched
+427410,Abiotic Factor,True,57827,2025-07-22,True,0,candidate_still_in_ea,12.4,still_in_ea
+1961460,PROJECT: PLAYTIME,True,57565,2022-12-12,True,0,candidate_still_in_ea,43.8,still_in_ea
+3097560,Liar's Bar,True,56006,2024-10-02,True,0,candidate_still_in_ea,22.1,still_in_ea
+1928420,Farlight 84,True,55383,2023-09-21,True,0,candidate_still_in_ea,34.5,still_in_ea
+1874880,Arma Reforger,False,55190,2023-11-16,True,1,candidate_launched,32.6,launched
+674020,World War 3,False,54545,2022-12-10,True,97,candidate_launched,43.9,launched
+346010,Besiege,False,53083,2015-01-28,True,94,candidate_launched,138.4,launched
+505460,Foxhole,False,52702,2017-07-27,True,100,candidate_launched,108.4,launched
+1129580,Medieval Dynasty,False,51798,2020-09-17,True,96,candidate_launched,70.6,launched
+313120,Stranded Deep,True,47723,2015-01-23,True,0,candidate_still_in_ea,138.5,still_in_ea
+805550,Assetto Corsa Competizione,True,47684,2018-09-12,True,0,candidate_still_in_ea,94.8,still_in_ea
+1119730,"Ranch Simulator: Build, Hunt, Farm",False,47561,2021-03-04,True,100,candidate_launched,65.1,launched
+2141730,Backrooms: Escape Together,True,47506,2022-10-18,True,0,candidate_still_in_ea,45.6,still_in_ea
+1987080,BiblioMania,True,46676,2022-06-20,True,0,candidate_still_in_ea,49.5,still_in_ea
+244450,Men of War: Assault Squad 2,False,46547,2014-05-15,True,80,candidate_launched,146.8,launched
+2051620,Enlisted,False,46235,2024-07-16,True,97,candidate_launched,24.6,launched
+2406770,Uncle Z,False,44516,2024-06-07,True,100,candidate_launched,25.9,launched
+843380,Super Animal Royale,False,44349,2021-08-26,True,90,candidate_launched,59.3,launched
+527230,For The King,False,43632,2017-02-28,True,93,candidate_launched,113.3,launched
+834910,ATLAS,True,42929,2018-12-22,True,0,candidate_still_in_ea,91.5,still_in_ea
+228380,Wreckfest,False,41227,2014-01-15,True,85,candidate_launched,150.8,launched
+745920,Temtem,False,39307,2020-01-21,True,96,candidate_launched,78.5,launched
+597170,Clone Drone in the Danger Zone,False,39124,2017-03-16,True,97,candidate_launched,112.8,launched
+611500,Quake Champions,True,38969,2022-08-18,True,0,candidate_still_in_ea,47.6,still_in_ea
+835570,Conqueror's Blade,False,38737,2020-04-06,True,89,candidate_launched,76.0,launched
+383980,Ulama: Arena of the Gods,True,37988,2017-03-28,True,0,candidate_still_in_ea,112.4,still_in_ea
+242860,Verdun,False,37663,2015-04-28,True,84,candidate_launched,135.4,launched
+207140,SpeedRunners,False,37130,2016-04-19,True,78,candidate_launched,123.7,launched
+1241100,POLYGON,False,36954,2020-03-06,True,97,candidate_launched,77.0,launched
+655500,MX Bikes,True,36600,2019-10-07,True,0,candidate_still_in_ea,82.0,still_in_ea
+2273430,BlazBlue Entropy Effect,False,35732,2024-02-14,True,70,candidate_launched,29.7,launched
+326460,ShellShock Live,True,35561,2015-03-11,True,0,candidate_still_in_ea,137.0,still_in_ea
+1527950,Gravel Gang,False,35395,2021-12-01,True,100,candidate_launched,56.2,launched
+1211020,Wobbly Life,True,35148,2020-07-08,True,0,candidate_still_in_ea,73.0,still_in_ea
+1483870,Draw &amp; Guess,False,35119,2020-12-27,True,22,candidate_launched,67.3,launched
+1997040,MARVEL SNAP,False,35021,2023-08-22,True,99,candidate_launched,35.5,launched
+960170,DJMAX RESPECT V,True,34722,2020-03-12,True,0,candidate_still_in_ea,76.9,still_in_ea
+383120,Empyrion - Galactic Survival,False,34356,2015-08-05,True,99,candidate_launched,132.1,launched
+844870,KurtzPel,True,33988,2019-04-30,True,0,candidate_still_in_ea,87.3,still_in_ea
+1359090,Zero Hour,False,33288,2020-08-12,True,94,candidate_launched,71.8,launched
+1268750,Starship Troopers: Extermination,False,33245,2023-05-17,True,100,candidate_launched,38.7,launched
+337320,Paint the Town Red,False,32394,2015-10-13,True,96,candidate_launched,129.9,launched
+427730,Who's Your Daddy?!,True,31888,2016-05-13,True,0,candidate_still_in_ea,122.9,still_in_ea
+299740,Miscreated,True,31586,2014-10-30,True,0,candidate_still_in_ea,141.3,still_in_ea
+571740,Golf It!,True,30992,2017-02-17,True,0,candidate_still_in_ea,113.7,still_in_ea
+393420,Hurtworld,True,30975,2015-12-04,True,0,candidate_still_in_ea,128.2,still_in_ea
+774801,Desktop Bowling,False,30925,2023-04-01,True,100,candidate_launched,40.2,launched
+1180380,Ruthless Conquest,False,30856,2019-11-27,True,98,candidate_launched,80.3,launched
+280790,Creativerse,False,30734,2017-05-08,True,88,candidate_launched,111.0,launched
+3478870,GeoGuessr Steam Edition,True,30075,2025-05-08,True,0,candidate_still_in_ea,14.9,still_in_ea
+1476970,IdleOn,True,29424,2025-11-06,True,0,candidate_still_in_ea,8.9,still_in_ea
+1062520,Dinkum,False,29016,2025-04-23,True,100,candidate_launched,15.4,launched
+1084600,My Time at Sandrock,False,28882,2022-05-26,True,99,candidate_launched,50.4,launched
+1374490,RuneScape: Dragonwilds,True,28585,2025-04-15,True,0,candidate_still_in_ea,15.7,still_in_ea
+744900,Dead Frontier 2,False,28302,2019-07-15,True,94,candidate_launched,84.8,launched
+1169040,Necesse,True,28172,2019-12-12,True,0,candidate_still_in_ea,79.8,still_in_ea
+1797880,Lost Light,False,28060,2022-09-01,True,91,candidate_launched,47.2,launched
+1583320,Pro Soccer Online,True,27386,2021-11-15,True,0,candidate_still_in_ea,56.7,still_in_ea
+1158160,Coral Island,False,27361,2022-10-11,True,99,candidate_launched,45.8,launched
+859580,Imperator: Rome,True,26864,2019-04-25,True,0,candidate_still_in_ea,87.4,still_in_ea
+774181,Rhythm Doctor,False,26798,2021-02-26,True,100,candidate_launched,65.3,launched
+1171690,Wayfinder,False,26545,2024-06-11,True,99,candidate_launched,25.8,launched
+247080,Crypt of the NecroDancer,False,26444,2015-04-23,True,85,candidate_launched,135.6,launched
+420290,Blackwake,True,26050,2020-02-19,True,0,candidate_still_in_ea,77.6,still_in_ea
+519860,DUSK,False,25388,2018-12-10,True,69,candidate_launched,91.9,launched
+1432860,Sun Haven,False,25299,2021-06-25,True,100,candidate_launched,61.4,launched
+302830,Sportsfriends,True,25173,2014-12-19,True,0,candidate_still_in_ea,139.7,still_in_ea
+285920,TerraTech,False,24873,2018-08-10,True,87,candidate_launched,95.9,launched
+2325290,Sky: Children of the Light,False,24700,2024-04-10,True,100,candidate_launched,27.8,launched
+16900,GROUND BRANCH,True,24621,2026-07-16,True,0,candidate_still_in_ea,0.6,still_in_ea
+2828860,Mint Dodgers,False,24607,2024-09-24,True,100,candidate_launched,22.3,launched
+1401590,Disney Dreamlight Valley,False,24570,2023-12-05,True,100,candidate_launched,32.0,launched
+692890,Roboquest,False,24278,2020-08-20,True,100,candidate_launched,71.6,launched
+903950,Last Oasis,True,24220,2020-03-26,True,0,candidate_still_in_ea,76.4,still_in_ea
+302670,Call to Arms,False,24097,2018-04-27,True,83,candidate_launched,99.4,launched
+1929610,Demonologist,False,23979,2023-03-27,True,100,candidate_launched,40.3,launched
+434650,Lost Castle / 失落城堡,False,23922,2016-09-01,True,85,candidate_launched,119.2,launched
+246900,I am Weapon: Revival,False,23690,2015-10-23,True,86,candidate_launched,129.5,launched
+2080690,Sunkenland,False,23686,2023-08-26,True,100,candidate_launched,35.4,launched
+681280,Descenders,False,23631,2018-02-09,True,88,candidate_launched,101.9,launched
+1022450,War Selection,True,23415,2019-10-08,True,0,candidate_still_in_ea,82.0,still_in_ea
+323850,Move or Die,False,23300,2016-01-21,True,53,candidate_launched,126.6,launched
+2437170,SMITE 2,False,23027,2024-08-27,True,100,candidate_launched,23.3,launched
+392110,ENDLESS Space™ 2,False,22992,2017-05-18,True,79,candidate_launched,110.7,launched
+2768430,ATLYSS,True,22829,2024-11-22,True,0,candidate_still_in_ea,20.4,still_in_ea
+2784470,9 Kings,True,22736,2025-05-23,True,0,candidate_still_in_ea,14.4,still_in_ea
+1451190,Undisputed,True,22626,2023-01-31,True,0,candidate_still_in_ea,42.1,still_in_ea
+997010,Police Simulator: Patrol Officers,True,22615,2022-11-10,True,0,candidate_still_in_ea,44.8,still_in_ea
+2661300,Grounded 2,True,22600,2025-07-29,True,0,candidate_still_in_ea,12.2,still_in_ea
+1096530,Solasta: Crown of the Magister,False,22353,2020-10-20,True,91,candidate_launched,69.6,launched
+2071280,63 Days,False,22341,2024-09-26,True,100,candidate_launched,22.3,launched
+374040,Portal Knights,True,22332,2017-05-18,True,0,candidate_still_in_ea,110.7,still_in_ea
+509980,BIGFOOT,False,22266,2017-01-31,True,100,candidate_launched,114.2,launched
+527430,"Warhammer 40,000: Inquisitor - Martyr",False,22206,2017-08-31,True,81,candidate_launched,107.2,launched
+236110,Dungeon Defenders II,False,22151,2017-06-20,True,83,candidate_launched,109.6,launched
+447820,Vikings - Wolves of Midgard,False,22103,2017-03-23,True,77,candidate_launched,112.5,launched
+394690,Tower Unite,True,21765,2016-04-08,True,0,candidate_still_in_ea,124.0,still_in_ea
+667970,VTOL VR,False,21694,2017-08-03,True,95,candidate_launched,108.2,launched
+3199170,Blood Strike,True,21576,2025-03-13,True,0,candidate_still_in_ea,16.8,still_in_ea
+429050,Feed and Grow: Fish,True,21513,2016-01-08,True,0,candidate_still_in_ea,127.0,still_in_ea
+1969870,Battle Teams 2,False,21494,2022-07-21,True,93,candidate_launched,48.5,launched
+1789480,Marauders,False,21422,2022-10-03,True,100,candidate_launched,46.1,launched
+3105440,Heroes of Might and Magic: Olden Era,True,21364,2026-04-30,True,0,candidate_still_in_ea,3.2,still_in_ea
+1974050,Torchlight: Infinite,False,21348,2023-05-10,True,100,candidate_launched,38.9,launched
+292000,No More Room in Hell 2,False,21277,2024-10-22,True,100,candidate_launched,21.4,launched
+1812450,Bellwright,True,21115,2024-04-23,True,0,candidate_still_in_ea,27.4,still_in_ea
+2248760,Car For Sale Simulator 2023,True,20793,2023-05-18,True,0,candidate_still_in_ea,38.6,still_in_ea
+736590,Operation: Harsh Doorstop,True,20540,2023-02-15,True,0,candidate_still_in_ea,41.6,still_in_ea
+2427700,Backpack Battles,False,20540,2024-03-08,True,100,candidate_launched,28.9,launched
+3716600,Mage Arena,False,20350,2025-07-24,True,100,candidate_launched,12.4,launched
+1307550,Craftopia,True,20189,2020-09-04,True,0,candidate_still_in_ea,71.1,still_in_ea
+2625420,Drive Beyond Horizons,False,19898,2025-03-24,True,100,candidate_launched,16.4,launched
+1590320,Bro Falls,False,19892,2021-12-30,True,96,candidate_launched,55.2,launched
+559650,Witch It,True,19843,2017-05-31,True,0,candidate_still_in_ea,110.3,still_in_ea
+2780980,LOCKDOWN Protocol,False,19764,2024-07-22,True,100,candidate_launched,24.5,launched
+242680,Nuclear Throne,False,19722,2015-12-05,True,72,candidate_launched,128.1,launched
+1016920,Unrailed!,False,19686,2019-09-09,True,94,candidate_launched,82.9,launched
+962730,Skater XL - The Ultimate Skateboarding Game,False,19573,2018-12-19,True,88,candidate_launched,91.6,launched
+2399420,Le Mans Ultimate,True,19313,2024-02-20,True,0,candidate_still_in_ea,29.5,still_in_ea
+669330,ChanceBall,False,19195,2024-09-26,True,100,candidate_launched,22.3,launched
+774861,Project Winter,False,19077,2019-02-07,True,95,candidate_launched,90.0,launched
+2488620,F1® 24,True,19069,2024-05-31,True,0,candidate_still_in_ea,26.2,still_in_ea
+289130,ENDLESS Legend™,False,19050,2014-09-18,True,90,candidate_launched,142.7,launched
+4124950,Ashes of Creation,True,18980,2025-12-11,True,0,candidate_still_in_ea,7.8,still_in_ea
+2909110,Nuclear Nightmare,True,18881,2024-10-21,True,0,candidate_still_in_ea,21.5,still_in_ea
+667530,Drunken Wrestlers 2,False,18723,2019-04-01,True,76,candidate_launched,88.2,launched
+605740,"Flashing Lights - Police, Firefighting, Emergency Services (EMS) Simulator",False,18555,2018-06-07,True,98,candidate_launched,98.0,launched
+707010,Will To Live Online,False,18348,2018-04-05,True,100,candidate_launched,100.1,launched
+544920,Darwin Project,True,18333,2020-01-14,True,0,candidate_still_in_ea,78.8,still_in_ea
+918570,Century: Age of Ashes,True,18309,2021-12-02,True,0,candidate_still_in_ea,56.1,still_in_ea
+763890,Wildermyth,False,18211,2019-11-13,True,95,candidate_launched,80.8,launched
+1928980,Nightingale,False,18012,2024-02-20,True,100,candidate_launched,29.5,launched
+1139980,Travellers Rest,True,17839,2020-07-28,True,0,candidate_still_in_ea,72.3,still_in_ea
+293760,Spirit of War,True,17766,2015-03-12,True,0,candidate_still_in_ea,137.0,still_in_ea
+1154030,Titan Quest II,False,17569,2025-08-01,True,100,candidate_launched,12.1,launched
+1371580,Myth of Empires,False,17499,2024-02-21,True,23,candidate_launched,29.4,launched
+2352620,Fellowship,True,17452,2025-10-16,True,0,candidate_still_in_ea,9.6,still_in_ea
+1302240,Labyrinthine,False,17425,2020-10-28,True,100,candidate_launched,69.3,launched
+961200,Predecessor,False,17396,2024-08-20,True,100,candidate_launched,23.5,launched
+248390,Craft The World,False,17020,2014-11-24,True,88,candidate_launched,140.5,launched
+980610,Quaver,True,16936,2022-08-19,True,0,candidate_still_in_ea,47.6,still_in_ea
+270150,RUNNING WITH RIFLES,False,16713,2015-04-02,True,85,candidate_launched,136.3,launched
+991780,Notes of Soul,True,16711,2019-01-17,True,0,candidate_still_in_ea,90.7,still_in_ea
+355180,Codename CURE,False,16517,2017-10-31,True,91,candidate_launched,105.2,launched
+706990,BLOCKPOST LEGACY,True,16461,2019-04-25,True,0,candidate_still_in_ea,87.4,still_in_ea
+2904000,The Spell Brigade,False,16361,2024-09-16,True,100,candidate_launched,22.6,launched
+391460,WARMODE,True,16324,2019-09-14,True,0,candidate_still_in_ea,82.8,still_in_ea
+1548850,Six Days in Fallujah,False,16323,2023-06-22,True,100,candidate_launched,37.5,launched
+489940,BATTALION: Legacy,True,16307,2019-05-23,True,0,candidate_still_in_ea,86.5,still_in_ea
+1850740,Ghost Watchers,False,16253,2022-07-28,True,100,candidate_launched,48.3,launched
+3228590,Deadzone: Rogue,False,16130,2025-04-29,True,99,candidate_launched,15.2,launched
+374280,Hired Ops,True,16130,2021-04-13,True,0,candidate_still_in_ea,63.8,still_in_ea
+361280,Turmoil,False,16085,2016-06-02,True,94,candidate_launched,122.2,launched
+780290,Gloomhaven,False,16040,2019-07-17,True,99,candidate_launched,84.7,launched
+290340,Armello,False,16037,2015-09-01,True,84,candidate_launched,131.3,launched
+1611600,WARNO,False,15886,2024-05-23,True,100,candidate_launched,26.4,launched
+1066890,Colossal Saga,False,15783,2020-06-30,True,80,candidate_launched,73.2,launched
+332310,LEGO® Worlds,True,15628,2017-03-07,True,0,candidate_still_in_ea,113.1,still_in_ea
+1239690,Retrowave,False,15521,2020-03-06,True,97,candidate_launched,77.1,launched
+469600,Legion TD 2 - Multiplayer Tower Defense,False,15207,2017-11-20,True,95,candidate_launched,104.6,launched
+872670,SCP: 5K,True,15108,2022-02-22,True,0,candidate_still_in_ea,53.4,still_in_ea
+424030,War of Rights,True,14987,2018-12-03,True,0,candidate_still_in_ea,92.1,still_in_ea
+2605790,Deep Rock Galactic: Rogue Core,True,14903,2026-05-20,True,0,candidate_still_in_ea,2.5,still_in_ea
+344760,Reign Of Kings,True,14840,2015-12-16,True,0,candidate_still_in_ea,127.8,still_in_ea
+311310,BANZAI ROYALE,True,14719,2019-06-13,True,0,candidate_still_in_ea,85.8,still_in_ea
+445220,Avorion,False,14528,2017-01-23,True,92,candidate_launched,114.5,launched
+1324780,Easy Red 2,False,14372,2020-11-10,True,87,candidate_launched,68.9,launched
+1173370,Slapshot: Rebound,False,14054,2024-04-11,True,98,candidate_launched,27.8,launched
+249050,Fabula Mortis,False,14033,2014-10-27,True,86,candidate_launched,141.4,launched
+382310,Eco,False,13986,2018-02-06,True,100,candidate_launched,102.0,launched
+1170950,Mortal Online 2,False,13876,2021-11-23,True,57,candidate_launched,56.4,launched
+1766060,HumanitZ,False,13765,2023-09-18,True,100,candidate_launched,34.6,launched
+418030,Subsistence,True,13756,2016-10-25,True,0,candidate_still_in_ea,117.5,still_in_ea
+410340,Liftoff®: FPV Drone Racing,False,13751,2018-09-13,True,94,candidate_launched,94.8,launched
+1504570,Cultivation Tales,False,13623,2022-04-15,True,100,candidate_launched,51.7,launched
+1605220,Dune: Spice Wars,False,13514,2022-04-26,True,100,candidate_launched,51.4,launched
+867210,Songs of Conquest,False,13494,2022-05-10,True,100,candidate_launched,50.9,launched
+300380,Road Redemption,False,13480,2014-09-18,True,95,candidate_launched,142.7,launched
+1239080,Door Kickers 2: Task Force North,True,13463,2020-11-03,True,0,candidate_still_in_ea,69.1,still_in_ea
+2445690,Lost Castle 2,False,13410,2024-07-25,True,100,candidate_launched,24.4,launched
+593600,PixARK,False,13200,2018-03-27,True,87,candidate_launched,100.4,launched
+926990,WolfQuest: Anniversary Edition,False,13154,2019-07-26,True,99,candidate_launched,84.4,launched
+1631270,StarRupture,False,13115,2026-01-06,True,100,candidate_launched,6.9,launched
+253250,Stonehearth,False,13059,2015-06-03,True,91,candidate_launched,134.2,launched
+1385380,Across the Obelisk,False,13032,2021-04-08,True,96,candidate_launched,64.0,launched
+1801110,BOKURA,True,12897,2023-02-13,True,0,candidate_still_in_ea,41.7,still_in_ea
+2294660,The Quinfall,False,12860,2025-01-24,True,100,candidate_launched,18.3,launched
+799600,Cosmoteer: Starship Architect &amp; Commander,True,12774,2022-10-24,True,0,candidate_still_in_ea,45.4,still_in_ea
+268650,REKT! High Octane Stunts,False,12767,2014-08-07,True,100,candidate_launched,144.1,launched
+1029550,Torque Drift,True,12723,2021-04-21,True,0,candidate_still_in_ea,63.6,still_in_ea
+2707940,FPV Kamikaze Drone,True,12658,2023-12-15,True,0,candidate_still_in_ea,31.7,still_in_ea
+814370,Monster Sanctuary,False,12602,2019-08-28,True,91,candidate_launched,83.3,launched
+673750,Super Bunny Man,False,12237,2017-08-31,True,19,candidate_launched,107.3,launched
+290080,Life is Feudal: Your Own,False,12057,2015-11-17,True,88,candidate_launched,128.7,launched
+1898300,ASKA,False,12002,2024-06-20,True,100,candidate_launched,25.5,launched
+1361000,In Silence,False,11952,2020-10-16,True,97,candidate_launched,69.7,launched
+1757300,Jump Space,True,11911,2025-09-19,True,0,candidate_still_in_ea,10.5,still_in_ea
+230230,Cult of the Wind,False,11893,2014-06-30,True,80,candidate_launched,145.3,launched
+1377380,Night of the Dead,False,11844,2020-08-28,True,100,candidate_launched,71.3,launched
+529180,Dark and Light,True,11833,2017-07-20,True,0,candidate_still_in_ea,108.6,still_in_ea
+407530,ARK: The Survival Of The Fittest,True,11802,2017-08-29,True,0,candidate_still_in_ea,107.3,still_in_ea
+1857950,VEIN,False,11682,2025-10-24,True,100,candidate_launched,9.4,launched
+332570,Amazing Frog?,False,11657,2014-11-21,True,44,candidate_launched,140.6,launched
+418340,RWBY: Grimm Eclipse,False,11623,2016-07-05,True,84,candidate_launched,121.1,launched
+846770,DYSMANTLE,False,11549,2020-11-06,True,97,candidate_launched,69.0,launched
+1049800,BLOCKADE,True,11536,2019-05-21,True,0,candidate_still_in_ea,86.6,still_in_ea
+1030210,Torchlight III,False,11458,2020-10-13,True,92,candidate_launched,69.8,launched
+1849250,EA SPORTS™ WRC,True,11327,2023-11-02,True,0,candidate_still_in_ea,33.1,still_in_ea
+469820,Genital Jousting,True,11274,2016-11-17,True,0,candidate_still_in_ea,116.7,still_in_ea
+1995520,Pax Dei,False,11222,2025-10-16,True,100,candidate_launched,9.6,launched
+2239140,Grapples Galore,False,11140,2025-02-07,True,100,candidate_launched,17.9,launched
+360170,How to Survive 2,True,11008,2016-09-08,True,0,candidate_still_in_ea,119.0,still_in_ea
+206500,AirMech,False,10856,2018-03-30,True,89,candidate_launched,100.3,launched
+1526490,Fear Surrounds,False,10850,2021-10-20,True,96,candidate_launched,57.6,launched
+1137460,ALTF4,False,10806,2021-02-19,True,97,candidate_launched,65.5,launched
+2285150,The Front,False,10744,2023-10-11,True,100,candidate_launched,33.8,launched
+1158940,Blazing Sails,False,10676,2020-11-05,True,100,candidate_launched,69.0,launched
+227860,Castle Story,True,10615,2017-08-17,True,0,candidate_still_in_ea,107.7,still_in_ea
+1426450,Age of Darkness: Final Stand,False,10596,2021-10-07,True,99,candidate_launched,58.0,launched
+686200,Door Kickers: Action Squad,False,10586,2017-11-17,True,91,candidate_launched,104.7,launched
+1957780,Ghosts of Tabor,False,10422,2023-03-21,True,100,candidate_launched,40.6,launched
+2747330,Species: Unknown,False,10414,2025-10-23,True,100,candidate_launched,9.4,launched
+768200,Smalland: Survive the Wilds,False,10388,2023-03-29,True,99,candidate_launched,40.3,launched
+226860,Crossfire: Dungeons,False,10387,2015-05-14,True,85,candidate_launched,134.9,launched
+1911610,Windblown,True,10276,2024-10-24,True,0,candidate_still_in_ea,21.4,still_in_ea
+519190,Next Day: Survival,False,10234,2017-07-20,True,92,candidate_launched,108.6,launched
+2827200,MIMESIS,False,10134,2025-10-27,True,100,candidate_launched,9.3,launched
+1352080,SMASH LEGENDS,False,10062,2021-04-13,True,92,candidate_launched,63.8,launched
+248610,Devil's Dare 悪魔の挑戦,False,10053,2014-10-20,True,83,candidate_launched,141.7,launched
+632300,Hobo: Tough Life,False,9965,2017-07-25,True,96,candidate_launched,108.5,launched
+321360,Primal Carnage: Extinction,False,9885,2015-04-04,True,81,candidate_launched,136.2,launched
+307960,Double Action: Boogaloo,False,9872,2014-10-22,True,63,candidate_launched,141.6,launched
+604240,Shotgun Farmers,False,9850,2017-06-01,True,96,candidate_launched,110.2,launched
+633460,Tannenberg,False,9772,2017-11-16,True,89,candidate_launched,104.7,launched
+1159690,Voidtrain,False,9745,2023-05-09,True,100,candidate_launched,38.9,launched
+719890,Beasts of Bermuda,True,9711,2018-12-21,True,0,candidate_still_in_ea,91.6,still_in_ea
+429790,Brain Syndrome VR,False,9701,2022-10-28,True,97,candidate_launched,45.3,launched
+375480,Chronicon,False,9699,2020-08-21,True,93,candidate_launched,71.5,launched
+1307890,Kingdoms Reborn,True,9691,2020-11-03,True,0,candidate_still_in_ea,69.1,still_in_ea
+1369670,Motor Town: Behind The Wheel,False,9481,2021-12-17,True,100,candidate_launched,55.6,launched
+2791440,Brighter Shores,False,9382,2024-11-06,True,100,candidate_launched,20.9,launched
+951440,Volcanoids,True,9318,2019-01-29,True,0,candidate_still_in_ea,90.3,still_in_ea
+496240,Onward,True,9307,2016-08-30,True,0,candidate_still_in_ea,119.3,still_in_ea
+2012510,Stormgate,False,9222,2025-08-05,True,100,candidate_launched,12.0,launched
+319910,Trine 3: The Artifacts of Power,False,9191,2015-08-20,True,89,candidate_launched,131.7,launched
+2140510,Town of Salem 2,False,9134,2023-08-25,True,99,candidate_launched,35.4,launched
+1273710,King of Crabs,False,9099,2023-09-25,True,99,candidate_launched,34.3,launched
+2116120,Incursion Red River,True,9080,2024-04-10,True,0,candidate_still_in_ea,27.8,still_in_ea
+25000,Overgrowth,False,9056,2017-10-16,True,87,candidate_launched,105.7,launched
+436520,Line of Sight,False,9009,2017-01-31,True,93,candidate_launched,114.2,launched
+366090,Colony Survival,True,8956,2017-06-16,True,0,candidate_still_in_ea,109.8,still_in_ea
+468920,Ultimate Fishing Simulator®,False,8917,2017-11-30,True,91,candidate_launched,104.3,launched
+351290,Day of Dragons,True,8833,2015-04-16,True,0,candidate_still_in_ea,135.8,still_in_ea
+1097430,Book of Yog Idle RPG,False,8812,2022-07-30,True,100,candidate_launched,48.3,launched
+1641960,Forever Skies,False,8742,2023-06-22,True,100,candidate_launched,37.5,launched
+369990,Assault on Arnhem,False,8639,2016-03-11,True,88,candidate_launched,125.0,launched
+269770,Secrets of Grindea,False,8571,2015-07-13,True,100,candidate_launched,132.9,launched
+384180,Prominence Poker,False,8570,2016-12-13,True,94,candidate_launched,115.9,launched
+1927780,Galaxy Life,False,8560,2022-08-31,True,91,candidate_launched,47.2,launched
+753650,Due Process,False,8545,2020-11-03,True,100,candidate_launched,69.1,launched
+1280930,Astral Ascent,False,8487,2022-04-12,True,98,candidate_launched,51.8,launched
+3191050,BRAZILIAN DRUG DEALER 3: I OPENED A PORTAL TO HELL IN THE FAVELA TRYING TO REVIVE MIT AIA I NEED TO CLOSE IT,False,8482,2024-09-21,True,100,candidate_launched,22.4,launched
+1000360,Hellish Quart,False,8460,2021-02-16,True,100,candidate_launched,65.6,launched
+298610,Ylands,False,8427,2019-12-05,True,86,candidate_launched,80.1,launched
+276810,Mordheim: City of the Damned,False,8406,2015-11-19,True,90,candidate_launched,128.7,launched
+1063420,Void Crew,False,8400,2023-09-07,True,100,candidate_launched,34.9,launched
+491540,Neopets - Mega Mini Games Collection - The Neopian Arcade Odyssey,True,8351,2021-03-25,True,0,candidate_still_in_ea,64.4,still_in_ea
+2948190,World of Sea Battle,False,8349,2025-10-21,True,75,candidate_launched,9.5,launched
+1104450,Bombergrounds: Reborn,False,8349,2022-10-06,True,95,candidate_launched,46.0,launched
+214420,Gear Up,False,8340,2015-01-28,True,93,candidate_launched,138.4,launched
+1913370,OPERATOR,False,8305,2023-08-01,True,100,candidate_launched,36.2,launched
+1537830,Disney Speedstorm,True,8262,2023-04-18,True,0,candidate_still_in_ea,39.6,still_in_ea
+886250,Vegas Infinite by PokerStars,False,8240,2023-11-10,True,94,candidate_launched,32.8,launched
+964800,Prodeus,False,8173,2020-11-09,True,93,candidate_launched,68.9,launched
+233980,Port Royale 3 Gold and Patrician IV Gold - Double Pack,False,8168,2014-07-25,True,1,candidate_launched,144.5,launched
+298050,Master of Orion,True,8165,2016-08-25,True,0,candidate_still_in_ea,119.5,still_in_ea
+291860,Pit People®,False,8161,2017-01-13,True,91,candidate_launched,114.8,launched
+298240,War Trigger 3,True,8148,2015-12-22,True,0,candidate_still_in_ea,127.6,still_in_ea
+879160,Battlerite Royale,True,8143,2019-02-19,True,0,candidate_still_in_ea,89.6,still_in_ea
+2015270,Rotwood,False,8136,2024-04-24,True,100,candidate_launched,27.4,launched
+230190,War for the Overworld,False,8098,2015-04-02,True,87,candidate_launched,136.3,launched
+2085540,Stick It to the Stickman,False,8085,2025-08-18,True,100,candidate_launched,11.6,launched
+671510,DESOLATE,True,8057,2018-02-08,True,0,candidate_still_in_ea,101.9,still_in_ea
+1088150,Scribble It!,False,8036,2020-10-20,True,18,candidate_launched,69.5,launched
+2306590,Apewar,True,8027,2023-03-24,True,0,candidate_still_in_ea,40.4,still_in_ea
+1001270,Kebab Chefs! - Restaurant Simulator,False,8004,2024-01-19,True,100,candidate_launched,30.5,launched
+311260,The Guild 3,True,7977,2017-09-26,True,0,candidate_still_in_ea,106.4,still_in_ea
+2818260,Vigor,False,7936,2024-09-18,True,100,candidate_launched,22.5,launched
+625340,XERA: Survival,False,7931,2021-09-27,True,95,candidate_launched,58.3,launched
+236370,TrackMania² Valley,True,7873,2013-07-02,True,0,candidate_still_in_ea,157.3,still_in_ea
+1088090,DYNASTY WARRIORS 9 Complete Edition,False,7868,2019-12-04,True,93,candidate_launched,80.1,launched
+3183280,Game of Thrones: Kingsroad,False,7868,2025-05-21,True,99,candidate_launched,14.5,launched
+1335830,Len's Island,True,7853,2021-11-26,True,0,candidate_still_in_ea,56.3,still_in_ea
+362620,Software Inc.,False,7774,2015-05-01,True,100,candidate_launched,135.3,launched
+1963370,No One Survived,False,7761,2023-01-14,True,100,candidate_launched,42.7,launched
+1342330,Mad Games Tycoon 2,False,7745,2021-01-21,True,100,candidate_launched,66.5,launched
+1702010,Sengoku Dynasty,False,7739,2023-08-10,True,100,candidate_launched,35.9,launched
+1699480,KLETKA,False,7721,2024-12-13,True,100,candidate_launched,19.7,launched
+2820820,Jotunnslayer: Hordes of Hel,False,7659,2025-01-21,True,100,candidate_launched,18.4,launched
+1635450,Longvinter,False,7623,2022-02-24,True,100,candidate_launched,53.4,launched
+268750,Magicite,False,7587,2014-06-09,True,93,candidate_launched,146.0,launched
+408900,Castle Fight,False,7555,2020-06-13,True,51,candidate_launched,73.8,launched
+915810,Midnight Ghost Hunt,False,7546,2022-03-31,True,99,candidate_launched,52.2,launched
+1058650,Beyond The Wire,False,7532,2020-10-21,True,98,candidate_launched,69.5,launched
+1157390,King Arthur: Knight's Tale,False,7500,2021-01-26,True,92,candidate_launched,66.3,launched
+1088790,Rebel Inc: Escalation,False,7480,2019-10-15,True,98,candidate_launched,81.8,launched
+700030,Life is Feudal: MMO,True,7345,2018-01-12,True,0,candidate_still_in_ea,102.8,still_in_ea
+1216320,Shieldwall,False,7325,2020-03-23,True,99,candidate_launched,76.5,launched
+333950,Medieval Engineers,True,7320,2015-02-19,True,0,candidate_still_in_ea,137.6,still_in_ea
+293780,Snow Moto Racing Freedom,False,7297,2017-04-11,True,91,candidate_launched,111.9,launched
+2436940,Sephiria,False,7263,2025-04-03,True,100,candidate_launched,16.1,launched
+397060,Faeria,False,7207,2017-03-08,True,93,candidate_launched,113.0,launched
+531640,Eternal Card Game,True,7031,2018-11-15,True,0,candidate_still_in_ea,92.7,still_in_ea
+518150,Intruder,True,7014,2019-03-01,True,0,candidate_still_in_ea,89.2,still_in_ea
+1135230,Ember Knights,False,6958,2022-04-20,True,99,candidate_launched,51.6,launched
+558100,Art of War: Red Tides,True,6956,2016-12-22,True,0,candidate_still_in_ea,115.5,still_in_ea
+2703850,Rooftops &amp; Alleys: The Parkour Game,True,6936,2025-06-16,True,0,candidate_still_in_ea,13.6,still_in_ea
+1013320,Firestone – Idle Clicker Online RPG,True,6919,2024-04-01,True,0,candidate_still_in_ea,28.1,still_in_ea
+332500,Ostrich Island,True,6915,2015-01-08,True,0,candidate_still_in_ea,139.0,still_in_ea
+1948800,Yi Xian: The Cultivation Card Game,False,6801,2024-01-22,True,100,candidate_launched,30.5,launched
+454120,Starbase,True,6750,2021-07-29,True,0,candidate_still_in_ea,60.3,still_in_ea
+541300,Survive the Nights,False,6699,2017-12-21,True,100,candidate_launched,103.6,launched
+307880,Savage Lands,False,6690,2015-03-05,True,99,candidate_launched,137.2,launched
+1562420,FOREWARNED,False,6638,2021-09-10,True,100,candidate_launched,58.9,launched
+342560,Airships: Conquer the Skies,False,6573,2015-02-25,True,43,candidate_launched,137.4,launched
+829590,CryoFall,False,6460,2019-04-03,True,99,candidate_launched,88.2,launched
+345180,Pulsen,False,6447,2015-07-24,True,89,candidate_launched,132.6,launched
+2336220,Feed the Cups,False,6425,2024-02-21,True,100,candidate_launched,29.5,launched
+2014780,X-Plane 12,False,6367,2022-09-16,True,93,candidate_launched,46.7,launched
+1279510,Screw Drivers,True,6347,2024-06-20,True,0,candidate_still_in_ea,25.5,still_in_ea
+263060,Heroes of Loot,False,6313,2015-05-21,True,88,candidate_launched,134.6,launched
+840800,Outlaws of the Old West,True,6293,2019-03-12,True,0,candidate_still_in_ea,88.9,still_in_ea
+1477590,EZ2ON REBOOT : R,True,6238,2022-04-14,True,0,candidate_still_in_ea,51.8,still_in_ea
+1485080,Just Act Natural,True,6230,2022-03-25,True,0,candidate_still_in_ea,52.4,still_in_ea
+2961880,Grocery Store Simulator,False,6153,2024-06-10,True,100,candidate_launched,25.8,launched
+2698780,ContractVille,False,6144,2024-05-31,True,100,candidate_launched,26.2,launched
+1053680,Granny Simulator,True,6119,2019-04-17,True,0,candidate_still_in_ea,87.7,still_in_ea
+1621070,DeadPoly,False,6110,2022-01-12,True,100,candidate_launched,54.8,launched
+307110,We Need To Go Deeper,False,6047,2019-08-01,True,87,candidate_launched,84.2,launched
+235800,Vortex Attack: ボルテックスアタック,False,6044,2015-05-26,True,85,candidate_launched,134.5,launched
+981430,Tiny Tina's Wonderlands,False,6004,2020-03-27,True,99,candidate_launched,76.4,launched
+1492070,Sker Ritual,False,5988,2024-04-18,True,99,candidate_launched,27.6,launched
+324080,Rising World,True,5958,2014-12-03,True,0,candidate_still_in_ea,140.2,still_in_ea
+324810,TOXIKK™,True,5929,2016-09-10,True,0,candidate_still_in_ea,118.9,still_in_ea
+487120,BOMTILES,True,5892,2017-07-26,True,0,candidate_still_in_ea,108.4,still_in_ea
+2344320,Eldegarde,False,5839,2026-01-21,True,100,candidate_launched,6.4,launched
+1456200,Unlimited Fight Ultimate Strike,False,5794,2020-12-08,True,100,candidate_launched,67.9,launched
+252870,PULSAR: Lost Colony,False,5726,2015-09-15,True,99,candidate_launched,130.8,launched
+236510,Takedown: Red Sabre,True,5714,2014-02-10,True,0,candidate_still_in_ea,149.9,still_in_ea
+271240,Offworld Trading Company,False,5702,2016-04-28,True,1,candidate_launched,123.4,launched
+790710,World of Warplanes,False,5628,2022-02-10,True,96,candidate_launched,53.8,launched
+2307350,Into the Radius 2,False,5603,2024-07-24,True,100,candidate_launched,24.4,launched
+1203190,Wreckfest 2,True,5590,2025-03-20,True,0,candidate_still_in_ea,16.5,still_in_ea
+2226280,BAPBAP,False,5544,2025-08-19,True,100,candidate_launched,11.5,launched
+1482620,Slappyball,False,5507,2024-11-07,True,100,candidate_launched,20.9,launched
+965580,Root,True,5464,2020-08-20,True,0,candidate_still_in_ea,71.6,still_in_ea
+2155180,Pioneers of Pagonia,False,5454,2023-12-13,True,100,candidate_launched,31.8,launched
+1618540,Ghost Exorcism INC.,True,5437,2021-07-15,True,0,candidate_still_in_ea,60.7,still_in_ea
+1422130,SimRail - The Railway Simulator,False,5416,2023-01-13,True,100,candidate_launched,42.7,launched
+1557990,Retail Royale,False,5396,2023-05-06,True,99,candidate_launched,39.0,launched
+2418520,Farm Together 2,False,5363,2025-05-30,True,99,candidate_launched,14.2,launched
+268870,Satellite Reign,False,5347,2015-08-28,True,90,candidate_launched,131.4,launched
+2963880,Murky Divers,False,5299,2024-06-19,True,100,candidate_launched,25.5,launched
+2878420,Old Market Simulator,False,5245,2024-05-22,True,98,candidate_launched,26.5,launched
+720620,TaleSpire,True,5184,2021-04-15,True,0,candidate_still_in_ea,63.7,still_in_ea
+1227650,Bang-On Balls: Chronicles,False,5159,2023-10-05,True,100,candidate_launched,34.0,launched
+396900,GRIP: Combat Racing,False,5139,2018-11-06,True,80,candidate_launched,93.0,launched
+2343650,Waven,True,5094,2023-08-16,True,0,candidate_still_in_ea,35.7,still_in_ea
+898920,Axis &amp; Allies 1942 Online,False,5078,2019-07-31,True,98,candidate_launched,84.3,launched
+3107230,Pantheon: Rise of the Fallen,True,5072,2024-12-13,True,0,candidate_still_in_ea,19.7,still_in_ea
+976890,Hidden Deep,False,5065,2022-01-24,True,95,candidate_launched,54.4,launched
+342940,Project: Gorgon,True,5022,2026-01-29,True,0,candidate_still_in_ea,6.2,still_in_ea
+323220,Vagante,False,5018,2014-12-17,True,97,candidate_launched,139.8,launched
+3062930,Unplagued,True,4946,2024-10-10,True,0,candidate_still_in_ea,21.8,still_in_ea
+877200,Zero Caliber VR,False,4936,2018-11-09,True,100,candidate_launched,92.9,launched
+1763250,SWORN,False,4900,2025-02-06,True,100,candidate_launched,17.9,launched
+1304680,Voidigo,False,4884,2021-02-25,True,100,candidate_launched,65.3,launched
+1494420,Silica,True,4876,2023-05-03,True,0,candidate_still_in_ea,39.1,still_in_ea
+2078450,"Warhammer 40,000: Speed Freeks",False,4865,2025-05-22,True,99,candidate_launched,14.5,launched
+405710,Staxel,False,4837,2018-01-23,True,97,candidate_launched,102.5,launched
+1491000,STUDIO SCREAM - VERSE ONE,False,4826,2025-03-04,True,99,candidate_launched,17.0,launched
+1101190,Dungeon Defenders: Awakened,False,4826,2020-02-21,True,77,candidate_launched,77.5,launched
+2486740,Sledders,False,4794,2023-12-05,True,100,candidate_launched,32.0,launched
+1035510,Ultimate Zombie Defense,False,4756,2020-02-21,True,31,candidate_launched,77.5,launched
+1695840,Fear Therapy,True,4744,2021-12-24,True,0,candidate_still_in_ea,55.4,still_in_ea
+225600,Blade Symphony,True,4682,2014-05-07,True,0,candidate_still_in_ea,147.1,still_in_ea
+963930,Contractors,True,4678,2018-12-15,True,0,candidate_still_in_ea,91.8,still_in_ea
+1201540,HELLCARD,False,4653,2023-02-16,True,100,candidate_launched,41.6,launched
+1677110,Lightyear Frontier,False,4647,2024-03-19,True,100,candidate_launched,28.6,launched
+378370,Nomad,True,4626,2015-06-26,True,0,candidate_still_in_ea,133.5,still_in_ea
+3247750,Mycopunk,True,4621,2025-07-10,True,0,candidate_still_in_ea,12.8,still_in_ea
+1807080,Ghost Exile,True,4618,2022-01-07,True,0,candidate_still_in_ea,54.9,still_in_ea
+322110,20XX,False,4574,2017-08-16,True,86,candidate_launched,107.7,launched
+452060,Caveblazers,False,4527,2017-05-24,True,89,candidate_launched,110.5,launched
+1403370,Zenith: Nexus,False,4503,2022-01-27,True,100,candidate_launched,54.3,launched
+574980,Them's Fightin' Herds,False,4498,2018-02-22,True,93,candidate_launched,101.5,launched
+358130,Curious Expedition,False,4494,2016-09-02,True,88,candidate_launched,119.2,launched
+1402020,SCP: Labrat,False,4484,2022-12-25,True,97,candidate_launched,43.4,launched
+641780,The Drone Racing League Simulator,False,4468,2017-11-01,True,87,candidate_launched,105.2,launched
+1054510,Survivalist: Invisible Strain,False,4458,2020-06-01,True,98,candidate_launched,74.2,launched
+711810,Never Split the Party,False,4399,2019-05-03,True,91,candidate_launched,87.2,launched
+887570,NEBULOUS: Fleet Command,False,4387,2022-02-11,True,100,candidate_launched,53.8,launched
+359840,Shift Happens,False,4377,2017-02-22,True,27,candidate_launched,113.5,launched
+953880,First Class Trouble,False,4375,2021-04-08,True,97,candidate_launched,64.0,launched
+375530,"Football, Tactics &amp; Glory",False,4355,2015-06-01,True,79,candidate_launched,134.3,launched
+1025600,Battle Realms: Zen Edition,True,4352,2019-12-03,True,0,candidate_still_in_ea,80.1,still_in_ea
+302590,Hidden in Plain Sight,True,4323,2014-07-16,True,0,candidate_still_in_ea,144.8,still_in_ea
+250420,8BitMMO,False,4312,2015-01-26,True,96,candidate_launched,138.4,launched
+1689500,Dune: Imperium,False,4302,2023-11-14,True,100,candidate_launched,32.7,launched
+315460,Dig or Die,False,4282,2015-03-05,True,98,candidate_launched,137.2,launched
+2827230,Wild Assault,False,4279,2025-04-11,True,100,candidate_launched,15.8,launched
+461430,EmergeNYC,True,4241,2016-11-03,True,0,candidate_still_in_ea,117.1,still_in_ea
+1058830,Spin Rhythm XD,True,4234,2019-10-22,True,0,candidate_still_in_ea,81.5,still_in_ea
+2956680,LORT,False,4229,2026-01-21,True,100,candidate_launched,6.4,launched
+1527910,Gladio and Glory,False,4201,2021-03-16,True,100,candidate_launched,64.7,launched
+747200,Keplerth,False,4148,2018-04-23,True,99,candidate_launched,99.5,launched
+956680,M.A.S.S. Builder,False,4111,2019-09-13,True,100,candidate_launched,82.8,launched
+2208570,Dark Hours,False,4107,2024-10-24,True,100,candidate_launched,21.4,launched
+1134700,Wild Terra 2: New Lands,False,4099,2021-01-28,True,100,candidate_launched,66.3,launched
+1057700,Battle Grounds III,True,4092,2024-07-15,True,0,candidate_still_in_ea,24.7,still_in_ea
+260430,Riddled Corpses,True,4080,2015-06-01,True,0,candidate_still_in_ea,134.3,still_in_ea
+555000,GOAT OF DUTY,False,4069,2019-07-10,True,99,candidate_launched,84.9,launched
+2824490,He is Coming,True,4058,2025-07-17,True,0,candidate_still_in_ea,12.6,still_in_ea
+2617700,Tinkerlands,True,4039,2025-05-23,True,0,candidate_still_in_ea,14.4,still_in_ea
+1648390,ScooterFlow,False,4036,2021-11-29,True,100,candidate_launched,56.2,launched
+878380,Touhou Big Big Battle,False,4033,2018-09-10,True,97,candidate_launched,94.9,launched
+1062810,Inkbound,False,4016,2023-05-22,True,99,candidate_launched,38.5,launched
+433530,Heliborne Collection,False,4013,2017-10-12,True,87,candidate_launched,105.9,launched
+1534840,Hyper Light Breaker,False,3974,2025-01-14,True,100,candidate_launched,18.7,launched
+338170,Ratz Instagib,False,3938,2016-07-27,True,94,candidate_launched,120.4,launched
+367270,Angels Fall First,False,3937,2015-10-01,True,98,candidate_launched,130.3,launched
+983870,FOUNDRY,True,3908,2024-05-02,True,0,candidate_still_in_ea,27.1,still_in_ea
+1134100,Frozenheim,False,3904,2021-05-20,True,99,candidate_launched,62.6,launched
+242880,"Sir, You Are Being Hunted",True,3903,2014-05-02,True,0,candidate_still_in_ea,147.3,still_in_ea
+1330000,Stolen Realm,False,3903,2021-10-14,True,100,candidate_launched,57.7,launched
+270450,Robot Roller-Derby Disco Dodgeball,False,3876,2015-02-19,True,90,candidate_launched,137.6,launched
+3501070,Car Service Together,False,3870,2026-02-04,True,100,candidate_launched,6.0,launched
+1304510,SCP: Nine-Tailed Fox,False,3815,2022-02-02,True,100,candidate_launched,54.1,launched
+718560,Scythe: Digital Edition,False,3808,2018-06-13,True,68,candidate_launched,97.8,launched
+227780,Serious Sam Classics: Revolution,False,3802,2019-08-30,True,74,candidate_launched,83.3,launched
+1510460,Chicken Invaders Universe,False,3802,2022-12-15,True,98,candidate_launched,43.7,launched
+2965660,PILGRIM,False,3797,2024-05-31,True,100,candidate_launched,26.2,launched
+251950,Sunny village,True,3795,2023-07-06,True,0,candidate_still_in_ea,37.0,still_in_ea
+1051690,Nightmare Reaper,False,3783,2019-07-16,True,96,candidate_launched,84.7,launched
+2314160,Tactical Assault VR,True,3745,2023-03-27,True,0,candidate_still_in_ea,40.4,still_in_ea
+1657090,Mini Royale,True,3739,2025-03-27,True,0,candidate_still_in_ea,16.3,still_in_ea
+3257000,SCP: Containment Breach 2,True,3732,2025-07-04,True,0,candidate_still_in_ea,13.0,still_in_ea
+364420,Roguelands,False,3731,2016-06-13,True,92,candidate_launched,121.9,launched
+2143030,PolyRoyale,False,3728,2023-07-10,True,100,candidate_launched,36.9,launched
+473770,BallisticNG,False,3724,2018-12-15,True,78,candidate_launched,91.8,launched
+1532200,Mars First Logistics,False,3719,2023-06-22,True,100,candidate_launched,37.5,launched
+941460,Death Trash,False,3714,2021-08-05,True,100,candidate_launched,60.0,launched
+979640,Cepheus Protocol,True,3712,2020-05-15,True,0,candidate_still_in_ea,74.8,still_in_ea
+1412190,BEACHED,True,3697,2021-08-04,True,0,candidate_still_in_ea,60.1,still_in_ea
+3454650,BitCraft Online,False,3673,2025-06-21,True,100,candidate_launched,13.5,launched
+1660080,Aloft,False,3672,2025-01-15,True,100,candidate_launched,18.6,launched
+1566200,Tape to Tape,True,3656,2023-05-03,True,0,candidate_still_in_ea,39.1,still_in_ea
+326410,Galactic Civilizations III,False,3628,2015-05-12,True,1,candidate_launched,134.9,launched
+1723780,Finnish Cottage Simulator,True,3619,2024-11-15,True,0,candidate_still_in_ea,20.6,still_in_ea
+407840,Guardians of Orion (Phase 2),True,3615,2016-12-21,True,0,candidate_still_in_ea,115.6,still_in_ea
+314410,Rampage Knights,False,3608,2015-09-04,True,91,candidate_launched,131.2,launched
+722960,CASE 2: Animatronics Survival,False,3585,2018-08-03,True,81,candidate_launched,96.2,launched
+3105890,PIONER,False,3581,2025-12-16,True,100,candidate_launched,7.6,launched
+822240,Animal Jam,True,3579,2025-01-09,True,0,candidate_still_in_ea,18.8,still_in_ea
+890550,RUMBLE,True,3549,2022-09-23,True,0,candidate_still_in_ea,46.4,still_in_ea
+1394270,SCP: Escape Together,True,3544,2021-01-06,True,0,candidate_still_in_ea,67.0,still_in_ea
+2695490,Age of Water,False,3516,2024-04-25,True,100,candidate_launched,27.4,launched
+1683150,Railroader,False,3503,2023-12-07,True,100,candidate_launched,31.9,launched
+910490,Killsquad,False,3491,2019-07-16,True,99,candidate_launched,84.8,launched
+587520,Dungeons of Sundaria,False,3473,2022-07-18,True,100,candidate_launched,48.6,launched
+506500,Party Panic,True,3470,2017-08-07,True,0,candidate_still_in_ea,108.0,still_in_ea
+257730,Infinity Wars: Animated Trading Card Game,False,3466,2014-09-05,True,88,candidate_launched,143.1,launched
+1471410,SYNTHETIK 2,False,3452,2021-11-11,True,100,candidate_launched,56.8,launched
+1861610,Endorphin Vice,False,3440,2022-02-17,True,20,candidate_launched,53.6,launched
+3645890,GONE Fishing,True,3436,2025-06-16,True,0,candidate_still_in_ea,13.6,still_in_ea
+2336720,Cave Crawlers,False,3409,2023-07-10,True,100,candidate_launched,36.9,launched
+1107320,OUTBRK,True,3403,2024-06-28,True,0,candidate_still_in_ea,25.2,still_in_ea
+801550,VAIL,False,3396,2024-02-15,True,96,candidate_launched,29.6,launched
+272230,Sub Rosa,True,3389,2021-03-25,True,0,candidate_still_in_ea,64.4,still_in_ea
+2180600,Heartwood Online,False,3375,2023-08-19,True,100,candidate_launched,35.6,launched
+976800,九劫曲：诅咒之地 NINE TRIALS,True,3350,2019-06-28,True,0,candidate_still_in_ea,85.4,still_in_ea
+308600,Skillshot City,True,3348,2017-05-23,True,0,candidate_still_in_ea,110.5,still_in_ea
+1227280,Despot's Game: Dystopian Battle Simulator,False,3342,2022-09-29,True,100,candidate_launched,46.2,launched
+3053950,Dungeon Rampage,False,3339,2025-12-05,True,100,candidate_launched,8.0,launched
+2218400,Greedland,False,3301,2023-08-04,True,100,candidate_launched,36.1,launched
+434730,Half Dead,True,3285,2016-08-01,True,0,candidate_still_in_ea,120.2,still_in_ea
+2106670,Gatekeeper,False,3274,2024-05-13,True,99,candidate_launched,26.8,launched
+488310,Eleven Table Tennis,False,3270,2016-09-22,True,96,candidate_launched,118.5,launched
+1048100,Peekaboo,False,3267,2019-03-29,True,86,candidate_launched,88.3,launched
+321400,Supraball,True,3246,2019-02-08,True,0,candidate_still_in_ea,89.9,still_in_ea
+1457320,Techtonica,False,3242,2023-07-18,True,99,candidate_launched,36.6,launched
+696370,BROKE PROTOCOL,False,3237,2024-06-27,True,99,candidate_launched,25.3,launched
+1018830,Element TD 2 - Tower Defense,False,3225,2020-02-28,True,96,candidate_launched,77.3,launched
+604500,Tank Force: Online Shooter Game,False,3212,2017-10-23,True,87,candidate_launched,105.5,launched
+1345820,Ragnarock,False,3208,2020-12-17,True,97,candidate_launched,67.7,launched
+612470,Bio Inc. Redemption,False,3191,2017-05-18,True,96,candidate_launched,110.7,launched
+326160,Shroud of the Avatar: Forsaken Virtues,False,3177,2018-03-27,True,91,candidate_launched,100.4,launched
+758690,Occupy Mars: The Game,False,3123,2023-05-10,True,100,candidate_launched,38.9,launched
+1364290,Animalia Survival,False,3096,2021-09-09,True,100,candidate_launched,58.9,launched
+551170,Onmyoji,False,3088,2018-04-18,True,89,candidate_launched,99.7,launched
+2949320,Ratatan,True,3075,2025-09-18,True,0,candidate_still_in_ea,10.5,still_in_ea
+2682580,Clash of the Kings,False,3068,2024-09-25,True,100,candidate_launched,22.3,launched
+254200,Astral Terra,False,3059,2015-11-09,True,85,candidate_launched,129.0,launched
+538100,Feel The Snow,True,3059,2016-10-14,True,0,candidate_still_in_ea,117.8,still_in_ea
+327090,Out of Reach,False,3051,2015-06-08,True,99,candidate_launched,134.0,launched
+1084520,雀姬/姫麻雀,True,3034,2019-08-06,True,0,candidate_still_in_ea,84.1,still_in_ea
+1465070,Legendary Tales,False,3028,2021-09-09,True,100,candidate_launched,58.9,launched
+1968730,Bounty of One,False,3023,2022-08-18,True,100,candidate_launched,47.6,launched
+851800,G2 Fighter / 基因特工,True,3020,2018-10-12,True,0,candidate_still_in_ea,93.8,still_in_ea
+913550,I wanna be the Creator,False,3000,2018-11-15,True,6,candidate_launched,92.8,launched
+357310,Oriental Empires,True,2994,2016-09-20,True,0,candidate_still_in_ea,118.6,still_in_ea
+244770,StarMade,True,2991,2014-12-04,True,0,candidate_still_in_ea,140.2,still_in_ea
+378760,Pixel Starships,False,2987,2023-05-23,True,99,candidate_launched,38.5,launched
+715400,Frozen Flame,False,2985,2022-11-17,True,100,candidate_launched,44.6,launched
+1278060,FPV SkyDive : FPV Drone Simulator,False,2975,2021-05-31,True,97,candidate_launched,62.2,launched
+1931180,Lost Skies,False,2964,2025-04-18,True,100,candidate_launched,15.6,launched
+400080,Out of Space,False,2961,2019-04-24,True,33,candidate_launched,87.5,launched
+372800,RPG MO,True,2961,2015-08-18,True,0,candidate_still_in_ea,131.7,still_in_ea
+2892880,修仙小屋,False,2956,2025-03-27,True,100,candidate_launched,16.3,launched
+862800,Storm Chasers,True,2953,2019-06-28,True,0,candidate_still_in_ea,85.3,still_in_ea
+1904820,Prison Life,True,2941,2022-09-23,True,0,candidate_still_in_ea,46.4,still_in_ea
+1456940,Level Zero: Extraction,True,2936,2024-08-13,True,0,candidate_still_in_ea,23.7,still_in_ea
+656240,Marshall Mellow,True,2930,2019-01-30,True,0,candidate_still_in_ea,90.2,still_in_ea
+1451480,The Greatest Penguin Heist of All Time,False,2924,2021-07-02,True,100,candidate_launched,61.2,launched
+1160490,VR Ping Pong Pro,True,2918,2019-11-11,True,0,candidate_still_in_ea,80.9,still_in_ea
+465200,Fury Unleashed,False,2897,2017-02-24,True,84,candidate_launched,113.4,launched
+725480,Slap City,True,2886,2018-03-05,True,0,candidate_still_in_ea,101.1,still_in_ea
+829660,No Time to Relax,False,2885,2019-02-28,True,49,candidate_launched,89.3,launched
+599080,The Blackout Club,False,2883,2018-10-30,True,89,candidate_launched,93.3,launched
+1948430,Planet S,False,2881,2023-10-28,True,100,candidate_launched,33.3,launched
+734580,BattleRush,False,2866,2018-03-27,True,96,candidate_launched,100.4,launched
+503350,M.A.X.: Mechanized Assault &amp; Exploration,False,2863,2017-04-07,True,89,candidate_launched,112.0,launched
+598960,Mashinky,False,2810,2018-10-06,True,100,candidate_launched,94.1,launched
+1029210,30XX,False,2802,2021-02-17,True,99,candidate_launched,65.6,launched
+343360,Particula,False,2798,2015-02-02,True,1,candidate_launched,138.2,launched
+1347970,Patch Quest,False,2783,2023-03-02,True,99,candidate_launched,41.2,launched
+1920430,FUMES,True,2773,2025-07-28,True,0,candidate_still_in_ea,12.2,still_in_ea
+324510,Boundless,False,2771,2014-11-13,True,93,candidate_launched,140.9,launched
+1679290,Fire &amp; Maneuver,False,2768,2023-04-19,True,100,candidate_launched,39.6,launched
+399820,Screeps: World,False,2767,2016-11-16,True,85,candidate_launched,116.7,launched
+500260,Ben and Ed - Blood Party,False,2759,2017-05-18,True,98,candidate_launched,110.7,launched
+3407390,ENDLESS Legend™ 2,True,2739,2025-09-22,True,0,candidate_still_in_ea,10.4,still_in_ea
+2510960,Temtem: Swarm,False,2729,2024-11-13,True,100,candidate_launched,20.7,launched
+238240,CodeSpells,True,2726,2015-09-17,True,0,candidate_still_in_ea,130.7,still_in_ea
+2195410,Songs of Silence,False,2717,2024-06-04,True,99,candidate_launched,26.0,launched
+306660,Man in a Maze: Deathmatch,False,2708,2014-10-16,True,95,candidate_launched,141.8,launched
+1614550,Astro Colony,True,2677,2022-11-07,True,0,candidate_still_in_ea,44.9,still_in_ea
+440310,Under Pressure,True,2676,2019-06-14,True,0,candidate_still_in_ea,85.8,still_in_ea
+1266540,Ships At Sea,False,2670,2024-05-23,True,100,candidate_launched,26.4,launched
+1715730,Boo Men,True,2654,2022-09-15,True,0,candidate_still_in_ea,46.7,still_in_ea
+1314000,Achilles: Legends Untold,False,2632,2022-05-12,True,100,candidate_launched,50.8,launched
+1863430,Dragonkin: The Banished,True,2624,2025-03-06,True,0,candidate_still_in_ea,17.0,still_in_ea
+585710,Blazing Beaks,False,2623,2019-05-10,True,34,candidate_launched,86.9,launched
+418180,Tempest: Pirate Action RPG,False,2622,2016-08-22,True,91,candidate_launched,119.5,launched
+3400960,Oaken Tower,True,2615,2026-04-28,True,0,candidate_still_in_ea,3.2,still_in_ea
+1397390,The Break-In,False,2610,2023-07-17,True,100,candidate_launched,36.7,launched
+2195120,Go-Go Town!,False,2608,2024-06-18,True,100,candidate_launched,25.6,launched
+314000,Pool Nation FX Lite,False,2599,2015-12-07,True,59,candidate_launched,128.1,launched
+2570210,Eden Crafters,False,2598,2024-10-16,True,100,candidate_launched,21.6,launched
+760650,Hammerting,False,2598,2020-10-27,True,98,candidate_launched,69.3,launched
+1124180,Rail Route,False,2591,2021-06-23,True,100,candidate_launched,61.5,launched
+431600,Automobilista,False,2587,2016-08-24,True,82,candidate_launched,119.5,launched
+764050,Maelstrom,False,2582,2019-09-20,True,95,candidate_launched,82.6,launched
+2686630,Voyagers of Nera,False,2581,2025-09-16,True,100,candidate_launched,10.6,launched
+2708450,Oh Deer,False,2568,2024-03-15,True,100,candidate_launched,28.7,launched
+265590,The Red Solstice,False,2557,2015-07-09,True,1,candidate_launched,133.0,launched
+1953230,Whisper Mountain Outbreak,False,2535,2025-08-11,True,100,candidate_launched,11.8,launched
+2193540,Wizard of Legend 2,False,2522,2024-10-03,True,100,candidate_launched,22.1,launched
+325210,Arctico,False,2521,2014-11-24,True,65,candidate_launched,140.5,launched
+939100,Darksburg,True,2519,2020-02-12,True,0,candidate_still_in_ea,77.8,still_in_ea
+436320,Raw Data,False,2491,2016-07-15,True,95,candidate_launched,120.8,launched
+3669570,Alchemy Factory,True,2470,2025-12-12,True,0,candidate_still_in_ea,7.8,still_in_ea
+2242760,The Escape: Together,False,2466,2023-01-13,True,100,candidate_launched,42.7,launched
+873840,Truck &amp; Logistics Simulator,True,2465,2020-06-23,True,0,candidate_still_in_ea,73.5,still_in_ea
+3712080,Funnel Runners,True,2454,2026-07-16,True,0,candidate_still_in_ea,0.6,still_in_ea
+520950,DRIFT CE,True,2451,2020-05-07,True,0,candidate_still_in_ea,75.0,still_in_ea
+1425000,Endless Alice,False,2436,2025-01-15,True,100,candidate_launched,18.6,launched
+705040,HAWKEN REBORN,True,2415,2023-05-17,True,0,candidate_still_in_ea,38.7,still_in_ea
+1881610,江湖客栈-The Jianghu,False,2408,2024-09-01,True,100,candidate_launched,23.1,launched
+661130,ChilloutVR,True,2408,2021-02-08,True,0,candidate_still_in_ea,65.9,still_in_ea
+842780,NavalArt,False,2386,2018-06-20,True,14,candidate_launched,97.6,launched
+385380,Planet Centauri,False,2382,2016-06-03,True,100,candidate_launched,122.2,launched
+3224420,Warm Monkey,False,2375,2025-03-06,True,100,candidate_launched,17.0,launched
+1446890,Shadow Fight Arena,False,2355,2025-10-29,True,100,candidate_launched,9.2,launched
+1610900,The Genesis Project,False,2350,2022-04-13,True,100,candidate_launched,51.8,launched
+3376250,Nine-Ball Roulette,True,2348,2025-01-14,True,0,candidate_still_in_ea,18.7,still_in_ea
+2271930,IfSunSets,False,2338,2024-11-05,True,100,candidate_launched,21.0,launched
+351100,Niffelheim,False,2337,2018-09-26,True,86,candidate_launched,94.4,launched
+1574900,Salt 2: Shores of Gold,False,2335,2022-09-20,True,100,candidate_launched,46.5,launched
+671610,Warfork,True,2318,2019-08-16,True,0,candidate_still_in_ea,83.7,still_in_ea
+394760,Dead Effect 2,True,2313,2016-05-06,True,0,candidate_still_in_ea,123.1,still_in_ea
+2748340,Goblin Cleanup,False,2309,2025-09-18,True,100,candidate_launched,10.5,launched
+1012110,Military Conflict: Vietnam,False,2307,2022-12-16,True,100,candidate_launched,43.7,launched
+487000,Quest Hunter,False,2304,2017-07-31,True,34,candidate_launched,108.3,launched
+415590,Earthfall,False,2304,2017-04-26,True,90,candidate_launched,111.4,launched
+1000030,"Cook, Serve, Delicious! 3?!",False,2302,2020-01-29,True,95,candidate_launched,78.3,launched
+2313330,TerraTech Worlds,False,2278,2024-03-22,True,100,candidate_launched,28.5,launched
+1134710,NIMBY Rails,True,2277,2021-01-26,True,0,candidate_still_in_ea,66.3,still_in_ea
+444930,Zaccaria Pinball,False,2268,2025-10-16,True,98,candidate_launched,9.6,launched
+318100,AXYOS,False,2267,2014-10-31,True,71,candidate_launched,141.3,launched
+310510,Deathtrap,False,2267,2015-02-04,True,52,candidate_launched,138.1,launched
+805850,Wrecked,False,2265,2018-05-21,True,93,candidate_launched,98.6,launched
+1817800,Oddsparks: An Automation Adventure,False,2264,2024-04-24,True,100,candidate_launched,27.4,launched
+513560,Hunger Dungeon,False,2262,2016-12-06,True,97,candidate_launched,116.1,launched
+618740,Beat Hazard 2,False,2260,2018-10-03,True,79,candidate_launched,94.2,launched
+1131620,Dominion,False,2255,2024-02-01,True,100,candidate_launched,30.1,launched
+2235200,Neon Abyss 2,False,2251,2025-07-17,True,100,candidate_launched,12.6,launched
+327860,Salt,True,2249,2014-10-15,True,0,candidate_still_in_ea,141.8,still_in_ea
+1100990,Aimbeast,True,2244,2019-08-21,True,0,candidate_still_in_ea,83.6,still_in_ea
+1136380,Ultimate Fishing® Simulator 2,False,2243,2022-08-22,True,100,candidate_launched,47.5,launched
+989440,Phantom Abyss,False,2237,2021-06-21,True,100,candidate_launched,61.5,launched
+684580,Shoppe Keep 2,False,2235,2018-05-03,True,91,candidate_launched,99.2,launched
+914260,HALF DEAD 2,True,2233,2019-03-01,True,0,candidate_still_in_ea,89.3,still_in_ea
+1511630,TrackDayR,True,2229,2021-03-17,True,0,candidate_still_in_ea,64.7,still_in_ea
+383230,Dungeon Souls,True,2226,2016-12-02,True,0,candidate_still_in_ea,116.2,still_in_ea
+2290000,TerraScape,False,2218,2023-04-05,True,100,candidate_launched,40.0,launched
+1191330,Inferna,True,2216,2019-12-20,True,0,candidate_still_in_ea,79.6,still_in_ea
+1419850,Saleblazers,False,2214,2023-09-29,True,100,candidate_launched,34.2,launched
+3009300,Teamfight Manager 2,True,2214,2026-05-26,True,0,candidate_still_in_ea,2.3,still_in_ea
+1062830,Embr,True,2209,2020-05-21,True,0,candidate_still_in_ea,74.5,still_in_ea
+915460,ULTIMATE HARDBASS DEFENCE,True,2205,2018-11-03,True,0,candidate_still_in_ea,93.2,still_in_ea
+1442670,Hamster Playground,False,2201,2024-07-11,True,100,candidate_launched,24.8,launched
+266430,Anarchy Arcade,True,2198,2014-09-03,True,0,candidate_still_in_ea,143.2,still_in_ea
+1487390,ANVIL,True,2196,2021-12-02,True,0,candidate_still_in_ea,56.2,still_in_ea
+1732430,Neighbors: Suburban Warfare,False,2193,2025-04-17,True,100,candidate_launched,15.6,launched
+1652250,Tales &amp; Tactics,False,2188,2023-08-10,True,100,candidate_launched,35.9,launched
+1043340,No Time,True,2183,2019-04-15,True,0,candidate_still_in_ea,87.8,still_in_ea
+1292040,STRIDE,False,2178,2022-06-10,True,95,candidate_launched,49.9,launched
+2067850,Drakensang Online,False,2165,2023-05-16,True,99,candidate_launched,38.7,launched
+280180,Hover,False,2164,2017-05-31,True,84,candidate_launched,110.3,launched
+606230,Thea 2: The Shattering,False,2163,2018-11-30,True,84,candidate_launched,92.2,launched
+1570330,West Hunt,False,2162,2022-06-14,True,100,candidate_launched,49.7,launched
+321270,UNLOVED,False,2150,2016-09-29,True,87,candidate_launched,118.3,launched
+1060230,Sapiens,False,2150,2022-07-26,True,100,candidate_launched,48.4,launched
+448850,Overload,False,2149,2017-03-13,True,83,candidate_launched,112.9,launched
+334040,Down To One,False,2139,2016-01-08,True,89,candidate_launched,127.0,launched
+1181550,Carnival Hunt,True,2132,2026-07-23,True,0,candidate_still_in_ea,0.4,still_in_ea
+390560,Fantasy Strike,False,2101,2019-07-25,True,63,candidate_launched,84.5,launched
+316430,OVERGRAVITY,True,2100,2015-07-22,True,0,candidate_still_in_ea,132.6,still_in_ea
+2275020,Backrooms Rec.,True,2091,2024-03-06,True,0,candidate_still_in_ea,29.0,still_in_ea
+3706810,Electoral Carnage,True,2086,2026-07-13,True,0,candidate_still_in_ea,0.7,still_in_ea
+464350,Birdsketball,False,2085,2016-11-16,True,91,candidate_launched,116.7,launched
+2211170,Unrailed 2: Back on Track,False,2080,2024-11-07,True,100,candidate_launched,20.9,launched
+490920,Wolfpack,True,2080,2019-03-15,True,0,candidate_still_in_ea,88.8,still_in_ea
+2178070,Towers of Aghasba,False,2050,2024-11-19,True,100,candidate_launched,20.5,launched
+4233550,Brainrot Online,False,2032,2026-01-09,True,3,candidate_launched,6.8,launched
+244030,Take On Mars,True,2031,2017-02-09,True,0,candidate_still_in_ea,113.9,still_in_ea
+936720,Wrench,True,2030,2018-12-19,True,0,candidate_still_in_ea,91.6,still_in_ea
+823950,Re:Legend,False,2024,2019-08-30,True,98,candidate_launched,83.3,launched
+2761670,Sinister Night 2,False,2022,2024-04-04,True,100,candidate_launched,28.1,launched
+1450900,Desynced,False,2018,2023-08-15,True,100,candidate_launched,35.7,launched
+250110,XenoBloom,False,2015,2015-09-23,True,88,candidate_launched,130.5,launched
+718650,Driftland: The Magic Revival,False,2007,2017-11-29,True,96,candidate_launched,104.3,launched
+708720,Gridiron,False,2004,2020-07-23,True,100,candidate_launched,72.5,launched
+564050,Bud Spencer &amp; Terence Hill - Slaps And Beans,False,1990,2017-12-15,True,89,candidate_launched,103.8,launched
+1644490,Occult,True,1956,2021-10-14,True,0,candidate_still_in_ea,57.7,still_in_ea
+344740,CRYPTARK,False,1947,2017-06-20,True,76,candidate_launched,109.6,launched
+454350,Days of War: Definitive Edition,True,1936,2020-01-30,True,0,candidate_still_in_ea,78.2,still_in_ea
+342310,RIOT: Civil Unrest,True,1935,2017-12-06,True,0,candidate_still_in_ea,104.1,still_in_ea
+2070270,Cloudheim,False,1914,2025-12-04,True,86,candidate_launched,8.0,launched
+1592110,Spirit of the Island,False,1896,2022-03-16,True,98,candidate_launched,52.7,launched
+508550,Sneak Thief,True,1890,2016-08-05,True,0,candidate_still_in_ea,120.1,still_in_ea
+1120480,The Anacrusis,False,1883,2022-01-13,True,100,candidate_launched,54.7,launched
+330580,Shark Attack Deathmatch 2,False,1883,2015-05-28,True,77,candidate_launched,134.4,launched
+415270,Star Crusade CCG,True,1880,2016-09-08,True,0,candidate_still_in_ea,119.0,still_in_ea
+251670,Battle Nations,False,1874,2014-09-18,True,94,candidate_launched,142.7,launched
+2981220,Forefront,False,1866,2025-11-06,True,100,candidate_launched,8.9,launched
+1343070,Call to Arms: Panzer Elite,False,1861,2025-09-19,True,100,candidate_launched,10.5,launched
+2059530,Dawn of Defiance,False,1831,2024-08-15,True,100,candidate_launched,23.7,launched
+314520,Space - The Return Of The Pixxelfrazzer,True,1829,2015-11-02,True,0,candidate_still_in_ea,129.2,still_in_ea
+1713350,Project Castaway,True,1824,2024-09-23,True,0,candidate_still_in_ea,22.4,still_in_ea
+2318480,Last Train Outta' Wormtown,False,1799,2023-04-20,True,100,candidate_launched,39.5,launched
+1592290,Paranoia Place: Escape Together,False,1797,2023-02-13,True,100,candidate_launched,41.7,launched
+722180,SURV1V3,False,1796,2018-01-29,True,93,candidate_launched,102.3,launched
+357330,Space Beast Terror Fright,False,1795,2015-04-06,True,94,candidate_launched,136.1,launched
+911430,Dorfs: Hammers for Hire,False,1787,2020-03-31,True,100,candidate_launched,76.2,launched
+885570,Nova-Life: Amboise,True,1784,2019-04-23,True,0,candidate_still_in_ea,87.5,still_in_ea
+2191500,Vampires: Bloodlord Rising,False,1776,2026-01-30,True,100,candidate_launched,6.1,launched
+511800,The Disney Afternoon Collection,True,1769,2017-04-18,True,0,candidate_still_in_ea,111.7,still_in_ea
+1552620,Expedition Agartha,False,1765,2023-09-21,True,99,candidate_launched,34.5,launched
+2507980,Meta Ghost: Breaking Show,True,1759,2026-07-16,True,0,candidate_still_in_ea,0.6,still_in_ea
+704920,Magic Rampage,False,1758,2022-05-24,True,14,candidate_launched,50.4,launched
+420930,Stikbold! A Dodgeball Adventure,True,1756,2016-04-01,True,0,candidate_still_in_ea,124.3,still_in_ea
+1701380,Cricket 22,True,1754,2021-10-22,True,0,candidate_still_in_ea,57.5,still_in_ea
+2250500,Rhythia,True,1752,2026-02-20,True,0,candidate_still_in_ea,5.4,still_in_ea
+1222300,Into The Flames,True,1740,2020-05-27,True,0,candidate_still_in_ea,74.4,still_in_ea
+485310,Head Shot,True,1738,2016-06-03,True,0,candidate_still_in_ea,122.2,still_in_ea
+3125250,STORROR Parkour Pro,False,1737,2025-03-31,True,100,candidate_launched,16.2,launched
+1125240,Ancient Dungeon,True,1733,2021-11-03,True,0,candidate_still_in_ea,57.1,still_in_ea
+1004270,My Island,True,1731,2019-01-30,True,0,candidate_still_in_ea,90.2,still_in_ea
+375600,Call of Duty®: Black Ops III,False,1728,2015-11-05,True,95,candidate_launched,129.1,launched
+555880,Sairento VR,False,1714,2016-12-21,True,99,candidate_launched,115.6,launched
+1440670,Zeepkist,True,1709,2021-01-28,True,0,candidate_still_in_ea,66.3,still_in_ea
+3918850,Might &amp; Magic Fates - Heroes TCG,True,1701,2026-02-16,True,0,candidate_still_in_ea,5.6,still_in_ea
+2795540,The Midnight Walkers,False,1699,2026-01-29,True,100,candidate_launched,6.2,launched
+2179380,Sand:box,False,1697,2022-11-23,True,80,candidate_launched,44.4,launched
+1864950,Beastieball,False,1694,2024-11-12,True,100,candidate_launched,20.7,launched
+2569510,MLB 9 Innings Rivals 26,True,1689,2025-03-18,True,0,candidate_still_in_ea,16.6,still_in_ea
+1425980,Stone Simulator – Just Be a Rock,False,1676,2025-03-02,True,87,candidate_launched,17.1,launched
+885000,Monochromaniacs,True,1667,2018-07-12,True,0,candidate_still_in_ea,96.9,still_in_ea
+363360,Interstellar Rift,False,1665,2020-09-24,True,95,candidate_launched,70.4,launched
+3494520,Lost Rift,False,1664,2025-09-25,True,100,candidate_launched,10.3,launched
+1686820,Arena of Kings,True,1659,2021-12-17,True,0,candidate_still_in_ea,55.6,still_in_ea
+1236720,Spirit Island,True,1655,2020-04-16,True,0,candidate_still_in_ea,75.7,still_in_ea
+509580,The Lord of the Rings: Adventure Card Game - Definitive Edition,False,1645,2019-08-29,True,93,candidate_launched,83.3,launched
+3453600,Supercar Collection Simulator,False,1641,2025-04-14,True,100,candidate_launched,15.7,launched
+2103530,Zedfest,True,1635,2023-04-07,True,0,candidate_still_in_ea,40.0,still_in_ea
+1612620,Never Return,True,1635,2021-08-20,True,0,candidate_still_in_ea,59.6,still_in_ea
+1142130,Race With Ryan,True,1629,2019-11-01,True,0,candidate_still_in_ea,81.2,still_in_ea
+1005930,Timeflow – Life Sim,True,1626,2019-01-19,True,0,candidate_still_in_ea,90.6,still_in_ea
+1066130,Truck Life,True,1626,2019-11-26,True,0,candidate_still_in_ea,80.4,still_in_ea
+1118920,TrenchesWIP,True,1624,2019-08-17,True,0,candidate_still_in_ea,83.7,still_in_ea
+402560,Tabletopia,False,1624,2016-12-01,True,95,candidate_launched,116.2,launched
+957790,War Dust VR: 32v32 Battlefields,False,1623,2018-10-20,True,97,candidate_launched,93.6,launched
+417910,Street Warriors Online,True,1622,2016-12-16,True,0,candidate_still_in_ea,115.7,still_in_ea
+748940,Rise of Legions,True,1619,2019-08-30,True,0,candidate_still_in_ea,83.3,still_in_ea
+329070,SpyParty,False,1616,2018-04-12,True,100,candidate_launched,99.9,launched
+610380,Ratty Catty,True,1613,2017-07-21,True,0,candidate_still_in_ea,108.6,still_in_ea
+919360,Alaloth: Champions of The Four Kingdoms,False,1599,2022-06-30,True,98,candidate_launched,49.2,launched
+4323990,EMPULSE,True,1598,2026-06-24,True,0,candidate_still_in_ea,1.4,still_in_ea
+448320,Slime-san: Superslime Edition,False,1596,2017-04-07,True,74,candidate_launched,112.1,launched
+1092630,Rogue Glitch Ultra,False,1596,2021-03-10,True,32,candidate_launched,64.9,launched
+1511780,Last Call BBS,False,1586,2022-07-05,True,64,candidate_launched,49.1,launched
+797410,brainCloud Bombers,False,1580,2018-07-24,True,31,candidate_launched,96.5,launched
+328070,Reflex Arena,True,1580,2017-03-08,True,0,candidate_still_in_ea,113.0,still_in_ea
+1722860,Munchkin Digital,False,1579,2022-12-01,True,100,candidate_launched,44.2,launched
+1259440,Mist Legacy,False,1578,2022-09-13,True,99,candidate_launched,46.8,launched
+1488310,Renown,True,1573,2025-09-22,True,0,candidate_still_in_ea,10.4,still_in_ea
+2121150,Chess for idiots,False,1573,2024-02-01,True,100,candidate_launched,30.1,launched
+1000080,Zengeon,True,1571,2019-01-18,True,0,candidate_still_in_ea,90.6,still_in_ea
+2234150,BACKROOMS: APPREHENSION,False,1568,2023-01-31,True,100,candidate_launched,42.1,launched
+1802720,Sixtar Gate: STARTRAIL,True,1567,2021-11-06,True,0,candidate_still_in_ea,57.0,still_in_ea
+1419640,Project F,True,1563,2023-08-03,True,0,candidate_still_in_ea,36.1,still_in_ea
+1315610,Source of Madness,False,1560,2021-09-22,True,97,candidate_launched,58.5,launched
+1674010,Nin Online,True,1551,2025-06-12,True,0,candidate_still_in_ea,13.8,still_in_ea
+839630,Survisland / 实境求生,True,1550,2018-07-16,True,0,candidate_still_in_ea,96.8,still_in_ea
+1420350,Fraymakers,True,1547,2023-01-19,True,0,candidate_still_in_ea,42.6,still_in_ea
+2182750,Fallen Arena,False,1545,2025-06-16,True,1,candidate_launched,13.6,launched
+2458830,Towerborne,True,1539,2026-02-26,True,0,candidate_still_in_ea,5.2,still_in_ea
+999860,Enemy On Board,True,1535,2020-05-08,True,0,candidate_still_in_ea,75.0,still_in_ea
+273500,Over 9000 Zombies!,False,1528,2015-02-25,True,95,candidate_launched,137.4,launched
+1371690,GRAVEN,False,1524,2021-05-26,True,100,candidate_launched,62.4,launched
+2051500,Soak &amp; Splash,True,1513,2024-02-04,True,0,candidate_still_in_ea,30.0,still_in_ea
+360620,Spellsworn,False,1512,2018-03-13,True,48,candidate_launched,100.9,launched
+1138100,Touhou Ibunseki - Ayaria Dawn: ReCreation,False,1509,2019-11-11,True,98,candidate_launched,80.9,launched
+711980,Bunny Memory,True,1506,2020-06-19,True,0,candidate_still_in_ea,73.6,still_in_ea
+3467040,Bookshop Simulator,False,1505,2025-09-16,True,100,candidate_launched,10.6,launched
+797400,Railroad Corporation,False,1493,2019-05-27,True,91,candidate_launched,86.4,launched
+696220,Folklore Hunter,True,1487,2020-02-24,True,0,candidate_still_in_ea,77.4,still_in_ea
+1574000,Industry Idle,False,1483,2024-09-13,True,100,candidate_launched,22.7,launched
+1462470,Vectorio Classic,False,1477,2021-03-22,True,100,candidate_launched,64.5,launched
+906870,FurryFury: Smash &amp; Roll,False,1475,2022-04-14,True,49,candidate_launched,51.8,launched
+1494840,Scoot,True,1467,2020-12-28,True,0,candidate_still_in_ea,67.3,still_in_ea
+2077750,RENNSPORT,True,1467,2025-11-10,True,0,candidate_still_in_ea,8.8,still_in_ea
+891220,pla_toon,False,1464,2018-08-13,True,100,candidate_launched,95.8,launched
+331500,Heroes of SoulCraft,False,1459,2015-07-17,True,28,candidate_launched,132.8,launched
+845890,Moonbreaker,False,1458,2024-02-01,True,100,candidate_launched,30.1,launched
+1564600,The Last Plague: Blight,False,1456,2024-10-03,True,100,candidate_launched,22.0,launched
+345330,Eden Rising,True,1447,2019-05-17,True,0,candidate_still_in_ea,86.7,still_in_ea
+917950,Vellum,True,1443,2024-03-28,True,0,candidate_still_in_ea,28.3,still_in_ea
+1140620,CosmicBreak Universal,False,1440,2021-04-07,True,87,candidate_launched,64.0,launched
+465240,Serious Sam VR: The Last Hope,False,1434,2016-10-17,True,95,candidate_launched,117.7,launched
+3352240,Raiders of Blackveil,True,1434,2025-12-15,True,0,candidate_still_in_ea,7.6,still_in_ea
+488440,Angeldust,True,1431,2019-12-21,True,0,candidate_still_in_ea,79.5,still_in_ea
+2504090,Heroes of Valor,False,1429,2025-06-12,True,100,candidate_launched,13.8,launched
+572220,MageQuit,False,1428,2017-01-11,True,9,candidate_launched,114.9,launched
+566860,Sniper Ghost Warrior 3 Season Pass Edition,True,1425,2017-04-24,True,0,candidate_still_in_ea,111.5,still_in_ea
+623340,Stars End,False,1425,2019-10-14,True,99,candidate_launched,81.8,launched
+428430,Endorlight,False,1409,2016-04-26,True,91,candidate_launched,123.4,launched
+748370,STAND OUT VR : VR Battle Royale,True,1408,2017-12-09,True,0,candidate_still_in_ea,104.0,still_in_ea
+280520,Crea,False,1407,2016-06-09,True,93,candidate_launched,122.0,launched
+1054430,Fling to the Finish,False,1404,2021-08-23,True,100,candidate_launched,59.4,launched
+2199420,Brickadia,False,1401,2025-07-11,True,100,candidate_launched,12.8,launched
+1432320,Liftoff®: Micro Drones,False,1395,2021-11-30,True,56,candidate_launched,56.2,launched
+1116540,DAVIGO: VR vs. PC,False,1386,2023-11-29,True,100,candidate_launched,32.2,launched
+301120,Eastside Hockey Manager,False,1379,2015-12-01,True,88,candidate_launched,128.3,launched
+2687970,TRIBES 3: Rivals,False,1379,2024-03-12,True,100,candidate_launched,28.8,launched
+1691280,Maximum Football,False,1376,2025-06-17,True,100,candidate_launched,13.6,launched
+1057640,Onirism,True,1375,2019-04-26,True,0,candidate_still_in_ea,87.4,still_in_ea
+611160,Karnage Chronicles,False,1370,2017-04-24,True,52,candidate_launched,111.5,launched
+295690,Grey Goo,False,1369,2015-01-22,True,10,candidate_launched,138.6,launched
+379210,Wayward,True,1365,2016-04-22,True,0,candidate_still_in_ea,123.6,still_in_ea
+3588490,Bogos Binted?,False,1362,2025-07-24,True,100,candidate_launched,12.4,launched
+2764750,Lab Sorters,True,1352,2025-03-07,True,0,candidate_still_in_ea,16.9,still_in_ea
+1329510,Big Farm Story,False,1351,2020-08-20,True,96,candidate_launched,71.6,launched
+798840,Panzer War : Definitive Edition,False,1350,2018-03-01,True,25,candidate_launched,101.3,launched
+1078920,Main Assembly,False,1349,2020-06-11,True,96,candidate_launched,73.9,launched
+839910,Mythgard,False,1349,2020-09-18,True,95,candidate_launched,70.6,launched
+1276660,Tinkertown,False,1342,2020-12-03,True,100,candidate_launched,68.1,launched
+250560,Fight The Dragon,False,1339,2014-12-04,True,1,candidate_launched,140.2,launched
+586030,Golf for Workgroups,False,1339,2017-04-06,True,100,candidate_launched,112.1,launched
+882140,Reentry - A Space Flight Simulator,False,1337,2018-11-15,True,76,candidate_launched,92.7,launched
+2823080,Sketchy's Contract,True,1336,2024-04-10,True,0,candidate_still_in_ea,27.9,still_in_ea
+706020,Fade to Silence,False,1332,2019-04-30,True,83,candidate_launched,87.3,launched
+764570,Beavers Be Dammed,True,1326,2018-01-16,True,0,candidate_still_in_ea,102.7,still_in_ea
+241240,Bounders and Cads,False,1312,2014-07-07,True,85,candidate_launched,145.1,launched
+1277530,BLACK STIGMA,False,1305,2025-07-18,True,100,candidate_launched,12.6,launched
+265750,Broforce,True,1303,2015-10-13,True,0,candidate_still_in_ea,129.9,still_in_ea
+853450,Nevergrind Online,False,1301,2022-06-09,True,100,candidate_launched,49.9,launched
+830820,Jets'n'Guns 2,False,1296,2018-12-11,True,90,candidate_launched,91.9,launched
+1502660,Untrusted,False,1296,2021-05-09,True,98,candidate_launched,62.9,launched
+334540,Vox Machinae,False,1296,2018-09-26,True,100,candidate_launched,94.4,launched
+3127650,NO STRANGERS,False,1287,2024-11-08,True,100,candidate_launched,20.9,launched
+2217580,New Star™ GP,False,1284,2023-08-08,True,97,candidate_launched,35.9,launched
+1713810,Lumencraft,True,1282,2022-04-13,True,0,candidate_still_in_ea,51.8,still_in_ea
+481870,Mini Thief,True,1280,2016-06-13,True,0,candidate_still_in_ea,121.9,still_in_ea
+3498270,Better Mart Simulator,True,1279,2025-05-16,True,0,candidate_still_in_ea,14.6,still_in_ea
+633080,Relic Hunters Legend,True,1278,2023-09-25,True,0,candidate_still_in_ea,34.4,still_in_ea
+3338950,The Scouring,False,1277,2025-08-12,True,100,candidate_launched,11.8,launched
+3417410,Storebound,False,1276,2025-11-17,True,24,candidate_launched,8.6,launched
+2113900,Touge Shakai,False,1271,2023-01-08,True,100,candidate_launched,42.9,launched
+1263070,Blightbound,True,1261,2020-07-29,True,0,candidate_still_in_ea,72.3,still_in_ea
+2223700,Driftwood,False,1259,2023-06-01,True,100,candidate_launched,38.2,launched
+544390,NITE Team 4 - Military Hacking Division,False,1258,2018-10-02,True,82,candidate_launched,94.2,launched
+314980,Perpetuum,False,1251,2014-10-17,True,13,candidate_launched,141.8,launched
+1026840,Ultra Fight Da ! Kyanta 2,True,1249,2019-05-08,True,0,candidate_still_in_ea,87.0,still_in_ea
+3126470,Ice World,False,1249,2024-11-17,True,100,candidate_launched,20.6,launched
+342480,Gunscape,True,1248,2016-03-02,True,0,candidate_still_in_ea,125.3,still_in_ea
+1804470,Duel Corp.,False,1247,2026-01-21,True,100,candidate_launched,6.4,launched
+1059220,'83,True,1241,2026-04-23,True,0,candidate_still_in_ea,3.4,still_in_ea
+370770,Holodrive,True,1237,2021-03-16,True,0,candidate_still_in_ea,64.7,still_in_ea
+429620,Dungeon Rushers,False,1236,2016-09-06,True,73,candidate_launched,119.1,launched
+3385970,Beyond Sandbox,True,1229,2026-04-27,True,0,candidate_still_in_ea,3.3,still_in_ea
+992910,The Black Masses,False,1228,2020-03-12,True,100,candidate_launched,76.8,launched
+319830,AX:EL - Air XenoDawn,False,1227,2015-12-04,True,23,candidate_launched,128.2,launched
+368180,Polyball,False,1226,2015-06-04,True,28,candidate_launched,134.2,launched
+381020,Sky Rogue,False,1225,2017-08-24,True,92,candidate_launched,107.5,launched
+490220,Prismata,False,1223,2018-03-08,True,100,candidate_launched,101.0,launched
+2794590,Scam Line,True,1219,2026-01-10,True,0,candidate_still_in_ea,6.8,still_in_ea
+2796180,SILENT BREATH,True,1219,2024-04-05,True,0,candidate_still_in_ea,28.0,still_in_ea
+325260,PANZER BALL,True,1215,2020-08-15,True,0,candidate_still_in_ea,71.7,still_in_ea
+646200,Dead Effect 2 VR,False,1215,2017-06-08,True,91,candidate_launched,110.0,launched
+385270,Jet Racing Extreme: The First Encounter,False,1212,2018-05-17,True,96,candidate_launched,98.7,launched
+3484300,DREADZONE,False,1209,2025-07-17,True,100,candidate_launched,12.6,launched
+1594880,Corsairs Legacy - Pirate Action RPG &amp; Sea Battles,False,1209,2024-01-31,True,100,candidate_launched,30.2,launched
+1269690,Attack on Toys,False,1208,2021-09-25,True,100,candidate_launched,58.4,launched
+350740,The Bug Butcher,True,1205,2016-01-19,True,0,candidate_still_in_ea,126.7,still_in_ea
+957960,Inkulinati,False,1205,2023-01-31,True,100,candidate_launched,42.1,launched
+1558830,RIPOUT,False,1205,2023-10-24,True,100,candidate_launched,33.4,launched
+1273440,OverDrift Festival,False,1197,2022-05-26,True,99,candidate_launched,50.4,launched
+1679220,Portal Dungeon,False,1196,2022-12-15,True,100,candidate_launched,43.7,launched
+810040,Swords 'n Magic and Stuff,False,1189,2020-09-08,True,100,candidate_launched,70.9,launched
+418620,Infected Shelter,False,1188,2016-02-02,True,28,candidate_launched,126.2,launched
+262120,Toy Soldiers: Complete,False,1184,2016-02-17,True,89,candidate_launched,125.7,launched
+552080,IronWolf VR,False,1183,2017-03-13,True,100,candidate_launched,112.9,launched
+2197890,Paranormal Cleanup,False,1170,2023-02-15,True,100,candidate_launched,41.6,launched
+253510,WARMACHINE: Tactics,False,1164,2014-11-20,True,86,candidate_launched,140.6,launched
+619540,Roten,False,1163,2025-04-22,True,100,candidate_launched,15.4,launched
+2689120,Gladio Mori,False,1162,2024-11-26,True,100,candidate_launched,20.3,launched
+314430,M.A.R.S.,False,1159,2021-10-28,True,88,candidate_launched,57.3,launched
+2196790,Jianghu Survivor,False,1155,2022-12-28,True,100,candidate_launched,43.3,launched
+1114860,Hobs,True,1155,2019-08-19,True,0,candidate_still_in_ea,83.6,still_in_ea
+244590,Epigenesis,False,1145,2014-08-01,True,96,candidate_launched,144.3,launched
+319050,Uebergame,True,1141,2015-10-26,True,0,candidate_still_in_ea,129.5,still_in_ea
+2788040,Another Try 2,False,1140,2025-04-18,True,100,candidate_launched,15.6,launched
+1239300,Gravewood High,False,1139,2023-05-03,True,100,candidate_launched,39.1,launched
+1426490,LOST EPIC,True,1135,2021-06-05,True,0,candidate_still_in_ea,62.1,still_in_ea
+3253530,PIT OF GOBLIN,False,1133,2024-12-17,True,83,candidate_launched,19.6,launched
+877010,Fireball Spam,True,1132,2021-09-21,True,0,candidate_still_in_ea,58.5,still_in_ea
+520010,Climbey,False,1129,2016-10-25,True,100,candidate_launched,117.4,launched
+1682050,PropHunter,False,1125,2021-08-06,True,68,candidate_launched,60.0,launched
+1889640,The Backrooms: Survival,False,1124,2022-03-31,True,100,candidate_launched,52.2,launched
+1707650,Swords and Sandals Immortals,False,1121,2022-05-27,True,99,candidate_launched,50.4,launched
+528550,Drunkn Bar Fight,False,1115,2016-11-28,True,93,candidate_launched,116.3,launched
+378360,Ymir,True,1115,2019-03-16,True,0,candidate_still_in_ea,88.8,still_in_ea
+440730,Survival Zombies The Inverted Evolution,False,1113,2017-05-08,True,93,candidate_launched,111.0,launched
+686260,Forged Battalion,False,1112,2018-01-16,True,96,candidate_launched,102.7,launched
+760640,Tennis Elbow 4,True,1110,2021-06-04,True,0,candidate_still_in_ea,62.1,still_in_ea
+1726130,Pathless Woods,True,1110,2024-04-03,True,0,candidate_still_in_ea,28.1,still_in_ea
+272890,Vertiginous Golf,False,1109,2015-05-07,True,27,candidate_launched,135.1,launched
+1840660,Mad Adventures,False,1101,2022-11-22,True,98,candidate_launched,44.5,launched
+226100,PixelJunk™ Nom Nom Galaxy,False,1100,2015-08-03,True,2,candidate_launched,132.2,launched
+1761220,Prosperous Universe,False,1096,2022-04-20,True,100,candidate_launched,51.6,launched
+2181940,CivIdle,False,1091,2025-12-05,True,100,candidate_launched,8.0,launched
+1755350,BBQ Simulator: The Squad,False,1090,2021-12-12,True,99,candidate_launched,55.8,launched
+1826420,CarX Drift Racing Online 2,True,1090,2026-05-07,True,0,candidate_still_in_ea,2.9,still_in_ea
+312150,Of Guards And Thieves,True,1088,2014-07-15,True,0,candidate_still_in_ea,144.8,still_in_ea
+2772990,Ghost Janitors,True,1085,2024-06-07,True,0,candidate_still_in_ea,25.9,still_in_ea
+1562260,Camping Simulator: The Squad,False,1083,2021-05-28,True,100,candidate_launched,62.3,launched
+2269950,The Karters 2: Turbo Charged,False,1083,2025-07-17,True,100,candidate_launched,12.6,launched
+412470,Metal War Online: Retribution,True,1082,2015-12-11,True,0,candidate_still_in_ea,127.9,still_in_ea
+3060170,Chained in the Backrooms,False,1078,2025-02-13,True,100,candidate_launched,17.7,launched
+488550,Dream Car Builder,False,1078,2016-09-23,True,58,candidate_launched,118.5,launched
+1843840,Rogue Point,True,1077,2026-02-12,True,0,candidate_still_in_ea,5.7,still_in_ea
+2503740,Storm Striker,False,1077,2023-11-17,True,100,candidate_launched,32.6,launched
+2701080,Intoxicated Driver,False,1072,2024-09-12,True,100,candidate_launched,22.8,launched
+3165680,Avakin Life,True,1068,2026-05-27,True,0,candidate_still_in_ea,2.3,still_in_ea
+608990,The Archotek Project,True,1067,2017-04-28,True,0,candidate_still_in_ea,111.4,still_in_ea
+1086410,Golf Around!,False,1061,2019-12-12,True,28,candidate_launched,79.8,launched
+3132860,天月麻雀 (Amatsuki Mahjong),False,1057,2025-01-20,True,99,candidate_launched,18.5,launched
+1196310,Fantasy Grounds VTT,False,1056,2020-11-05,True,55,candidate_launched,69.0,launched
+1681160,Piratopia,False,1052,2021-11-11,True,100,candidate_launched,56.8,launched
+3576070,Sudden Attack Zero Point,True,1051,2026-07-30,True,0,candidate_still_in_ea,0.2,still_in_ea
+1925560,Tricking 0,True,1049,2022-03-31,True,0,candidate_still_in_ea,52.2,still_in_ea
+3111080,Milky Way Idle,False,1048,2025-03-06,True,100,candidate_launched,17.0,launched
+830370,Monster Crown,False,1044,2020-07-31,True,98,candidate_launched,72.2,launched
+1096200,The Orville - Interactive Fan Experience,True,1043,2019-07-23,True,0,candidate_still_in_ea,84.5,still_in_ea
+613730,Need For Drink,True,1038,2017-04-14,True,0,candidate_still_in_ea,111.8,still_in_ea
+1324350,Turbo Golf Racing,False,1037,2022-08-04,True,100,candidate_launched,48.1,launched
+1871990,Engine Evolution 2022,False,1033,2023-02-21,True,100,candidate_launched,41.5,launched
+2438160,World War Armies,False,1030,2024-05-02,True,96,candidate_launched,27.1,launched
+1759440,Babble Royale,False,1028,2021-12-15,True,99,candidate_launched,55.7,launched
+1439750,9-Bit Armies: A Bit Too Far,False,1025,2024-02-23,True,98,candidate_launched,29.4,launched
+1200770,Deathground,False,1023,2025-10-07,True,100,candidate_launched,9.9,launched
+466110,Shaolin vs Wutang,False,1021,2016-05-09,True,63,candidate_launched,123.0,launched
+335430,Grimoire: Manastorm,False,1015,2017-10-26,True,97,candidate_launched,105.4,launched
+1166990,Kukoro: Stream chat games,False,1015,2020-11-06,True,85,candidate_launched,69.0,launched
+3445340,Sandwich Simulator,False,1013,2025-05-26,True,100,candidate_launched,14.3,launched
+1670780,Out of Action,False,1010,2026-01-22,True,100,candidate_launched,6.4,launched
+2258890,Xanadu Land,True,1002,2025-08-02,True,0,candidate_still_in_ea,12.1,still_in_ea
+1708460,Obsideo,False,1002,2021-08-28,True,100,candidate_launched,59.3,launched
+1015140,10 Miles To Safety,False,1002,2019-10-21,True,99,candidate_launched,81.6,launched
+1203180,Breakwaters: Crystal Tides,True,1000,2021-12-09,True,0,candidate_still_in_ea,55.9,still_in_ea
+1181790,Circle of Sumo: Online Rumble!,True,999,2020-10-17,True,0,candidate_still_in_ea,69.6,still_in_ea
+597230,Shotgun Legend,False,999,2017-06-01,True,16,candidate_launched,110.3,launched
+3051280,Haven &amp; Hearth,False,997,2024-11-01,True,100,candidate_launched,21.1,launched
+331200,Grass Simulator,False,996,2015-04-01,True,86,candidate_launched,136.3,launched
+1620540,Pixel Cup Soccer - Ultimate Edition,False,995,2021-07-07,True,61,candidate_launched,61.0,launched
+579840,Bloody Trapland 2: Curiosity,False,994,2019-02-01,True,23,candidate_launched,90.2,launched
+3328720,Flash Doll,False,990,2024-12-19,True,52,candidate_launched,19.5,launched
+299480,Rogue Stormers,False,990,2016-04-21,True,55,candidate_launched,123.6,launched
+2230170,The Cenozoic Era,False,989,2023-01-20,True,100,candidate_launched,42.5,launched
+3267430,Last Remains,True,989,2025-02-18,True,0,candidate_still_in_ea,17.5,still_in_ea
+356070,Commander Cool 2,False,987,2015-12-17,True,93,candidate_launched,127.8,launched
+1591680,Open Mod 2025,True,980,2023-06-26,True,0,candidate_still_in_ea,37.3,still_in_ea
+658980,Valnir Rok Survival RPG,True,980,2017-09-26,True,0,candidate_still_in_ea,106.4,still_in_ea
+684200,Icons: Legacy Edition,False,979,2018-07-12,True,97,candidate_launched,96.9,launched
+3441460,Fuel Harvest Together,False,976,2025-04-25,True,100,candidate_launched,15.3,launched
+2587450,Tank Team,False,973,2024-04-12,True,72,candidate_launched,27.8,launched
+835650,Rising Lords,True,972,2020-05-27,True,0,candidate_still_in_ea,74.3,still_in_ea
+1758950,Banzai Escape 2: Subterranean,False,971,2021-10-29,True,100,candidate_launched,57.2,launched
+325420,Homebrew - Patent Unknown,False,971,2014-11-15,True,100,candidate_launched,140.8,launched
+2926900,MAVRIX by Matt Jones,False,968,2025-07-24,True,100,candidate_launched,12.4,launched
+347160,Puzzle Ball,False,966,2015-10-01,True,68,candidate_launched,130.3,launched
+2160360,Aero GPX,False,963,2024-08-06,True,100,candidate_launched,24.0,launched
+1077290,SuperSmash: Physics Battle,True,962,2019-10-01,True,0,candidate_still_in_ea,82.2,still_in_ea
+2467810,Orebound,False,962,2024-10-24,True,100,candidate_launched,21.4,launched
+2395810,富豪派对重制版,True,959,2023-08-15,True,0,candidate_still_in_ea,35.7,still_in_ea
+3894440,NO BACKUP,True,959,2026-05-09,True,0,candidate_still_in_ea,2.9,still_in_ea
+2566340,Gedonia 2,False,955,2025-04-09,True,100,candidate_launched,15.9,launched
+582330,Warriors: Rise to Glory,False,951,2018-02-02,True,100,candidate_launched,102.2,launched
+510840,Evolvation,False,950,2017-02-06,True,16,candidate_launched,114.0,launched
+1178780,BattleGroupVR,False,949,2020-07-31,True,100,candidate_launched,72.2,launched
+580040,Formata,True,949,2017-02-10,True,0,candidate_still_in_ea,113.9,still_in_ea
+1106340,Legend Bowl,False,949,2020-11-27,True,94,candidate_launched,68.3,launched
+1295900,Draconia,True,943,2022-01-13,True,0,candidate_still_in_ea,54.7,still_in_ea
+3211680,Tobacco Shop Simulator,False,942,2024-12-09,True,99,candidate_launched,19.9,launched
+312210,The Fifth Day,True,940,2014-07-25,True,0,candidate_still_in_ea,144.5,still_in_ea
+575950,Blood Feed,False,939,2017-07-19,True,48,candidate_launched,108.7,launched
+1983990,Nexus 5X,False,938,2023-12-12,True,100,candidate_launched,31.8,launched
+1076500,Valgrave: Immortal Plains,False,937,2020-02-07,True,98,candidate_launched,78.0,launched
+1506850,Cards &amp; Tankards,False,937,2023-05-25,True,98,candidate_launched,38.4,launched
+1575680,BlasterBeat,True,936,2023-06-09,True,0,candidate_still_in_ea,37.9,still_in_ea
+916930,War Trigger Classic,True,932,2018-09-06,True,0,candidate_still_in_ea,95.1,still_in_ea
+1475400,"Run Prop, Run! - Puropu Pursuit",False,929,2021-06-23,True,100,candidate_launched,61.5,launched
+1488560,Football Simulator,False,923,2022-06-09,True,100,candidate_launched,49.9,launched
+365810,Flying Tigers: Shadows Over China,False,923,2017-05-29,True,97,candidate_launched,110.4,launched
+2347080,Frosthaven,True,921,2025-07-31,True,0,candidate_still_in_ea,12.1,still_in_ea
+2115390,Project Unknown,False,921,2024-07-12,True,100,candidate_launched,24.8,launched
+3253440,EGG RAIDERS,True,920,2024-10-30,True,0,candidate_still_in_ea,21.2,still_in_ea
+288140,Perfect Golf,False,915,2016-05-03,True,95,candidate_launched,123.2,launched
+2147380,Heroes of Science and Fiction,False,912,2024-09-30,True,100,candidate_launched,22.2,launched
+2218970,Plains of Pain,False,912,2023-02-17,True,15,candidate_launched,41.6,launched
+1207850,Project RTD: Random Tower Defense PvP,True,911,2020-02-18,True,0,candidate_still_in_ea,77.6,still_in_ea
+352950,Space Overlords,True,910,2016-03-03,True,0,candidate_still_in_ea,125.2,still_in_ea
+400450,NeuroVoider,False,908,2016-08-31,True,90,candidate_launched,119.3,launched
+2124930,Gum Ball Run,True,908,2024-10-08,True,0,candidate_still_in_ea,21.9,still_in_ea
+2111870,Section 13,False,907,2023-07-19,True,100,candidate_launched,36.6,launched
+764920,Fear the Night - 恐惧之夜,True,899,2018-12-12,True,0,candidate_still_in_ea,91.9,still_in_ea
+670260,Solace Crafting,False,897,2018-01-17,True,26,candidate_launched,102.7,launched
+871930,GLADIABOTS - AI Combat Arena,False,897,2018-08-09,True,97,candidate_launched,96.0,launched
+223490,Civil War II,True,896,2014-07-03,True,0,candidate_still_in_ea,145.2,still_in_ea
+2184150,Dead Matter,True,896,2023-09-16,True,0,candidate_still_in_ea,34.7,still_in_ea
+445720,Battle Islands: Commanders,True,895,2017-02-14,True,0,candidate_still_in_ea,113.8,still_in_ea
+1252680,SENTRY,True,893,2024-03-25,True,0,candidate_still_in_ea,28.4,still_in_ea
+1380410,Puzzle Quest 3,False,890,2023-05-31,True,99,candidate_launched,38.2,launched
+1240630,Hex of Steel,False,889,2020-03-05,True,12,candidate_launched,77.1,launched
+682290,Zeus' Battlegrounds,False,883,2018-09-29,True,100,candidate_launched,94.3,launched
+770100,One Deck Dungeon,False,880,2018-02-27,True,31,candidate_launched,101.3,launched
+397100,Of Carrots And Blood,True,880,2016-03-25,True,0,candidate_still_in_ea,124.5,still_in_ea
+3285700,Life is Feudal: Arden,True,876,2025-02-25,True,0,candidate_still_in_ea,17.3,still_in_ea
+572520,Dropzone,True,871,2017-02-15,True,0,candidate_still_in_ea,113.7,still_in_ea
+2438990,Ark Nova,False,869,2024-12-05,True,100,candidate_launched,20.0,launched
+285820,Lootfest,False,869,2015-05-11,True,93,candidate_launched,135.0,launched
+612930,Fight of Gods,True,867,2017-09-04,True,0,candidate_still_in_ea,107.1,still_in_ea
+529520,Mutant Football League,False,858,2017-10-31,True,55,candidate_launched,105.2,launched
+1105130,Arcadius,True,854,2022-02-17,True,0,candidate_still_in_ea,53.6,still_in_ea
+677480,Outpost Zero,False,851,2018-07-12,True,91,candidate_launched,96.9,launched
+1390700,The Crackpet Show,False,848,2021-12-16,True,99,candidate_launched,55.7,launched
+2186700,Contain,True,846,2024-01-16,True,0,candidate_still_in_ea,30.6,still_in_ea
+822800,Soulfire,True,846,2020-08-04,True,0,candidate_still_in_ea,72.1,still_in_ea
+1869780,UnderMine 2,False,843,2025-07-22,True,100,candidate_launched,12.4,launched
+2089250,Alpha Response,True,841,2024-10-08,True,0,candidate_still_in_ea,21.9,still_in_ea
+2717010,KALPA: Cosmic Symphony,True,841,2024-08-15,True,0,candidate_still_in_ea,23.7,still_in_ea
+1454370,STARSEEKER: Astroneer Expeditions,True,840,2026-06-11,True,0,candidate_still_in_ea,1.8,still_in_ea
+263200,Signs of Life,True,838,2014-01-27,True,0,candidate_still_in_ea,150.4,still_in_ea
+1990050,Creature Crafter,False,838,2022-08-01,True,73,candidate_launched,48.2,launched
+588440,False Front,False,837,2019-05-30,True,38,candidate_launched,86.3,launched
+280010,Gunjitsu,True,837,2015-07-31,True,0,candidate_still_in_ea,132.3,still_in_ea
+1323900,Scrapnaut,False,836,2021-03-03,True,99,candidate_launched,65.1,launched
+1328990,Godsworn,False,835,2024-03-28,True,100,candidate_launched,28.3,launched
+1138640,Hometopia,False,834,2023-09-27,True,99,candidate_launched,34.3,launched
+681390,ZomDay,False,834,2017-08-17,True,95,candidate_launched,107.7,launched
+282050,Devil's Bluff,False,833,2015-10-28,True,89,candidate_launched,129.4,launched
+1985930,The Backrooms 1998 - Found Footage Survival Horror Game,True,832,2022-05-25,True,0,candidate_still_in_ea,50.4,still_in_ea
+794860,eSail Sailing Simulator,False,832,2018-03-27,True,21,candidate_launched,100.4,launched
+597150,Hyper Knights,False,832,2017-05-19,True,96,candidate_launched,110.7,launched
+2264340,TIEBREAK – GRAND SLAM EDITION,True,832,2024-08-22,True,0,candidate_still_in_ea,23.4,still_in_ea
+1910150,Walk of Life,False,832,2025-10-24,True,100,candidate_launched,9.4,launched
+3140620,C.A.S.T. (CHERNOZEM ANOMALY STRIKE TEAM),False,829,2024-12-09,True,100,candidate_launched,19.9,launched
+3242950,Outworld Station,False,827,2025-04-22,True,100,candidate_launched,15.4,launched
+3336520,Dinotica,False,825,2025-08-12,True,100,candidate_launched,11.8,launched
+268220,Meltdown,False,823,2014-06-05,True,78,candidate_launched,146.2,launched
+1133060,Anarchy: Wolf's law,False,820,2021-11-05,True,100,candidate_launched,57.0,launched
+263720,Brawlout,False,814,2017-04-20,True,94,candidate_launched,111.6,launched
+3447690,iDigging,False,813,2025-03-05,True,73,candidate_launched,17.0,launched
+454540,Handball 17,True,812,2016-11-15,True,0,candidate_still_in_ea,116.8,still_in_ea
+223410,Door Kickers,False,812,2014-10-17,True,98,candidate_launched,141.8,launched
+1915550,Nemesis: Lockdown,False,810,2022-05-31,True,99,candidate_launched,50.2,launched
+2756930,PUMP IT UP RISE,True,806,2025-07-14,True,0,candidate_still_in_ea,12.7,still_in_ea
+1609370,Caravanners,False,806,2025-10-31,True,100,candidate_launched,9.1,launched
+574180,Rem Survival,True,803,2021-03-05,True,0,candidate_still_in_ea,65.1,still_in_ea
+771060,Iron League,False,803,2018-03-15,True,100,candidate_launched,100.8,launched
+1230800,Beach Buggy Racing 2: Island Adventure,True,802,2020-02-27,True,0,candidate_still_in_ea,77.3,still_in_ea
+1320100,Wanted Raccoon,False,802,2021-03-19,True,100,candidate_launched,64.6,launched
+1097620,Pinball FX,False,802,2019-06-20,True,40,candidate_launched,85.6,launched
+2971900,Welcome to Dustown,False,801,2025-04-12,True,48,candidate_launched,15.8,launched
+698870,Metaverse Keeper / 元能失控,True,800,2019-04-11,True,0,candidate_still_in_ea,87.9,still_in_ea
+1064340,Chess Evolved Online,False,799,2021-02-22,True,100,candidate_launched,65.4,launched
+3811390,WASD : The Adventure of Tori,True,798,2025-07-23,True,0,candidate_still_in_ea,12.4,still_in_ea
+285840,Enemy Mind,False,798,2014-06-06,True,3,candidate_launched,146.1,launched
+230860,Cannon Brawl,False,797,2014-09-19,True,89,candidate_launched,142.7,launched
+1601330,Survival Machine,False,794,2025-05-07,True,100,candidate_launched,14.9,launched
+574080,Fog of War,False,793,2017-02-22,True,98,candidate_launched,113.5,launched
+506730,Dinosaur Forest,False,793,2017-05-17,True,95,candidate_launched,110.7,launched
+382050,Eon Altar,False,792,2016-06-22,True,92,candidate_launched,121.6,launched
+576470,ANIMALITY,True,788,2017-02-02,True,0,candidate_still_in_ea,114.2,still_in_ea
+2980270,HackHub - Ultimate Hacker Simulator,True,784,2026-01-26,True,0,candidate_still_in_ea,6.3,still_in_ea
+1397790,Samurai GUNN 2,True,782,2021-07-20,True,0,candidate_still_in_ea,60.6,still_in_ea
+305960,Global ATC Simulator,True,780,2014-11-07,True,0,candidate_still_in_ea,141.1,still_in_ea
+1168870,Mists of Noyah,True,780,2020-05-27,True,0,candidate_still_in_ea,74.3,still_in_ea
+360730,Cards and Castles,False,777,2015-12-18,True,50,candidate_launched,127.7,launched
+1105810,Onset,True,775,2019-12-13,True,0,candidate_still_in_ea,79.8,still_in_ea
+2296550,Dying Light 2: Stay Human Digital Extras Edition,False,772,2023-08-02,True,99,candidate_launched,36.1,launched
+1527890,Dysterra,False,770,2025-04-17,True,19,candidate_launched,15.6,launched
+1514840,Scroter,False,769,2021-02-25,True,100,candidate_launched,65.3,launched
+2790090,Sirocco,False,768,2025-05-02,True,100,candidate_launched,15.1,launched
+449210,Verdict Guilty - 유죄 평결,False,768,2016-06-13,True,12,candidate_launched,121.9,launched
+1559680,Amazing Frog? 2,False,767,2022-06-16,True,100,candidate_launched,49.7,launched
+752900,Prehistoric Hunt,False,767,2020-12-01,True,17,candidate_launched,68.2,launched
+640150,Tale of Toast,False,767,2018-02-23,True,100,candidate_launched,101.5,launched
+1079620,Infinity: Battlescape,True,764,2019-09-27,True,0,candidate_still_in_ea,82.4,still_in_ea
+320540,Coffin Dodgers,False,761,2015-07-08,True,93,candidate_launched,133.1,launched
+1945250,Blacktop Hoops,False,759,2024-05-16,True,100,candidate_launched,26.7,launched
+423890,Gods and Idols,True,758,2016-12-12,True,0,candidate_still_in_ea,115.9,still_in_ea
+2835530,Backrooms: Extractions,True,756,2025-04-30,True,0,candidate_still_in_ea,15.2,still_in_ea
+794490,Journey Of Life,True,755,2021-02-01,True,0,candidate_still_in_ea,66.1,still_in_ea
+1869500,DAIMON BLADES,False,754,2025-10-06,True,100,candidate_launched,9.9,launched
+552450,Downward Spiral: Prologue,True,752,2017-03-30,True,0,candidate_still_in_ea,112.3,still_in_ea
+1455910,Territory: Farming and Warfare,False,752,2023-01-12,True,99,candidate_launched,42.8,launched
+314010,Boid,False,751,2016-07-08,True,55,candidate_launched,121.0,launched
+1783280,Ghostlore,False,751,2022-04-14,True,100,candidate_launched,51.8,launched
+1726530,Toaster Arena,False,750,2025-01-20,True,100,candidate_launched,18.5,launched
+1589770,Engine Evolution 2021,False,748,2022-01-12,True,99,candidate_launched,54.8,launched
+1524630,KeepUp Survival,False,747,2021-02-26,True,87,candidate_launched,65.3,launched
+1010860,Hide and Seek,True,747,2019-02-01,True,0,candidate_still_in_ea,90.2,still_in_ea
+1619310,SWAT Commander,True,747,2025-07-31,True,0,candidate_still_in_ea,12.2,still_in_ea
+2196640,Engine Evolution 2023,False,746,2024-10-08,True,100,candidate_launched,21.9,launched
+781030,DK Online,False,746,2019-03-05,True,83,candidate_launched,89.1,launched
+1310510,Handy Harry's Haunted House Services,True,745,2020-07-31,True,0,candidate_still_in_ea,72.2,still_in_ea
+2456070,Motorbike Evolution 2024,False,742,2024-03-25,True,100,candidate_launched,28.4,launched
+242130,Vector Thrust,False,741,2015-07-02,True,1,candidate_launched,133.3,launched
+505740,Eximius: Seize the Frontline,False,740,2018-09-28,True,96,candidate_launched,94.3,launched
+1272550,PHANTOM GALAXIES™,True,740,2023-11-15,True,0,candidate_still_in_ea,32.7,still_in_ea
+1743830,One Military Camp,False,739,2023-03-02,True,100,candidate_launched,41.2,launched
+2593870,Football Heroes League,True,737,2025-05-02,True,0,candidate_still_in_ea,15.1,still_in_ea
+451840,Out of Ammo,False,737,2016-09-15,True,94,candidate_launched,118.8,launched
+2620240,Spectral Scream,False,736,2024-05-09,True,98,candidate_launched,26.9,launched
+3220170,Arcane Afterfall,False,734,2025-07-17,True,98,candidate_launched,12.6,launched
+1547670,A Day Out,False,733,2023-05-09,True,100,candidate_launched,38.9,launched
+340810,Deepworld,True,732,2015-04-22,True,0,candidate_still_in_ea,135.6,still_in_ea
+1765300,Ultimate Zombie Defense 2,False,729,2024-09-27,True,100,candidate_launched,22.3,launched
+1082450,Gold Hunter,True,724,2022-05-13,True,0,candidate_still_in_ea,50.8,still_in_ea
+4175080,SHRAPNEL,True,724,2026-03-12,True,0,candidate_still_in_ea,4.8,still_in_ea
+316930,Kings of Kung Fu,False,721,2015-06-25,True,93,candidate_launched,133.5,launched
+282590,Star Ruler 2,False,720,2015-03-27,True,1,candidate_launched,136.5,launched
+1627850,Deadly Broadcast,False,718,2022-05-14,True,100,candidate_launched,50.8,launched
+618080,Martial Arts Brutality,False,715,2018-01-31,True,95,candidate_launched,102.2,launched
+1450180,Haunt Chaser,True,714,2021-07-16,True,0,candidate_still_in_ea,60.7,still_in_ea
+3288270,Monster Care Simulator,False,712,2025-04-04,True,99,candidate_launched,16.0,launched
+2456080,Formula Evolution 2024,False,707,2024-06-03,True,100,candidate_launched,26.1,launched
+263020,Shadow Puppeteer,False,706,2014-09-29,True,98,candidate_launched,142.3,launched
+2304620,Backrooms Society,False,703,2023-06-19,True,98,candidate_launched,37.6,launched
+4324480,Dirty Business,True,702,2026-07-22,True,0,candidate_still_in_ea,0.4,still_in_ea
+467820,Zero G Arena,False,702,2018-08-09,True,67,candidate_launched,96.0,launched
+429780,Bunny Hop League,False,701,2017-04-27,True,86,candidate_launched,111.4,launched
+895670,Armajet,False,698,2019-10-08,True,88,candidate_launched,82.0,launched
+1916310,Remnant Records,False,698,2022-07-19,True,100,candidate_launched,48.6,launched
+384500,Zombie Party,False,698,2016-06-10,True,92,candidate_launched,121.9,launched
+724300,Roof Rage,True,697,2018-06-08,True,0,candidate_still_in_ea,98.0,still_in_ea
+2840210,Bureau of Contacts,True,696,2024-06-20,True,0,candidate_still_in_ea,25.5,still_in_ea
+1429880,Little Sim World,True,695,2025-05-01,True,0,candidate_still_in_ea,15.1,still_in_ea
+1407180,Lawgivers II,False,694,2023-08-18,True,100,candidate_launched,35.6,launched
+805270,Playcraft,False,693,2023-01-17,True,44,candidate_launched,42.6,launched
+2506530,It Has My Face,False,692,2025-09-23,True,100,candidate_launched,10.4,launched
+1501690,Dice Kingdoms,False,691,2023-04-03,True,100,candidate_launched,40.1,launched
+319540,A Year Of Rain,False,688,2020-03-13,True,90,candidate_launched,76.8,launched
+2010530,MONSTER CARDS,True,688,2022-08-12,True,0,candidate_still_in_ea,47.8,still_in_ea
+598780,epsilon wars,True,688,2020-11-12,True,0,candidate_still_in_ea,68.8,still_in_ea
+383790,The Ship: Remasted,True,687,2016-10-31,True,0,candidate_still_in_ea,117.2,still_in_ea
+1879340,MuseSwipr,True,686,2022-12-21,True,0,candidate_still_in_ea,43.5,still_in_ea
+2300230,Feather Party,False,684,2024-05-03,True,100,candidate_launched,27.1,launched
+2107090,KitHack Model Club,False,683,2024-04-15,True,97,candidate_launched,27.7,launched
+3408110,Cafemart Simulator,False,683,2025-02-25,True,100,candidate_launched,17.3,launched
+1585020,JUNKPUNK,False,682,2021-11-12,True,100,candidate_launched,56.8,launched
+1732920,Bulanci,False,679,2023-09-21,True,99,candidate_launched,34.5,launched
+2803360,Project L33T: Founders Edition,False,678,2024-07-25,True,100,candidate_launched,24.4,launched
+685240,Paradiddle,True,678,2017-10-31,True,0,candidate_still_in_ea,105.2,still_in_ea
+466660,Stash,False,677,2017-09-07,True,73,candidate_launched,107.0,launched
+1493520,Beat Hazard 3,False,677,2022-11-14,True,100,candidate_launched,44.7,launched
+2453660,Hoop Land,True,675,2025-10-21,True,0,candidate_still_in_ea,9.5,still_in_ea
+382260,8Bit Fiesta - The Drinking Game,False,675,2016-09-30,True,93,candidate_launched,118.3,launched
+423810,Marooners,False,675,2016-09-15,True,42,candidate_launched,118.8,launched
+311800,Super Lemonade Factory,False,674,2014-07-09,True,80,candidate_launched,145.0,launched
+1269300,This Means Warp,False,673,2022-03-17,True,100,candidate_launched,52.7,launched
+569530,Sky Noon,False,671,2018-06-14,True,94,candidate_launched,97.8,launched
+2105910,Garbanzo Quest,False,668,2022-09-16,True,8,candidate_launched,46.7,launched
+2437670,Dagger Directive,False,665,2025-06-03,True,100,candidate_launched,14.1,launched
+1264520,Vibrant Venture,True,662,2020-07-24,True,0,candidate_still_in_ea,72.4,still_in_ea
+385830,Burgers,False,662,2015-09-04,True,25,candidate_launched,131.2,launched
+453690,Dark Quest 2,False,660,2016-11-07,True,22,candidate_launched,117.0,launched
+861050,DemonsAreCrazy,True,660,2019-09-12,True,0,candidate_still_in_ea,82.8,still_in_ea
+503770,Elven Assassin,True,656,2016-09-10,True,0,candidate_still_in_ea,118.9,still_in_ea
+2696400,"Magical Mic Duel: Senpai, Hear My Spell",False,655,2024-05-23,True,100,candidate_launched,26.4,launched
+4551040,Animal Company,True,655,2026-05-21,True,0,candidate_still_in_ea,2.5,still_in_ea
+2162780,E.E.R.I.E2,False,653,2022-11-05,True,100,candidate_launched,45.0,launched
+754050,Bomb Bots Arena,True,652,2020-06-01,True,0,candidate_still_in_ea,74.2,still_in_ea
+3232040,BodyRecords,True,651,2025-04-17,True,0,candidate_still_in_ea,15.6,still_in_ea
+1253220,The Gold River Project,False,648,2026-01-23,True,100,candidate_launched,6.4,launched
+356510,Gunslugs,True,645,2015-06-02,True,0,candidate_still_in_ea,134.3,still_in_ea
+1455900,Plunder Panic,False,645,2021-09-17,True,23,candidate_launched,58.6,launched
+2714970,Backrooms Media,False,642,2024-09-10,True,100,candidate_launched,22.8,launched
+2206350,Farm Manager World,False,641,2025-04-21,True,98,candidate_launched,15.5,launched
+1503790,Nordicandia,True,639,2022-09-02,True,0,candidate_still_in_ea,47.1,still_in_ea
+733460,First Feudal,False,639,2017-11-30,True,31,candidate_launched,104.2,launched
+1739300,Smack Studio,True,637,2024-07-31,True,0,candidate_still_in_ea,24.1,still_in_ea
+2960770,The Anomaly Project,True,632,2024-07-24,True,0,candidate_still_in_ea,24.4,still_in_ea
+377140,DARK SOULS™ III,True,631,2016-04-09,True,0,candidate_still_in_ea,124.0,still_in_ea
+423490,Air Missions: HIND,False,629,2017-06-14,True,82,candidate_launched,109.8,launched
+315840,Catacomb Kids,True,627,2015-02-20,True,0,candidate_still_in_ea,137.6,still_in_ea
+1691320,Hellbreach: Vegas,False,627,2024-03-11,True,100,candidate_launched,28.8,launched
+871990,BattleRush 2,False,625,2018-08-28,True,59,candidate_launched,95.3,launched
+546930,Machine Hunt,False,625,2017-05-15,True,93,candidate_launched,110.8,launched
+824070,Objects in Space,False,621,2018-06-21,True,84,candidate_launched,97.6,launched
+1215180,The Beasts Of 9500,True,620,2020-05-29,True,0,candidate_still_in_ea,74.3,still_in_ea
+586110,Sansar,True,620,2018-12-05,True,0,candidate_still_in_ea,92.1,still_in_ea
+1596950,Frog Fighters,False,619,2021-05-30,True,100,candidate_launched,62.2,launched
+2015620,Valkyrie of Phantasm,True,618,2022-10-22,True,0,candidate_still_in_ea,45.5,still_in_ea
+1512940,Malody V,False,618,2021-12-25,True,57,candidate_launched,55.4,launched
+1609730,Aliens vs. Ghosts,True,614,2022-07-06,True,0,candidate_still_in_ea,49.0,still_in_ea
+905970,Steel Crew,True,614,2021-10-28,True,0,candidate_still_in_ea,57.3,still_in_ea
+1020800,CAR TUNE: Project,False,614,2020-02-21,True,65,candidate_launched,77.5,launched
+995050,Havocado: Ragdoll Fighter,True,613,2019-04-25,True,0,candidate_still_in_ea,87.5,still_in_ea
+1889620,AI Roguelite,False,613,2022-03-02,True,22,candidate_launched,53.2,launched
+4197990,Cargo Hunters,True,613,2026-03-09,True,0,candidate_still_in_ea,4.9,still_in_ea
+1005340,Myths and Legends - Card Game,True,608,2019-08-09,True,0,candidate_still_in_ea,84.0,still_in_ea
+1598730,Exoprimal Deluxe Edition,True,607,2021-09-03,True,0,candidate_still_in_ea,59.1,still_in_ea
+1520380,HALF DEAD 3,False,606,2021-08-20,True,97,candidate_launched,59.6,launched
+946610,Pocket Rogues,True,606,2018-10-25,True,0,candidate_still_in_ea,93.4,still_in_ea
+529240,"Creature Clicker - Capture, Train, Ascend!",True,605,2017-04-28,True,0,candidate_still_in_ea,111.4,still_in_ea
+1329600,Karting,False,604,2020-07-31,True,58,candidate_launched,72.2,launched
+1797680,Wee Tanks!,False,604,2022-02-23,True,100,candidate_launched,53.4,launched
+2309400,The Devourer: Hunted Souls,False,602,2023-10-26,True,100,candidate_launched,33.3,launched
+455300,Deuterium Wars,True,601,2019-10-10,True,0,candidate_still_in_ea,81.9,still_in_ea
+2270210,DunHero,False,601,2024-02-12,True,100,candidate_launched,29.7,launched
+3498390,Astroloot,False,596,2025-03-14,True,100,candidate_launched,16.7,launched
+1657810,Combots,True,596,2021-07-08,True,0,candidate_still_in_ea,61.0,still_in_ea
+575050,Little Triangle,False,595,2017-01-21,True,96,candidate_launched,114.6,launched
+1424910,KEO,False,594,2021-12-09,True,100,candidate_launched,55.9,launched
+1648190,QANGA,False,593,2024-09-02,True,100,candidate_launched,23.1,launched
+2388460,Pathfinder: Gallowspire Survivors,False,593,2023-09-14,True,99,candidate_launched,34.7,launched
+658470,Mini Battlegrounds,False,590,2018-08-21,True,97,candidate_launched,95.6,launched
+2168260,Forgotten Seas,False,590,2024-06-07,True,100,candidate_launched,25.9,launched
+3815750,SEVERANCE,False,588,2025-10-31,True,100,candidate_launched,9.1,launched
+265970,Walkover,False,587,2015-03-19,True,89,candidate_launched,136.7,launched
+1641670,KUUKIYOMI: Consider It! ONLINE,False,585,2022-01-22,True,99,candidate_launched,54.5,launched
+1090250,Crunch Element,True,585,2020-12-19,True,0,candidate_still_in_ea,67.6,still_in_ea
+1149940,Lock 'n Load Tactical Digital: Core Game,True,582,2020-04-03,True,0,candidate_still_in_ea,76.1,still_in_ea
+2955840,Kitchen Wars,False,581,2025-04-16,True,33,candidate_launched,15.6,launched
+2312280,7 Days Blood Moons,True,580,2025-11-04,True,0,candidate_still_in_ea,9.0,still_in_ea
+1264970,The Conquest of Go,False,576,2020-12-07,True,100,candidate_launched,68.0,launched
+508790,Flat Heroes,False,574,2016-09-08,True,33,candidate_launched,119.0,launched
+2262080,Omega Crafter,True,573,2024-03-29,True,0,candidate_still_in_ea,28.3,still_in_ea
+1460550,Ring of Titans,False,573,2024-10-21,True,26,candidate_launched,21.5,launched
+3649730,Legend Battles,False,569,2026-01-17,True,99,candidate_launched,6.6,launched
+1813170,Surrounded,True,569,2023-07-14,True,0,candidate_still_in_ea,36.7,still_in_ea
+2081880,Kathana,True,568,2025-08-09,True,0,candidate_still_in_ea,11.9,still_in_ea
+848050,GP Bikes,True,568,2021-12-18,True,0,candidate_still_in_ea,55.6,still_in_ea
+1191830,Iverian Wars: Craxion vs Defugel,True,567,2026-02-24,True,0,candidate_still_in_ea,5.3,still_in_ea
+2340870,Rugby 25,False,567,2024-06-28,True,93,candidate_launched,25.3,launched
+1117160,Towers Together: Beginnings,True,563,2023-04-11,True,0,candidate_still_in_ea,39.8,still_in_ea
+1903560,Atomic Picnic,True,561,2024-11-07,True,0,candidate_still_in_ea,20.9,still_in_ea
+1722870,Clank!,False,560,2024-07-24,True,98,candidate_launched,24.4,launched
+1144800,Drop In - VR F2P,True,560,2020-05-27,True,0,candidate_still_in_ea,74.4,still_in_ea
+323670,Super Indie Karts,True,557,2015-05-06,True,0,candidate_still_in_ea,135.1,still_in_ea
+1415220,It's Only Money,False,555,2023-06-16,True,100,candidate_launched,37.7,launched
+1949970,J-Jump Arena,False,555,2025-10-23,True,36,candidate_launched,9.4,launched
+1147940,3dSen PC,False,554,2020-06-19,True,100,candidate_launched,73.6,launched
+338810,Demise of Nations,True,554,2017-08-08,True,0,candidate_still_in_ea,108.0,still_in_ea
+419520,Lifeless,True,554,2016-06-16,True,0,candidate_still_in_ea,121.8,still_in_ea
+1428470,PAW Patrol Mighty Pups Save Adventure Bay,False,553,2020-11-06,True,100,candidate_launched,69.0,launched
+1163740,Card Hog,False,552,2020-06-23,True,100,candidate_launched,73.5,launched
+2275440,Solar Nations 2,False,552,2025-01-31,True,21,candidate_launched,18.1,launched
+2644050,Echoes of Elysium,False,551,2026-01-27,True,100,candidate_launched,6.2,launched
+492150,RPG World - Action RPG Maker,True,550,2020-07-17,True,0,candidate_still_in_ea,72.7,still_in_ea
+3616560,Dread Not,False,549,2025-06-15,True,100,candidate_launched,13.7,launched
+655780,Project 5: Sightseer,False,549,2019-08-16,True,19,candidate_launched,83.7,launched
+676500,Time Warpers,False,548,2018-11-02,True,97,candidate_launched,93.2,launched
+249950,Barren Roads,False,547,2015-05-29,True,89,candidate_launched,134.4,launched
+289760,ROCKETSROCKETSROCKETS,False,546,2015-05-01,True,96,candidate_launched,135.3,launched
+1455120,Pumping Simulator,False,545,2020-12-20,True,42,candidate_launched,67.5,launched
+616830,Cartoon Strike,True,544,2020-10-14,True,0,candidate_still_in_ea,69.8,still_in_ea
+691730,FPV Drone Simulator,True,543,2017-09-09,True,0,candidate_still_in_ea,106.9,still_in_ea
+840130,Battle Royale: Survivors 究极求生:大逃杀,False,543,2018-08-29,True,98,candidate_launched,95.3,launched
+416450,Emporea: Realms of War and Magic,True,542,2016-06-08,True,0,candidate_still_in_ea,122.0,still_in_ea
+428080,Racket: Nx,False,540,2017-01-31,True,96,candidate_launched,114.2,launched
+2553040,Nested Lands,True,540,2026-02-25,True,0,candidate_still_in_ea,5.3,still_in_ea
+340580,Armed with Wings: Rearmed,False,540,2017-06-01,True,70,candidate_launched,110.2,launched
+428180,Islet Online,True,539,2019-02-12,True,0,candidate_still_in_ea,89.8,still_in_ea
+3669720,Bakery Cafe Simulator: Prologue,True,539,2025-05-08,True,0,candidate_still_in_ea,14.9,still_in_ea
+527700,Premium Pool Arena,False,537,2017-04-14,True,35,candidate_launched,111.8,launched
+3010460,Backroom Company,False,536,2024-10-28,True,100,candidate_launched,21.2,launched
+926390,Highway Game,False,536,2019-11-11,True,54,candidate_launched,80.9,launched
+1636030,Crossfire: Sierra Squad,False,535,2023-08-29,True,95,candidate_launched,35.3,launched
+528460,Rogalia,True,535,2018-10-15,True,0,candidate_still_in_ea,93.8,still_in_ea
+457010,Glitchrunners,True,535,2016-04-08,True,0,candidate_still_in_ea,124.0,still_in_ea
+1081560,GOLD EXPRESS,True,534,2019-09-27,True,0,candidate_still_in_ea,82.4,still_in_ea
+1771180,No Fair Play,False,534,2022-09-09,True,11,candidate_launched,46.9,launched
+1055210,Retrograde Arena,False,533,2020-05-28,True,14,candidate_launched,74.3,launched
+2363590,H.I.A: Horror Investigation Agency,False,532,2024-02-29,True,10,candidate_launched,29.2,launched
+552110,Puzzle Pirates: Dark Seas,False,531,2018-07-06,True,98,candidate_launched,97.1,launched
+329460,JumpJet Rex,False,531,2015-04-21,True,69,candidate_launched,135.6,launched
+1342790,GangV | VR &amp; PC Battle Royale,False,531,2021-04-17,True,100,candidate_launched,63.7,launched
+3408170,Deadswitch Combat,True,530,2025-09-26,True,0,candidate_still_in_ea,10.3,still_in_ea
+1106140,Perfect Partner,False,529,2021-01-30,True,100,candidate_launched,66.2,launched
+3844750,FlatOut 4: Total Insanity VR,True,528,2026-05-07,True,0,candidate_still_in_ea,2.9,still_in_ea
+618850,Pumpkin Days,False,528,2019-07-31,True,97,candidate_launched,84.3,launched
+1341210,Afterinfection,False,524,2022-02-02,True,99,candidate_launched,54.1,launched
+1938050,Unbridled: That Horse Game,False,524,2025-02-19,True,100,candidate_launched,17.5,launched
+750470,War Brokers,False,522,2018-04-18,True,30,candidate_launched,99.7,launched
+1285230,Ultimate Racing 2D 2,False,520,2021-10-12,True,43,candidate_launched,57.8,launched
+1089650,VR Emergency Response Sim,True,520,2019-06-12,True,0,candidate_still_in_ea,85.9,still_in_ea
+485670,Mini Golf Arena,False,519,2018-04-22,True,18,candidate_launched,99.6,launched
+348460,Bierzerkers,False,519,2016-02-25,True,95,candidate_launched,125.4,launched
+787040,Perfect Heist,False,518,2018-06-15,True,25,candidate_launched,97.8,launched
+2805060,Taquero Simulator,True,518,2024-06-04,True,0,candidate_still_in_ea,26.0,still_in_ea
+1103880,Bullet Roulette VR,True,518,2019-09-11,True,0,candidate_still_in_ea,82.9,still_in_ea
+3058360,Parisian Bistro Simulator,False,516,2025-08-25,True,100,candidate_launched,11.3,launched
+2204350,Midnight Heist,False,516,2023-10-25,True,100,candidate_launched,33.4,launched
+3189430,Pick Me Pick Me,True,516,2025-05-28,True,0,candidate_still_in_ea,14.3,still_in_ea
+2502650,Daisho: Survival of a Samurai,False,516,2025-06-10,True,82,candidate_launched,13.8,launched
+3032020,Cast &amp; Spell,False,515,2025-04-18,True,93,candidate_launched,15.6,launched
+3140990,Backrooms Cleanup Crew,False,515,2025-04-16,True,100,candidate_launched,15.6,launched
+525640,Bullets And More VR - BAM VR,False,514,2016-09-08,True,24,candidate_launched,119.0,launched
+2564910,CRYO,True,513,2025-10-24,True,0,candidate_still_in_ea,9.3,still_in_ea
+2903710,Lost Lullabies: The Orphanage Chronicles,False,513,2025-03-07,True,100,candidate_launched,17.0,launched
+2347910,Seal: WHAT the FUN,False,511,2024-12-13,True,100,candidate_launched,19.7,launched
+489380,QuiVr,False,507,2016-12-20,True,98,candidate_launched,115.6,launched
+2810780,Forsaken Frontiers,False,506,2024-10-21,True,99,candidate_launched,21.4,launched
+521920,Death's Hangover,False,506,2017-01-20,True,12,candidate_launched,114.6,launched
+1169740,Danger Scavenger,False,506,2020-06-22,True,41,candidate_launched,73.5,launched
+1340180,Sherwood Extreme,False,502,2024-04-29,True,100,candidate_launched,27.2,launched
+1148480,SPACERIFT: Arcanum System,True,501,2020-12-17,True,0,candidate_still_in_ea,67.6,still_in_ea
+1754960,Astride,True,501,2023-06-02,True,0,candidate_still_in_ea,38.1,still_in_ea
+857940,Nature Calls,False,499,2018-05-21,True,97,candidate_launched,98.6,launched
+2084450,DIRECT CONTACT,False,498,2024-02-29,True,100,candidate_launched,29.2,launched
+1063580,Aeon's End,True,498,2019-06-21,True,0,candidate_still_in_ea,85.6,still_in_ea
+431450,Alchemist's Awakening,False,497,2016-03-21,True,95,candidate_launched,124.6,launched
+908740,VALHALL: Harbinger,False,496,2020-10-23,True,100,candidate_launched,69.5,launched
+1932260,No Creeps Were Harmed TD,False,494,2023-08-18,True,100,candidate_launched,35.6,launched
+397310,Looterkings,False,493,2017-08-11,True,97,candidate_launched,107.9,launched
+1693250,Ancient Wars: Sparta Definitive Edition,False,493,2022-01-28,True,89,candidate_launched,54.3,launched
+2168810,Dream Sketcher,False,493,2023-04-27,True,100,candidate_launched,39.3,launched
+1883000,HEART of CROWN Online,False,492,2024-04-23,True,100,candidate_launched,27.4,launched
+1008580,Cthulhu's Catharsis,True,492,2019-11-22,True,0,candidate_still_in_ea,80.5,still_in_ea
+496550,Noob Squad,False,491,2016-10-05,True,32,candidate_launched,118.1,launched
+3487060,Youtubers Life 3,False,490,2025-05-22,True,100,candidate_launched,14.5,launched
+1063590,Rogue Masters,False,489,2026-01-10,True,45,candidate_launched,6.8,launched
+570980,Tale of Fallen Dragons,True,488,2017-02-06,True,0,candidate_still_in_ea,114.0,still_in_ea
+1730650,REQUISITION VR,False,482,2022-10-20,True,100,candidate_launched,45.5,launched
+898580,Premium Bowling,False,482,2018-09-26,True,19,candidate_launched,94.4,launched
+844330,The Goatman,False,481,2018-06-16,True,40,candidate_launched,97.8,launched
+1772910,Dead District: Survival,False,481,2022-08-11,True,99,candidate_launched,47.8,launched
+1412470,GranAge,False,478,2020-12-30,True,98,candidate_launched,67.2,launched
+931650,Braveland Heroes,False,477,2019-09-16,True,96,candidate_launched,82.7,launched
+336440,Super Cane Magic ZERO - Legend of the Cane Cane,False,477,2015-08-26,True,54,candidate_launched,131.5,launched
+2241380,Ancient Kingdoms,False,476,2025-01-15,True,95,candidate_launched,18.6,launched
+414190,Junk Jack,False,475,2016-12-01,True,83,candidate_launched,116.2,launched
+2846060,Subterror,False,475,2024-10-11,True,58,candidate_launched,21.8,launched
+2909580,Viractal: Will You Trust Your Party?,False,474,2025-09-19,True,99,candidate_launched,10.5,launched
+1944360,Rune Teller,False,474,2022-08-19,True,99,candidate_launched,47.6,launched
+1550730,Ikonei Island: An Earthlock Adventure,False,472,2022-08-18,True,88,candidate_launched,47.6,launched
+1032700,Bus Driving Sim 22,False,472,2022-06-03,True,99,candidate_launched,50.1,launched
+773840,ExoCross,True,471,2020-08-11,True,0,candidate_still_in_ea,71.9,still_in_ea
+484870,Battle Dome,False,470,2017-06-08,True,97,candidate_launched,110.0,launched
+2698870,Midnight Murder Club,False,470,2025-03-13,True,100,candidate_launched,16.8,launched
+1918970,Eresys,False,470,2023-04-20,True,100,candidate_launched,39.5,launched
+1985420,This is a Ghost,False,470,2022-12-09,True,100,candidate_launched,43.9,launched
+2708790,Together After Dark,False,469,2024-06-18,True,64,candidate_launched,25.6,launched
+2154230,AI: Art Impostor,True,468,2022-11-03,True,0,candidate_still_in_ea,45.1,still_in_ea
+908070,Mystic Vale,True,466,2018-11-27,True,0,candidate_still_in_ea,92.3,still_in_ea
+1751350,Wild Indigo Ranch,False,465,2023-11-09,True,100,candidate_launched,32.9,launched
+1232220,Professional Fishing 2,True,465,2025-09-11,True,0,candidate_still_in_ea,10.8,still_in_ea
+3802470,Turnbound,False,464,2026-01-22,True,97,candidate_launched,6.4,launched
+1960480,AutoForge,False,462,2024-03-27,True,100,candidate_launched,28.3,launched
+668170,Incline,True,461,2017-10-10,True,0,candidate_still_in_ea,105.9,still_in_ea
+1739880,Blood And Zombies,False,461,2022-07-26,True,97,candidate_launched,48.4,launched
+2215270,Army Troop,False,461,2023-09-16,True,91,candidate_launched,34.6,launched
+444690,TRAPPED,True,460,2016-09-09,True,0,candidate_still_in_ea,118.9,still_in_ea
+339910,Straima,True,459,2015-09-25,True,0,candidate_still_in_ea,130.5,still_in_ea
+2293680,Crestfallen: Medieval Survival,True,459,2024-07-17,True,0,candidate_still_in_ea,24.6,still_in_ea
+1217050,Shaolin vs Wutang 2,False,459,2020-03-09,True,100,candidate_launched,77.0,launched
+4369490,Soulbound: Online,True,459,2026-07-21,True,0,candidate_still_in_ea,0.5,still_in_ea
+852780,Temperia: Soul of Majestic,True,458,2022-07-26,True,0,candidate_still_in_ea,48.4,still_in_ea
+562270,Shot Shot Tactic,True,458,2016-12-01,True,0,candidate_still_in_ea,116.2,still_in_ea
+2976900,Unpossess: Exorcism Simulator,False,456,2025-01-10,True,96,candidate_launched,18.8,launched
+279140,Making History: The Great War,False,455,2015-01-29,True,45,candidate_launched,138.3,launched
+512220,Trickster VR: Co-op Dungeon Crawler,False,455,2016-08-12,True,90,candidate_launched,119.9,launched
+1111930,Underspace,False,455,2024-04-10,True,100,candidate_launched,27.8,launched
+777770,WAR PARTY,False,455,2018-10-12,True,82,candidate_launched,93.9,launched
+990920,Sea of Craft,False,454,2022-04-29,True,100,candidate_launched,51.3,launched
+1997630,Ink: Tournament Paintball,True,454,2023-11-27,True,0,candidate_still_in_ea,32.3,still_in_ea
+2138570,Mutants: Genesis,True,452,2025-05-20,True,0,candidate_still_in_ea,14.5,still_in_ea
+1342340,ARCANE DUEL 術法亂鬥,True,451,2020-07-03,True,0,candidate_still_in_ea,73.1,still_in_ea
+1245250,Thrive: Heavy Lies The Crown,False,451,2024-11-06,True,100,candidate_launched,20.9,launched
+3159570,Lynked: Banner of the Spark,False,449,2024-10-22,True,100,candidate_launched,21.4,launched
+3462790,RUPTURR,True,449,2026-07-03,True,0,candidate_still_in_ea,1.1,still_in_ea
+640050,Soldiers of the Universe,False,447,2017-09-14,True,84,candidate_launched,106.8,launched
+343630,Executive Assault,True,445,2015-07-17,True,0,candidate_still_in_ea,132.8,still_in_ea
+2497560,SKIBIDI: ESCAPE FROM TOILETS!,True,445,2023-11-30,True,0,candidate_still_in_ea,32.2,still_in_ea
+1633370,Boat Crew,False,441,2022-08-01,True,22,candidate_launched,48.2,launched
+714020,Idle Adventure,False,441,2018-04-14,True,100,candidate_launched,99.8,launched
+1163690,Wizards,False,440,2021-01-16,True,100,candidate_launched,66.7,launched
+613900,Museum of Other Realities,False,439,2020-02-26,True,13,candidate_launched,77.3,launched
+965590,Sagrada,False,438,2020-03-05,True,37,candidate_launched,77.1,launched
+393930,RoShamBo,True,438,2016-07-14,True,0,candidate_still_in_ea,120.8,still_in_ea
+520860,Impulse of War,True,436,2017-02-24,True,0,candidate_still_in_ea,113.4,still_in_ea
+2413050,Retrowave World,False,436,2024-05-10,True,100,candidate_launched,26.8,launched
+622040,Zooicide,True,436,2017-06-30,True,0,candidate_still_in_ea,109.3,still_in_ea
+539400,Son of a Witch,False,435,2016-11-10,True,11,candidate_launched,116.9,launched
+698260,Star Shelter,False,433,2017-10-12,True,63,candidate_launched,105.9,launched
+1116170,CyberCorp,False,433,2024-08-19,True,100,candidate_launched,23.5,launched
+346970,OBEY,True,433,2015-05-22,True,0,candidate_still_in_ea,134.6,still_in_ea
+1243200,STUFFED,False,433,2021-12-09,True,100,candidate_launched,55.9,launched
+361040,Kopanito All-Stars Soccer,True,432,2016-11-16,True,0,candidate_still_in_ea,116.7,still_in_ea
+977390,Tokyo Warfare Turbo,True,432,2019-10-18,True,0,candidate_still_in_ea,81.6,still_in_ea
+293840,Acceleration of SUGURI X-Edition HD,False,432,2014-07-01,True,13,candidate_launched,145.3,launched
+2099220,Mobmania,True,431,2022-08-18,True,0,candidate_still_in_ea,47.6,still_in_ea
+2613870,BattleCore Arena,True,431,2025-02-04,True,0,candidate_still_in_ea,18.0,still_in_ea
+1385780,My Village Life,True,430,2020-08-27,True,0,candidate_still_in_ea,71.3,still_in_ea
+504300,Gangs of Space,True,430,2017-08-10,True,0,candidate_still_in_ea,107.9,still_in_ea
+3265230,Cursed Companions,False,430,2025-11-20,True,37,candidate_launched,8.5,launched
+1719390,Cards and Castles 2,True,429,2023-11-05,True,0,candidate_still_in_ea,33.0,still_in_ea
+703280,Zeal,False,428,2018-09-24,True,93,candidate_launched,94.5,launched
+2599370,DeathWatchers,True,428,2024-07-12,True,0,candidate_still_in_ea,24.8,still_in_ea
+622770,Hacktag,False,428,2017-06-01,True,45,candidate_launched,110.2,launched
+377060,On a Roll,True,427,2017-08-30,True,0,candidate_still_in_ea,107.3,still_in_ea
+1113030,Stellar Warfare,False,427,2021-08-04,True,94,candidate_launched,60.1,launched
+424830,Soup: the Game,False,427,2016-03-18,True,4,candidate_launched,124.7,launched
+1078200,Spirits Abyss,False,426,2019-10-07,True,73,candidate_launched,82.0,launched
+1306770,Revival: Recolonization,False,425,2023-06-28,True,100,candidate_launched,37.3,launched
+2716120,Kaetram,True,424,2024-05-16,True,0,candidate_still_in_ea,26.6,still_in_ea
+1969150,Formula Bwoah: Online Multiplayer Racing,False,424,2023-05-26,True,100,candidate_launched,38.4,launched
+2469200,Fera: The Sundered Tribes,False,424,2024-09-17,True,100,candidate_launched,22.6,launched
+474220,Soldat 2,True,423,2020-09-22,True,0,candidate_still_in_ea,70.5,still_in_ea
+1741160,Catch Me!,False,422,2022-07-28,True,30,candidate_launched,48.3,launched
+3116640,Torque Drift 2,False,421,2024-11-28,True,100,candidate_launched,20.2,launched
+2165470,Taora : Survival,False,420,2024-05-23,True,100,candidate_launched,26.4,launched
+1579020,Golfie,False,419,2022-05-26,True,84,candidate_launched,50.4,launched
+2359470,Strayed,False,418,2024-04-19,True,71,candidate_launched,27.5,launched
+3063750,Pixel Dungeon VR,True,418,2025-05-27,True,0,candidate_still_in_ea,14.3,still_in_ea
+595430,Sky Knights,True,416,2017-07-27,True,0,candidate_still_in_ea,108.4,still_in_ea
+773520,Refight:Burning Engine,False,414,2018-10-15,True,92,candidate_launched,93.8,launched
+4173620,I Know a Guy: Shady Life Simulator,True,414,2026-04-01,True,0,candidate_still_in_ea,4.1,still_in_ea
+1803390,Bounty: Drag Racing,True,414,2023-06-15,True,0,candidate_still_in_ea,37.7,still_in_ea
+1055610,Deep Space Battle Simulator,True,413,2020-03-06,True,0,candidate_still_in_ea,77.1,still_in_ea
+595770,AirMech Wastelands,False,412,2017-11-24,True,50,candidate_launched,104.4,launched
+3702930,Bum: Revenge,False,412,2025-07-30,True,100,candidate_launched,12.2,launched
+1216230,Project Heartbeat,True,411,2020-03-26,True,0,candidate_still_in_ea,76.4,still_in_ea
+448240,Hybrids Arena,True,411,2016-08-30,True,0,candidate_still_in_ea,119.3,still_in_ea
+611300,Task Force,True,411,2022-08-27,True,0,candidate_still_in_ea,47.3,still_in_ea
+116100,Super Toy Cars,False,410,2014-06-06,True,53,candidate_launched,146.1,launched
+573490,Interstellar Transport Company,True,410,2017-08-16,True,0,candidate_still_in_ea,107.7,still_in_ea
+3444080,Bakery Cafe Simulator,True,409,2025-07-08,True,0,candidate_still_in_ea,12.9,still_in_ea
+294000,Trouble In The Manor,False,408,2015-11-16,True,32,candidate_launched,128.8,launched
+1677970,Railroad Corporation 2,False,407,2024-10-21,True,99,candidate_launched,21.5,launched
+1210800,Rum &amp; Gun,False,407,2020-05-01,True,24,candidate_launched,75.2,launched
+929060,Road to Eden,False,407,2019-02-28,True,38,candidate_launched,89.3,launched
+1568620,MetaPhysical,False,407,2021-10-28,True,12,candidate_launched,57.3,launched
+1206600,Almighty: Kill Your Gods,False,404,2021-05-05,True,100,candidate_launched,63.1,launched
+589320,Catch a Lover,False,402,2017-07-24,True,99,candidate_launched,108.5,launched
+1646580,Project Demigod,True,401,2021-10-08,True,0,candidate_still_in_ea,57.9,still_in_ea
+1311570,Desecrators,False,400,2021-03-26,True,6,candidate_launched,64.4,launched
+300260,Planetoid Pioneers,False,400,2016-04-15,True,15,candidate_launched,123.8,launched
+1075140,Super Friends Party,True,399,2026-08-04,True,0,candidate_still_in_ea,0.0,still_in_ea
+512160,Volleying,False,398,2017-10-17,True,3,candidate_launched,105.7,launched
+464100,Codex of Victory,False,398,2017-03-16,True,15,candidate_launched,112.8,launched
+338530,Affected Zone Tactics,False,398,2015-11-17,True,11,candidate_launched,128.7,launched
+2082350,Vectorio,False,397,2023-08-18,True,100,candidate_launched,35.6,launched
+2075580,Under A New Sun,True,397,2023-11-13,True,0,candidate_still_in_ea,32.7,still_in_ea
+246940,Lords of the Black Sun,False,395,2014-09-12,True,84,candidate_launched,142.9,launched
+903730,AXIOM SOCCER,True,394,2019-04-11,True,0,candidate_still_in_ea,87.9,still_in_ea
+891430,Rogue Heist,True,391,2019-08-21,True,0,candidate_still_in_ea,83.6,still_in_ea
+600460,Dustwind,False,391,2017-11-29,True,78,candidate_launched,104.3,launched
+3384440,Call of Clans,False,390,2025-04-07,True,95,candidate_launched,15.9,launched
+2094070,Quest Master,False,388,2024-05-29,True,100,candidate_launched,26.2,launched
+1674820,Boxing GO,False,387,2022-03-29,True,60,candidate_launched,52.3,launched
+640700,Narvas,True,387,2020-06-04,True,0,candidate_still_in_ea,74.1,still_in_ea
+617850,Jaws Of Extinction™,True,386,2019-05-23,True,0,candidate_still_in_ea,86.5,still_in_ea
+719200,The Wall,False,385,2018-11-02,True,95,candidate_launched,93.2,launched
+926540,Prime &amp; Load : 1776,False,384,2020-04-25,True,97,candidate_launched,75.4,launched
+2375530,Descenders Next,True,384,2025-07-21,True,0,candidate_still_in_ea,12.5,still_in_ea
+2154270,Pixel Starships 2,False,382,2025-08-27,True,100,candidate_launched,11.3,launched
+876900,Climb,False,381,2018-06-20,True,100,candidate_launched,97.6,launched
+1575710,AutoChess of Gensokyo,True,381,2021-08-28,True,0,candidate_still_in_ea,59.3,still_in_ea
+3484640,ReCharge RC: High Voltage,False,381,2025-07-18,True,100,candidate_launched,12.6,launched
+792200,Dynast.io,False,380,2023-08-31,True,70,candidate_launched,35.2,launched
+2350020,Bombergrounds: Classic,False,379,2023-04-20,True,100,candidate_launched,39.6,launched
+655740,Tallowmere 2: Curse of the Kittens,False,379,2020-12-04,True,100,candidate_launched,68.1,launched
+200150,Battle Chess: Game of Kings™,False,377,2015-12-11,True,38,candidate_launched,127.9,launched
+436230,Detached,False,377,2017-05-18,True,51,candidate_launched,110.7,launched
+1222210,Extremely Realistic Siege Warfare Simulator,False,375,2022-09-08,True,89,candidate_launched,46.9,launched
+1714900,First Dwarf,False,375,2024-06-19,True,100,candidate_launched,25.5,launched
+657090,Robothorium,False,374,2018-06-07,True,71,candidate_launched,98.0,launched
+2094600,Nowhere: Mysterious Artifacts,False,374,2023-08-17,True,71,candidate_launched,35.6,launched
+1142810,Toasterball,False,373,2020-01-15,True,24,candidate_launched,78.7,launched
+295670,Hive Jump,False,372,2017-01-18,True,71,candidate_launched,114.7,launched
+338820,Retro Commander,False,371,2023-11-24,True,50,candidate_launched,32.4,launched
+454140,First Person Tennis - The Real Tennis Simulator,True,370,2016-12-06,True,0,candidate_still_in_ea,116.1,still_in_ea
+2392280,TDS - Tower Defense Strategy,True,369,2024-08-21,True,0,candidate_still_in_ea,23.5,still_in_ea
+1219480,Poly Squad,True,369,2021-02-13,True,0,candidate_still_in_ea,65.7,still_in_ea
+297470,Shadows of War,False,368,2014-12-29,True,28,candidate_launched,139.3,launched
+1781750,Fly Dangerous,True,368,2022-05-24,True,0,candidate_still_in_ea,50.5,still_in_ea
+868150,Takelings House Party,True,368,2019-07-25,True,0,candidate_still_in_ea,84.5,still_in_ea
+762560,ManaRocks,True,368,2020-05-29,True,0,candidate_still_in_ea,74.3,still_in_ea
+1570730,Super Totally Ultimate Dad Showdown,False,367,2021-05-09,True,64,candidate_launched,63.0,launched
+451600,CounterAttack: Uprising,False,365,2016-04-21,True,16,candidate_launched,123.6,launched
+1676380,Kingdom of Atham: Crown of the Champions,False,365,2024-01-12,True,52,candidate_launched,30.8,launched
+1902880,Tales of Yore,False,365,2023-08-08,True,99,candidate_launched,35.9,launched
+431770,Rivalry,True,365,2016-01-22,True,0,candidate_still_in_ea,126.5,still_in_ea
+2539910,XF Extreme Formula,True,365,2024-06-11,True,0,candidate_still_in_ea,25.8,still_in_ea
+1739070,Coin Cascade,False,365,2022-04-08,True,81,candidate_launched,52.0,launched
+1054340,Logic World,False,364,2021-10-22,True,100,candidate_launched,57.5,launched
+3148160,Dragon Song Tavern: Cozy &amp; Adventurous,False,364,2025-05-29,True,99,candidate_launched,14.2,launched
+1386650,ZCREW,False,363,2020-12-17,True,46,candidate_launched,67.6,launched
+906930,LEAP,False,363,2022-06-01,True,100,candidate_launched,50.2,launched
+2639420,Fairytale Fables,True,359,2023-12-23,True,0,candidate_still_in_ea,31.4,still_in_ea
+531270,The Art of Fight | 4vs4 Fast-Paced FPS,False,359,2017-02-17,True,98,candidate_launched,113.7,launched
+4375230,Three Kingdoms:BOND,True,359,2026-07-14,True,0,candidate_still_in_ea,0.7,still_in_ea
+1384320,Grapple Tournament,False,357,2023-12-23,True,49,candidate_launched,31.4,launched
+1080010,Witchtastic,False,357,2020-07-21,True,32,candidate_launched,72.6,launched
+2175780,Dominance,False,356,2023-01-12,True,100,candidate_launched,42.8,launched
+600120,Life Forge - Reborn ORPG,True,356,2018-11-26,True,0,candidate_still_in_ea,92.4,still_in_ea
+1374580,Dirge,False,356,2024-02-01,True,5,candidate_launched,30.1,launched
+3997970,Camelot Unchained,True,355,2026-06-02,True,0,candidate_still_in_ea,2.1,still_in_ea
+746940,Nippon Marathon,True,355,2018-02-16,True,0,candidate_still_in_ea,101.7,still_in_ea
+653120,RockShot,False,354,2018-06-04,True,100,candidate_launched,98.1,launched
+1343620,Nemesis: Distress,True,354,2022-06-15,True,0,candidate_still_in_ea,49.7,still_in_ea
+1332760,Nienix: Cosmic Warfare,False,353,2022-01-28,True,38,candidate_launched,54.3,launched
+2790700,SWAPMEAT,False,351,2025-10-21,True,80,candidate_launched,9.4,launched
+1079230,Himno - The Silent Melody,True,351,2021-10-20,True,0,candidate_still_in_ea,57.5,still_in_ea
+877850,Tribe XR | DJ Academy,True,351,2019-03-25,True,0,candidate_still_in_ea,88.5,still_in_ea
+1261180,Rebirth Online,True,351,2020-08-04,True,0,candidate_still_in_ea,72.1,still_in_ea
+489240,Exile to Death,False,350,2018-06-01,True,27,candidate_launched,98.2,launched
+466980,Can't Drive This,False,350,2016-09-26,True,100,candidate_launched,118.4,launched
+1481440,Guardians Frontline,False,349,2021-02-26,True,39,candidate_launched,65.3,launched
+215550,Zombie Playground™,False,349,2016-10-31,True,34,candidate_launched,117.2,launched
+2292370,PlayM2M,True,349,2025-03-28,True,0,candidate_still_in_ea,16.3,still_in_ea
+1203370,Survival Classic,False,348,2020-02-19,True,60,candidate_launched,77.6,launched
+1815530,Dungeon Defenders: Going Rogue,False,347,2022-03-29,True,100,candidate_launched,52.3,launched
+868080,Golf Galore,False,347,2018-07-13,True,15,candidate_launched,96.9,launched
+2503220,Karting Superstars,True,347,2023-09-13,True,0,candidate_still_in_ea,34.7,still_in_ea
+660920,The Warhorn,True,345,2019-01-29,True,0,candidate_still_in_ea,90.3,still_in_ea
+1469690,Drift King,True,344,2021-08-23,True,0,candidate_still_in_ea,59.5,still_in_ea
+3225420,Recharge: Room Games,False,343,2025-07-28,True,100,candidate_launched,12.2,launched
+2686580,Trinity Survivors,False,343,2024-01-30,True,100,candidate_launched,30.2,launched
+1868410,Movie Night,True,342,2022-01-27,True,0,candidate_still_in_ea,54.3,still_in_ea
+1870320,World Seed,False,341,2022-05-17,True,41,candidate_launched,50.7,launched
+371510,DELTAZEAL,False,341,2015-10-16,True,21,candidate_launched,129.8,launched
+1066180,Crisis Brigade 2 reloaded,True,341,2020-06-08,True,0,candidate_still_in_ea,74.0,still_in_ea
+551700,Gunheart,False,341,2017-07-31,True,98,candidate_launched,108.3,launched
+3201910,RailGods of Hysterra,False,341,2025-05-07,True,100,candidate_launched,14.9,launched
+2943670,Night Club Simulator,True,340,2025-07-30,True,0,candidate_still_in_ea,12.2,still_in_ea
+1518440,MakerKing,True,340,2021-08-18,True,0,candidate_still_in_ea,59.6,still_in_ea
+345010,Ascent - The Space Game,True,339,2016-04-12,True,0,candidate_still_in_ea,123.9,still_in_ea
+873220,SurvivalZ Battlegrounds,True,338,2018-06-16,True,0,candidate_still_in_ea,97.8,still_in_ea
+2215910,MetaBall - Multiplayer Basketball,False,337,2024-03-08,True,85,candidate_launched,28.9,launched
+1431780,The Black Heart,False,337,2020-10-22,True,47,candidate_launched,69.5,launched
+1702180,Goat's Tale (Classic),False,336,2022-01-17,True,15,candidate_launched,54.6,launched
+1790340,Lil Splody: Look Out Below!,True,334,2022-06-20,True,0,candidate_still_in_ea,49.6,still_in_ea
+1074630,Call Of Unity,False,332,2019-05-11,True,60,candidate_launched,86.9,launched
+742460,Marble Skies,True,331,2017-12-16,True,0,candidate_still_in_ea,103.7,still_in_ea
+2116260,Relic Dudes,True,331,2023-02-03,True,0,candidate_still_in_ea,42.0,still_in_ea
+362400,Regimental Chess,True,330,2015-04-29,True,0,candidate_still_in_ea,135.4,still_in_ea
+3019850,Fishing Grind,True,330,2024-10-31,True,0,candidate_still_in_ea,21.1,still_in_ea
+2506820,Demonsomnia,False,329,2024-08-13,True,100,candidate_launched,23.7,launched
+2343930,Eyes of War,False,328,2023-06-15,True,100,candidate_launched,37.7,launched
+458830,Snooker Nation Championship,True,328,2016-04-27,True,0,candidate_still_in_ea,123.4,still_in_ea
+2276850,The Voidness - Lidar Horror Survival Game,False,327,2023-04-07,True,100,candidate_launched,40.0,launched
+668430,VRacer Hoverbike,True,325,2018-04-13,True,0,candidate_still_in_ea,99.8,still_in_ea
+1608470,Warstride Challenges,False,325,2022-04-19,True,100,candidate_launched,51.6,launched
+377260,Unearned Bounty,False,325,2018-08-22,True,99,candidate_launched,95.5,launched
+3224910,Nexus Station,True,325,2025-01-30,True,0,candidate_still_in_ea,18.1,still_in_ea
+3082170,Skeleton Hell,True,325,2024-07-25,True,0,candidate_still_in_ea,24.3,still_in_ea
+3491280,Bouncy Escape,True,325,2025-03-07,True,0,candidate_still_in_ea,16.9,still_in_ea
+363530,Robot Arena III,False,325,2016-06-20,True,88,candidate_launched,121.6,launched
+1761900,EXOME,True,324,2022-12-16,True,0,candidate_still_in_ea,43.7,still_in_ea
+541930,Panoptic,False,324,2019-05-16,True,22,candidate_launched,86.8,launched
+1363360,Noch,False,323,2021-05-19,True,63,candidate_launched,62.6,launched
+673190,All-Star Fruit Racing,False,323,2017-09-04,True,34,candidate_launched,107.1,launched
+664090,Eternity Warriors VR,True,323,2017-09-18,True,0,candidate_still_in_ea,106.7,still_in_ea
+217120,Waves 2: Notorious,False,322,2015-12-16,True,9,candidate_launched,127.8,launched
+434510,Formicide,False,322,2017-06-12,True,14,candidate_launched,109.9,launched
+299420,CubeGun,True,321,2014-05-21,True,0,candidate_still_in_ea,146.7,still_in_ea
+2939600,Tower Networking Inc.,False,321,2025-07-30,True,100,candidate_launched,12.2,launched
+1546930,Angry Angry Shark,False,320,2022-01-02,True,38,candidate_launched,55.1,launched
+799500,SurvivalZ,True,318,2018-02-19,True,0,candidate_still_in_ea,101.6,still_in_ea
+1355780,Crushed,False,317,2020-11-23,True,32,candidate_launched,68.4,launched
+355400,Diesel Guns,False,317,2016-09-22,True,28,candidate_launched,118.5,launched
+4134600,EverRail,True,315,2026-07-20,True,0,candidate_still_in_ea,0.5,still_in_ea
+2408920,Sons Of The Dream Forest,False,315,2023-05-22,True,6,candidate_launched,38.5,launched
+1007740,Refight:The Last Warship,True,315,2019-03-14,True,0,candidate_still_in_ea,88.8,still_in_ea
+752910,Cookies vs. Claus,True,315,2017-12-03,True,0,candidate_still_in_ea,104.2,still_in_ea
+725100,Exoblast,False,315,2022-01-31,True,16,candidate_launched,54.2,launched
+468070,90 Minute Fever - Online Football (Soccer) Manager,True,314,2023-09-01,True,0,candidate_still_in_ea,35.1,still_in_ea
+251210,IHF Handball Challenge 12,True,314,2014-03-20,True,0,candidate_still_in_ea,148.7,still_in_ea
+2268560,Zombie Survival Game Online,False,314,2023-12-20,True,100,candidate_launched,31.5,launched
+783240,Die pig die,False,314,2018-05-23,True,100,candidate_launched,98.5,launched
+2234020,Iso Racer,False,313,2023-05-12,True,100,candidate_launched,38.8,launched
+454070,Boundel: The Second Era,False,312,2016-11-14,True,94,candidate_launched,116.8,launched
+909380,Traditional Chinese Medicine Simulator,False,312,2021-07-29,True,86,candidate_launched,60.3,launched
+1297790,Sunday Rivals,True,312,2020-08-06,True,0,candidate_still_in_ea,72.0,still_in_ea
+467760,Trapper's Delight,False,311,2016-07-19,True,24,candidate_launched,120.7,launched
+1586750,Two Strikes,False,310,2021-05-31,True,47,candidate_launched,62.2,launched
+2354570,Realm of Simplicity MMORPG,True,310,2025-01-23,True,0,candidate_still_in_ea,18.4,still_in_ea
+397160,Aurora Dusk: Steam Age,False,310,2016-04-28,True,33,candidate_launched,123.4,launched
+691390,Alchemage,False,310,2017-09-15,True,75,candidate_launched,106.8,launched
+2400960,SolForge Fusion,False,310,2024-04-16,True,78,candidate_launched,27.6,launched
+3922920,PONE,True,308,2025-10-22,True,0,candidate_still_in_ea,9.4,still_in_ea
+244410,Supreme Ruler 1936,True,308,2014-05-09,True,0,candidate_still_in_ea,147.1,still_in_ea
+1133500,Overthrown,False,306,2024-12-05,True,100,candidate_launched,20.0,launched
+907310,World of Myths,True,306,2019-05-30,True,0,candidate_still_in_ea,86.3,still_in_ea
+1886120,Voice of Chernobyl,False,306,2022-09-18,True,80,candidate_launched,46.6,launched
+488430,Galaxy in Turmoil,True,305,2020-05-23,True,0,candidate_still_in_ea,74.5,still_in_ea
+1753400,Visite virtuelle de l'Assemblée nationale,False,305,2025-07-29,True,18,candidate_launched,12.2,launched
+566530,Mass Exodus Redux,False,304,2017-05-04,True,51,candidate_launched,111.2,launched
+1430970,Astatos,False,304,2021-12-17,True,100,candidate_launched,55.7,launched
+1818180,The RPG Engine,False,302,2023-09-08,True,64,candidate_launched,34.9,launched
+1565890,RaceLeague,False,301,2022-07-26,True,100,candidate_launched,48.4,launched
+1219590,HEAT REBORN,True,301,2021-05-08,True,0,candidate_still_in_ea,63.0,still_in_ea
+1369770,MannaRites,False,300,2020-10-24,True,44,candidate_launched,69.4,launched
+1887020,Robber Knight,False,300,2022-07-22,True,100,candidate_launched,48.5,launched
+1769270,Spikair Volleyball,True,300,2023-02-06,True,0,candidate_still_in_ea,41.9,still_in_ea
+1187330,Tower Tag,True,299,2020-05-28,True,0,candidate_still_in_ea,74.3,still_in_ea
+1546280,Mad Pack,False,299,2022-02-10,True,97,candidate_launched,53.8,launched
+411480,BATTLECREW™ Space Pirates,True,297,2017-07-10,True,0,candidate_still_in_ea,109.0,still_in_ea
+2152990,Dinogen Online,False,296,2023-03-04,True,100,candidate_launched,41.1,launched
+2055500,Repetendium,True,296,2022-11-04,True,0,candidate_still_in_ea,45.0,still_in_ea
+2520870,Love In The Dark,False,295,2023-09-28,True,27,candidate_launched,34.3,launched
+577410,Derpy pirates!,False,295,2018-10-26,True,40,candidate_launched,93.4,launched
+837400,Burndown,False,295,2018-05-28,True,18,candidate_launched,98.4,launched
+1460750,Landflix Odyssey,True,295,2020-11-13,True,0,candidate_still_in_ea,68.8,still_in_ea
+263920,Tales of Zestiria,True,294,2015-10-16,True,0,candidate_still_in_ea,129.8,still_in_ea
+1101400,Spookyard,True,294,2020-11-07,True,0,candidate_still_in_ea,68.9,still_in_ea
+3919360,Dig Island,True,293,2026-01-30,True,0,candidate_still_in_ea,6.1,still_in_ea
+2406180,Knights Within,False,293,2024-05-15,True,100,candidate_launched,26.7,launched
+658160,ClickRaid,False,293,2017-07-27,True,64,candidate_launched,108.4,launched
+1343520,Survival: Lost Way,False,293,2021-02-04,True,90,candidate_launched,66.0,launched
+555050,Racket Fury: Table Tennis VR,False,291,2017-07-28,True,43,candidate_launched,108.4,launched
+590910,炎黄战纪之三国烽烟,False,290,2018-02-01,True,100,candidate_launched,102.2,launched
+1146940,I will eat you,False,290,2019-11-04,True,10,candidate_launched,81.1,launched
+1305310,Drox Operative 2,False,289,2020-06-01,True,45,candidate_launched,74.2,launched
+462940,Making History: The Second World War,False,289,2017-10-13,True,20,candidate_launched,105.8,launched
+3384090,Plastic Battlegrounds,True,288,2025-07-10,True,0,candidate_still_in_ea,12.8,still_in_ea
+1557580,DON'T LOOK AWAY,False,287,2022-10-16,True,100,candidate_launched,45.7,launched
+335700,Heavy Fire: Shattered Spear,True,287,2015-10-23,True,0,candidate_still_in_ea,129.5,still_in_ea
+397390,Tree of Savior (English Ver.),False,287,2016-03-25,True,23,candidate_launched,124.5,launched
+594490,Deadly Hunter VR,False,286,2017-06-20,True,42,candidate_launched,109.6,launched
+2541890,Abnormality,False,285,2024-10-28,True,86,candidate_launched,21.2,launched
+3179350,Long Drive North: Co-Op RV Simulator,False,285,2025-11-18,True,39,candidate_launched,8.5,launched
+584890,Stayin' Alive,False,285,2017-12-20,True,96,candidate_launched,103.6,launched
+495350,Woodle Tree 2: Worlds,False,284,2016-09-16,True,73,candidate_launched,118.7,launched
+330270,Warlocks vs Shadows,False,283,2015-08-19,True,2,candidate_launched,131.7,launched
+2126990,Lost World,False,283,2022-11-22,True,89,candidate_launched,44.5,launched
+332250,The Four Kings Casino and Slots,False,282,2015-05-29,True,59,candidate_launched,134.4,launched
+1756160,Unsafe Express,False,282,2021-11-18,True,100,candidate_launched,56.6,launched
+436530,Bullshot,True,282,2016-11-22,True,0,candidate_still_in_ea,116.5,still_in_ea
+1929230,Lost Lives,False,282,2025-08-29,True,66,candidate_launched,11.2,launched
+2735220,PolyZ,False,281,2024-10-05,True,33,candidate_launched,22.0,launched
+2274510,Hood Warfare,True,281,2023-01-26,True,0,candidate_still_in_ea,42.3,still_in_ea
+792570,BattleCON: Online,False,281,2018-09-03,True,100,candidate_launched,95.1,launched
+1293650,b 2,True,280,2020-05-15,True,0,candidate_still_in_ea,74.7,still_in_ea
+2593340,Wonderia,True,280,2026-07-23,True,0,candidate_still_in_ea,0.4,still_in_ea
+2183600,Kingdom Under Fire: A War of Heroes (GOLD Edition),True,280,2022-12-07,True,0,candidate_still_in_ea,44.0,still_in_ea
+923370,Cat Warfare,True,280,2020-02-26,True,0,candidate_still_in_ea,77.3,still_in_ea
+458660,The Slimeking's Tower,False,279,2021-08-21,True,38,candidate_launched,59.5,launched
+2216600,Korea Dynasty (조선메타실록),False,279,2023-01-15,True,100,candidate_launched,42.7,launched
+1273480,The Highrise,False,279,2023-05-29,True,100,candidate_launched,38.3,launched
+2192900,Knock'Em Out,False,278,2024-04-04,True,78,candidate_launched,28.0,launched
+1147130,Countryballs: Modern Ballfare,False,278,2021-06-11,True,52,candidate_launched,61.9,launched
+690980,TO4: Tactical Operations,True,278,2020-06-11,True,0,candidate_still_in_ea,73.9,still_in_ea
+1677980,Unmatched: Digital Edition,False,277,2022-09-15,True,67,candidate_launched,46.7,launched
+1970020,Touhou Fairy Knockout ~ One fairy to rule them all,False,277,2023-07-28,True,100,candidate_launched,36.3,launched
+435490,Pierhead Arcade,True,277,2016-09-22,True,0,candidate_still_in_ea,118.5,still_in_ea
+3245050,Hockey Super Squad,False,277,2024-11-15,True,100,candidate_launched,20.6,launched
+512020,Box Maze,False,277,2017-03-03,True,22,candidate_launched,113.2,launched
+1721350,Horror Night,False,276,2022-02-04,True,78,candidate_launched,54.0,launched
+2158270,Quatro!,False,275,2024-04-11,True,56,candidate_launched,27.8,launched
+1333410,Kings Of Streets,True,275,2020-06-19,True,0,candidate_still_in_ea,73.6,still_in_ea
+942200,Rocket Boots Mania,False,275,2018-11-29,True,27,candidate_launched,92.3,launched
+1707540,Escape From Monster,False,275,2021-08-19,True,52,candidate_launched,59.6,launched
+521950,GunHero,False,275,2017-04-18,True,99,candidate_launched,111.7,launched
+1244910,My Supermarket,True,274,2023-07-22,True,0,candidate_still_in_ea,36.5,still_in_ea
+939000,Crisis VRigade,False,274,2018-09-27,True,43,candidate_launched,94.4,launched
+2202590,Shape Shifter: Formations,False,273,2023-09-29,True,97,candidate_launched,34.2,launched
+1033410,Fragsurf,True,272,2020-06-07,True,0,candidate_still_in_ea,74.0,still_in_ea
+237350,Frozen Cortex,False,272,2015-02-19,True,45,candidate_launched,137.6,launched
+1955030,SCP: EVENT CLASSIFIED,True,272,2024-04-26,True,0,candidate_still_in_ea,27.3,still_in_ea
+2443760,Forklift Racer,True,271,2023-07-17,True,0,candidate_still_in_ea,36.6,still_in_ea
+1679010,BLOCKPOST MOBILE,True,270,2024-02-18,True,0,candidate_still_in_ea,29.6,still_in_ea
+446540,Smash Up,True,270,2016-10-12,True,0,candidate_still_in_ea,117.9,still_in_ea
+838410,Tabletop Playground,True,269,2020-05-15,True,0,candidate_still_in_ea,74.7,still_in_ea
+608110,Null Vector,False,268,2018-05-03,True,97,candidate_launched,99.2,launched
+922620,Kingshunt,False,267,2022-11-03,True,100,candidate_launched,45.1,launched
+1561960,Yield! Fall of Rome,False,266,2025-01-20,True,100,candidate_launched,18.5,launched
+416040,Doom &amp; Destiny Advanced,False,265,2016-11-15,True,7,candidate_launched,116.8,launched
+640340,Serious Sam: Tormental,False,265,2019-04-02,True,50,candidate_launched,88.2,launched
+324190,ChargeShot,True,265,2015-09-18,True,0,candidate_still_in_ea,130.7,still_in_ea
+3223160,Apocalypse Express,True,264,2025-06-17,True,0,candidate_still_in_ea,13.6,still_in_ea
+1724030,Eyes of Hellfire,False,264,2025-08-27,True,100,candidate_launched,11.3,launched
+2765460,Star Trek Legends,True,264,2024-02-20,True,0,candidate_still_in_ea,29.5,still_in_ea
+661920,Claybook,False,263,2017-10-18,True,78,candidate_launched,105.7,launched
+2083800,Trimurti Online,True,262,2024-02-13,True,0,candidate_still_in_ea,29.7,still_in_ea
+2400880,Haunted Investigation,True,261,2023-05-07,True,0,candidate_still_in_ea,39.0,still_in_ea
+3602720,CashGrab: Refunded,False,260,2025-06-20,True,100,candidate_launched,13.5,launched
+1304090,Cannibal Crossing,False,260,2020-10-23,True,51,candidate_launched,69.5,launched
+1206290,Goblin Summer Camp,True,259,2020-04-30,True,0,candidate_still_in_ea,75.2,still_in_ea
+1198740,Colony Siege,False,258,2020-06-19,True,47,candidate_launched,73.6,launched
+1005400,Star Drift Evolution,False,258,2020-10-30,True,95,candidate_launched,69.2,launched
+1748750,Crystarise,False,257,2023-04-28,True,100,candidate_launched,39.3,launched
+346460,Vector 36,False,257,2017-01-25,True,68,candidate_launched,114.4,launched
+1974220,Eden Island,False,257,2022-10-01,True,80,candidate_launched,46.2,launched
+619310,Ways of History,True,256,2017-09-01,True,0,candidate_still_in_ea,107.2,still_in_ea
+428190,Tasty Planet: Back for Seconds,False,256,2016-03-29,True,10,candidate_launched,124.4,launched
+588120,Capsa,False,255,2022-02-03,True,17,candidate_launched,54.0,launched
+1277500,Skeletal Avenger,False,255,2021-04-28,True,61,candidate_launched,63.3,launched
+2162070,Ooglians,False,255,2022-12-15,True,100,candidate_launched,43.7,launched
+865980,BOSSGARD,False,255,2019-04-18,True,72,candidate_launched,87.7,launched
+411980,TY the Tasmanian Tiger 3,False,254,2018-03-19,True,40,candidate_launched,100.7,launched
+922450,4X-Galaxy 无主之地：银河,False,254,2018-12-21,True,83,candidate_launched,91.6,launched
+381750,RC Simulation 2.0,False,254,2015-11-24,True,51,candidate_launched,128.5,launched
+1704080,Bean Stalker,False,254,2021-09-20,True,55,candidate_launched,58.5,launched
+2505020,MEAT Veterans,False,253,2023-09-18,True,100,candidate_launched,34.6,launched
+3151710,Ace Squared,True,252,2024-12-02,True,0,candidate_still_in_ea,20.1,still_in_ea
+495580,Divided We Fall: Play For Free,False,251,2017-10-02,True,41,candidate_launched,106.2,launched
+1459960,Glitchpunk,False,251,2021-08-11,True,99,candidate_launched,59.8,launched
+2072640,Inout,False,251,2023-04-14,True,82,candidate_launched,39.8,launched
+1427760,RoboSquare,True,251,2021-12-31,True,0,candidate_still_in_ea,55.2,still_in_ea
+2220870,Fantasy Survivors,False,250,2023-04-28,True,25,candidate_launched,39.3,launched
+922630,Mortal Royale,True,250,2018-12-17,True,0,candidate_still_in_ea,91.7,still_in_ea
+682450,Garrison: Archangel,True,249,2018-03-28,True,0,candidate_still_in_ea,100.4,still_in_ea
+1081670,Fitforce,True,248,2021-01-29,True,0,candidate_still_in_ea,66.2,still_in_ea
+1308950,Party Arena: Board Game Battler,True,248,2020-06-08,True,0,candidate_still_in_ea,74.0,still_in_ea
+1766160,Line Strike,True,247,2022-02-02,True,0,candidate_still_in_ea,54.1,still_in_ea
+2176900,Tales of Fablecraft,False,247,2024-07-23,True,100,candidate_launched,24.4,launched
+3354260,TCG Multiplayer Card Shop Simulator,False,247,2025-06-18,True,100,candidate_launched,13.6,launched
+1786010,AETHERIS,False,246,2023-05-17,True,71,candidate_launched,38.7,launched
+875760,Furious Seas,True,246,2018-07-16,True,0,candidate_still_in_ea,96.7,still_in_ea
+3363030,TDP4: Team Battle,True,246,2024-12-31,True,0,candidate_still_in_ea,19.1,still_in_ea
+1476350,Brain Meltdown - Into Despair,True,245,2020-12-01,True,0,candidate_still_in_ea,68.2,still_in_ea
+1271090,Let's Cook Together,False,245,2020-04-04,True,13,candidate_launched,76.1,launched
+369080,Age of Survival,True,245,2025-01-05,True,0,candidate_still_in_ea,19.0,still_in_ea
+2941660,Archean,False,245,2024-05-16,True,90,candidate_launched,26.7,launched
+2455040,AsHes,True,245,2024-06-24,True,0,candidate_still_in_ea,25.4,still_in_ea
+372750,Girl Amazon Survival,True,245,2016-08-17,True,0,candidate_still_in_ea,119.7,still_in_ea
+2358040,Magisterium: Fantasy Craft,False,245,2023-11-13,True,95,candidate_launched,32.7,launched
+1530450,Scramble: Battle of Britain,True,244,2024-10-30,True,0,candidate_still_in_ea,21.2,still_in_ea
+1234620,Tinker Racers,False,244,2020-03-01,True,56,candidate_launched,77.2,launched
+1509230,Prop Hunt,False,243,2021-01-22,True,24,candidate_launched,66.5,launched
+1306570,Epic Jump!,True,241,2022-06-25,True,0,candidate_still_in_ea,49.4,still_in_ea
+1693000,Within the Range,True,241,2021-07-28,True,0,candidate_still_in_ea,60.3,still_in_ea
+458520,Wrath of Anna,False,241,2016-09-21,True,64,candidate_launched,118.6,launched
+2598980,Oh Baby Kart,True,241,2024-10-08,True,0,candidate_still_in_ea,21.9,still_in_ea
+1404090,Trivia Tricks,False,241,2020-10-27,True,28,candidate_launched,69.3,launched
+1149710,Tesla Force,False,240,2020-08-05,True,42,candidate_launched,72.1,launched
+357650,Project Explore,True,240,2017-08-11,True,0,candidate_still_in_ea,107.9,still_in_ea
+1077530,SUPER BUILD,True,240,2019-08-31,True,0,candidate_still_in_ea,83.2,still_in_ea
+3295810,Remote Reaper: FPV Combat Drone Simulator,True,239,2025-04-04,True,0,candidate_still_in_ea,16.0,still_in_ea
+3075800,Subterranauts,False,239,2024-10-21,True,100,candidate_launched,21.5,launched
+564210,GUNGUNGUN,False,239,2017-04-14,True,2,candidate_launched,111.8,launched
+1300700,Kingdom Wars 4,False,239,2020-07-09,True,48,candidate_launched,72.9,launched
+437610,SQUIDS FROM SPACE,True,238,2017-06-16,True,0,candidate_still_in_ea,109.7,still_in_ea
+1574870,USC: Counterforce,False,238,2023-07-25,True,54,candidate_launched,36.4,launched
+576480,Drunken Fight Simulator,True,238,2017-01-17,True,0,candidate_still_in_ea,114.7,still_in_ea
+2022360,Heal &amp; Hurt,True,237,2023-02-24,True,0,candidate_still_in_ea,41.4,still_in_ea
+977510,Dwarfs Delight,False,237,2024-03-07,True,97,candidate_launched,29.0,launched
+1646790,Striving for Light,False,237,2021-11-29,True,10,candidate_launched,56.2,launched
+595960,Pinball Wicked,False,236,2025-05-26,True,14,candidate_launched,14.3,launched
+518040,Volleyball Unbound - Pro Beach Volleyball,True,236,2016-12-16,True,0,candidate_still_in_ea,115.7,still_in_ea
+349510,Hanako: Honor &amp; Blade,False,236,2021-09-15,True,14,candidate_launched,58.7,launched
+339440,Critical Annihilation,True,236,2016-02-12,True,0,candidate_still_in_ea,125.9,still_in_ea
+496250,Paddle Up,True,236,2016-08-24,True,0,candidate_still_in_ea,119.5,still_in_ea
+1142220,Bloodgeon,False,235,2019-11-01,True,8,candidate_launched,81.2,launched
+659500,A Mining Game,True,235,2019-07-20,True,0,candidate_still_in_ea,84.6,still_in_ea
+436260,Ultimate Arena FPS,True,234,2016-09-05,True,0,candidate_still_in_ea,119.1,still_in_ea
+777470,The Infinite Black 2,False,234,2022-10-29,True,99,candidate_launched,45.3,launched
+366290,Carp Fishing Simulator,False,234,2015-04-28,True,35,candidate_launched,135.4,launched
+411120,Galaxy Admirals,False,234,2017-01-17,True,60,candidate_launched,114.7,launched
+484350,VRZ: Torment,False,233,2017-05-18,True,94,candidate_launched,110.7,launched
+3725630,WISE GUYS,True,232,2026-02-09,True,0,candidate_still_in_ea,5.8,still_in_ea
+1851610,River Tails: Stronger Together,False,232,2023-03-16,True,28,candidate_launched,40.7,launched
+351630,Minigolf VR,True,232,2016-03-29,True,0,candidate_still_in_ea,124.3,still_in_ea
+3122990,Elder Legacy: Survival,False,231,2024-10-25,True,100,candidate_launched,21.3,launched
+3068670,Anode Heart: Layer Null,False,230,2024-12-12,True,48,candidate_launched,19.7,launched
+591790,BREACH IT,True,230,2017-05-30,True,0,candidate_still_in_ea,110.3,still_in_ea
+3576880,Dreadline: Net Quota,False,230,2025-06-16,True,100,candidate_launched,13.6,launched
+2391900,Champion Shift,False,228,2024-02-29,True,71,candidate_launched,29.2,launched
+2960490,Royal Revolt Survivors,False,227,2025-10-15,True,100,candidate_launched,9.6,launched
+2438970,Cascadia,False,226,2024-10-30,True,64,candidate_launched,21.2,launched
+863400,Feud,True,226,2024-02-23,True,0,candidate_still_in_ea,29.4,still_in_ea
+2800450,Planetaries,True,226,2024-08-15,True,0,candidate_still_in_ea,23.7,still_in_ea
+2272630,PEAK.53,False,226,2024-07-17,True,97,candidate_launched,24.6,launched
+2321880,Spire Horizon,False,225,2023-07-28,True,99,candidate_launched,36.3,launched
+3023190,Deduce Together,True,225,2024-08-13,True,0,candidate_still_in_ea,23.7,still_in_ea
+357670,Home Improvisation: Furniture Sandbox,False,225,2016-07-28,True,34,candidate_launched,120.4,launched
+1054690,Dreadlands,False,224,2020-03-10,True,45,candidate_launched,76.9,launched
+697630,WARMA,False,224,2018-06-19,True,84,candidate_launched,97.6,launched
+1821680,The Adventurer's Domain Online,False,224,2023-01-26,True,100,candidate_launched,42.3,launched
+1785120,Field Clashers,False,224,2022-03-25,True,47,candidate_launched,52.4,launched
+454180,CrazyCars3D,True,224,2016-06-14,True,0,candidate_still_in_ea,121.8,still_in_ea
+3681820,MoonMiners,False,223,2025-07-17,True,100,candidate_launched,12.6,launched
+1791910,Silent Rain,False,223,2023-10-20,True,99,candidate_launched,33.5,launched
+722670,Chinese Chess,True,223,2017-10-20,True,0,candidate_still_in_ea,105.6,still_in_ea
+438320,Rush Rover,False,222,2016-12-13,True,33,candidate_launched,115.8,launched
+603350,Don't cut your hand,False,222,2017-05-31,True,19,candidate_launched,110.3,launched
+965080,江湖求生 Ganghood Survival,True,222,2018-11-13,True,0,candidate_still_in_ea,92.8,still_in_ea
+1901810,Nearly Dead - Live and Let Die,False,222,2023-02-24,True,58,candidate_launched,41.4,launched
+1475460,3 Minute Heroes,False,222,2020-12-03,True,78,candidate_launched,68.1,launched
+1440360,Tanks in Labyrinth,False,221,2023-02-03,True,4,candidate_launched,42.1,launched
+2379810,Bazaar Simulator,False,221,2025-01-30,True,100,candidate_launched,18.1,launched
+321830,Khet 2.0,True,220,2014-09-30,True,0,candidate_still_in_ea,142.3,still_in_ea
+2467300,Hoofobia,True,220,2024-02-24,True,0,candidate_still_in_ea,29.4,still_in_ea
+1986390,Passed Out,True,219,2023-03-13,True,0,candidate_still_in_ea,40.8,still_in_ea
+414120,Hover Junkers,True,219,2016-04-05,True,0,candidate_still_in_ea,124.1,still_in_ea
+1149400,The Yellow King,True,219,2020-02-06,True,0,candidate_still_in_ea,78.0,still_in_ea
+2072980,Final Knight,False,218,2025-01-13,True,99,candidate_launched,18.7,launched
+1584690,TrinityS,False,217,2022-04-28,True,85,candidate_launched,51.3,launched
+946880,World of Football,True,217,2024-11-20,True,0,candidate_still_in_ea,20.5,still_in_ea
+1037080,Strip Fighter ZERO,True,216,2021-03-16,True,0,candidate_still_in_ea,64.7,still_in_ea
+408960,Zombasite,False,216,2016-08-23,True,42,candidate_launched,119.5,launched
+1028800,Survival Camp,True,216,2019-12-31,True,0,candidate_still_in_ea,79.2,still_in_ea
+1124160,VR Giants,True,215,2023-06-14,True,0,candidate_still_in_ea,37.7,still_in_ea
+403590,Klepto,True,215,2016-06-30,True,0,candidate_still_in_ea,121.3,still_in_ea
+779100,Daemonical,False,215,2018-08-15,True,100,candidate_launched,95.8,launched
+2613950,Bloody Knuckles Street Boxing,False,215,2024-06-03,True,59,candidate_launched,26.1,launched
+710170,The Broken Seal,False,214,2017-11-08,True,7,candidate_launched,105.0,launched
+2475010,Pizza Bandit,True,214,2025-08-25,True,0,candidate_still_in_ea,11.3,still_in_ea
+1946300,Bargue,False,213,2022-06-17,True,100,candidate_launched,49.7,launched
+3124850,D.O.T. Defence,False,213,2025-04-15,True,99,candidate_launched,15.7,launched
+1699860,Parkour Tag,False,212,2021-11-01,True,44,candidate_launched,57.2,launched
+1011290,Hotel R'n'R,True,212,2019-08-29,True,0,candidate_still_in_ea,83.3,still_in_ea
+1151130,Dark Chess,False,212,2022-10-14,True,52,candidate_launched,45.7,launched
+1313580,CryptoClickers: Crypto Idle Game,True,211,2021-06-19,True,0,candidate_still_in_ea,61.6,still_in_ea
+760630,Tennis Elbow Manager 2,True,210,2019-06-07,True,0,candidate_still_in_ea,86.0,still_in_ea
+585190,A Gummy's Life,False,209,2017-04-10,True,13,candidate_launched,111.9,launched
+704020,Master Arena,False,208,2022-05-27,True,11,candidate_launched,50.3,launched
+2506440,Trolddom,False,208,2024-10-30,True,31,candidate_launched,21.2,launched
+1451680,Game Master Engine,True,208,2021-03-09,True,0,candidate_still_in_ea,65.0,still_in_ea
+1980390,Neighbor Fight,False,207,2022-06-09,True,56,candidate_launched,49.9,launched
+954280,3dSen VR,False,206,2019-06-04,True,34,candidate_launched,86.1,launched
+589370,Fur Fun,True,206,2017-05-05,True,0,candidate_still_in_ea,111.1,still_in_ea
+420550,Super Arcade Football,False,206,2016-04-04,True,51,candidate_launched,124.2,launched
+2249550,WarLeague,False,206,2023-01-04,True,100,candidate_launched,43.0,launched
+1001040,Glorious Companions,False,206,2019-06-04,True,32,candidate_launched,86.1,launched
+1257800,Hats and Hand Grenades,False,205,2022-11-11,True,59,candidate_launched,44.8,launched
+389050,Pocket Rumble,True,205,2016-02-01,True,0,candidate_still_in_ea,126.2,still_in_ea
+3814570,凡人修仙传奇,False,205,2026-01-30,True,100,candidate_launched,6.1,launched
+3907880,Thunder Spikes Volleyball,True,204,2025-10-30,True,0,candidate_still_in_ea,9.2,still_in_ea
+264000,Son of Nor,False,204,2015-04-28,True,38,candidate_launched,135.4,launched
+1677570,Scelestum,True,203,2022-10-30,True,0,candidate_still_in_ea,45.2,still_in_ea
+1347630,Key To Heaven,False,203,2024-11-29,True,16,candidate_launched,20.2,launched
+1745680,Odd Remedy,False,202,2024-11-07,True,72,candidate_launched,20.9,launched
+1322100,Battle Bands: Rock &amp; Roll Deckbuilder,True,202,2022-03-17,True,0,candidate_still_in_ea,52.7,still_in_ea
+1020910,Sefirot Shards,True,201,2023-07-22,True,0,candidate_still_in_ea,36.5,still_in_ea
+1739650,Dimensions: Dreadnought Architect,False,201,2023-02-02,True,100,candidate_launched,42.1,launched
+1865010,HG Adventure,False,201,2023-08-04,True,100,candidate_launched,36.1,launched
+3385960,BattleGroupVR2,False,201,2025-11-07,True,61,candidate_launched,8.9,launched
+2443090,Deathless: Survivors,False,200,2024-07-29,True,100,candidate_launched,24.2,launched
+387060,Earth Overclocked,False,200,2015-12-04,True,9,candidate_launched,128.2,launched

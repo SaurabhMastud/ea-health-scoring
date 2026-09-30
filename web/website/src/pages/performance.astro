@@ -1,0 +1,240 @@
+---
+import Base from '../layouts/Base.astro';
+import { getModel, getMeta, num, int, pct, score, scorePct } from '../lib/data';
+
+const model = getModel();
+const meta = getMeta();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// the test-set-maximised cutoff this analysis rejected, read off the threshold curve rather
+// than quoted from the corpus it was first caught on
+const peakPrecision = model.threshold_curve.reduce((a, b) => (b.precision > a.precision ? b : a));
+
+// Headline comparison. Categorical slots are semantically pinned across the whole
+// convention: blue is always our model, orange is always the baseline we claim to beat.
+const bars = [
+  { label: 'Community text → retention', sub: 'the cross-instrument model', value: model.headline.auc, colour: 'var(--series-health-score)' },
+  { label: 'Positive-review share alone', sub: 'the free baseline any studio already has', value: model.headline.baseline_auc, colour: 'var(--series-review-baseline)' },
+  { label: 'Chance', sub: 'a coin flip', value: 0.5, colour: 'var(--series-dummy)' },
+];
+const BW = 660, BROW = 52, BPAD_L = 220, BPAD_R = 56;
+const BH = bars.length * BROW + 26;
+const bScale = (v: number) => ((v - 0.4) / (1.0 - 0.4)) * (BW - BPAD_L - BPAD_R);
+
+// Calibration. One series against a 45° reference — the reference is muted, not
+// a second data colour.
+const CW = 460, CH = 300, CPAD = 46;
+const cx = (v: number) => CPAD + v * (CW - CPAD * 2);
+const cy = (v: number) => CH - CPAD - v * (CH - CPAD * 2);
+const calPath = model.calibration.map((p, i) => `${i ? 'L' : 'M'}${cx(p.predicted).toFixed(1)},${cy(p.observed).toFixed(1)}`).join(' ');
+---
+<Base title="Results" section="results"
+      description="What the model predicts, what it does not, and where the free baseline beats it.">
+
+  <h1>Results</h1>
+  <p class="prose secondary">
+    Everything on this page is measured on a temporal test split — trained on games that left
+    early access earlier, tested on games that left later. The test set was touched once.
+  </p>
+
+  <!-- ------------------------------------------------------------ headline -->
+  <section class="panel">
+    <h2 class="panel-title">The one genuine prediction</h2>
+    <p class="panel-sub">{model.headline.claim}</p>
+
+    <svg class="chart" viewBox={`0 0 ${BW} ${BH}`} role="img"
+         aria-label={`Area under the ROC curve: cross-instrument model ${model.headline.auc}, positive-review baseline ${model.headline.baseline_auc}, chance 0.5.`}>
+      {bars.map((b, i) => {
+        const y = i * BROW + 8;
+        const w = Math.max(bScale(b.value), 2);
+        return (
+          <g>
+            <text x={BPAD_L - 14} y={y + 15} text-anchor="end" class="data-label" style="fill:var(--ink-primary);font-weight:600">{b.label}</text>
+            <text x={BPAD_L - 14} y={y + 30} text-anchor="end" class="axis-label">{b.sub}</text>
+            {/* zero-baseline caveat: the axis starts at 0.4 because 0.5 is the
+                floor of the measure, and that truncation is stated on the axis */}
+            <rect x={BPAD_L} y={y + 4} width={w} height="20" fill={b.colour} rx="4" />
+            <text x={BPAD_L + w + 8} y={y + 19} class="data-label tabular">{b.value.toFixed(3)} · {scorePct(b.value)}</text>
+          </g>
+        );
+      })}
+      <line x1={BPAD_L} y1={BH - 16} x2={BW - BPAD_R} y2={BH - 16} class="axis-line" />
+      <text x={BPAD_L} y={BH - 3} class="axis-label">0.40</text>
+      <text x={BW - BPAD_R} y={BH - 3} text-anchor="end" class="axis-label">1.00 — AUC-ROC, axis truncated at 0.40</text>
+    </svg>
+
+    <p class="note" style="margin-top:1rem">
+      <strong>Gain +{model.headline.gain.toFixed(3)} ({scorePct(model.headline.gain)} of the scale), 95% CI
+      [{model.headline.gain_ci[0].toFixed(3)}, {model.headline.gain_ci[1].toFixed(3)}].</strong>
+      {' '}{model.headline.why_it_matters}
+    </p>
+  </section>
+
+  <!-- --------------------------------------------------------- all models -->
+  <h2>Every model, including the ones that do not support the claim</h2>
+  <p class="prose secondary">
+    Three of these numbers are much larger than the headline and <strong>none of them are
+    predictions</strong>. Where a predictor and an outcome are measured with the same
+    instrument — early-access toxicity against post-launch toxicity, for instance — a high AUC
+    mostly says the trait persisted, not that it was forecast. They are shown because omitting
+    them would be the dishonest choice, and labelled because presenting them as performance
+    would be worse.
+  </p>
+
+  <div class="scroll-x">
+    <table>
+      <caption>Temporal test split. "Association" rows share a measurement instrument between predictor and outcome.</caption>
+      <thead>
+        <tr>
+          <th>Model</th><th class="n">Features</th><th class="n">AUC-ROC</th>
+          <th class="n">AUC-PR</th><th class="n">Brier</th><th>Reading</th>
+        </tr>
+      </thead>
+      <tbody>
+        {model.runs.map((r) => (
+          <tr class={r.is_prediction ? 'highlight' : undefined}>
+            <td>{r.run}</td>
+            <td class="n">{r.n_features}</td>
+            <td class="n"><strong>{score(r.test_auc_roc, 4)}</strong></td>
+            <td class="n">{score(r.test_auc_pr, 4)}</td>
+            <td class="n">{num(r.test_brier, 4)}</td>
+            <td>{r.is_prediction
+              ? <span class="tag tag-pred">Prediction</span>
+              : <span class="tag">Association</span>}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ---------------------------------------------------- negative result -->
+  <section class="panel" style="margin-top:2rem">
+    <h2 class="panel-title">Where the model loses</h2>
+    <p class="panel-sub">{model.negative_result.claim}</p>
+    <div class="figures">
+      <div><div class="fig-value">{scorePct(model.negative_result.baseline_auc)}</div>
+        <div class="fig-label">positive-review share alone</div></div>
+      <div><div class="fig-value muted-value">{scorePct(model.negative_result.full_model_auc)}</div>
+        <div class="fig-label">full model, 19 features</div></div>
+    </div>
+    <p style="margin-top:1rem;max-width:66ch">{model.negative_result.detail}</p>
+  </section>
+
+  <!-- ---------------------------------------------------------- calibration -->
+  <div class="grid-2" style="margin-top:2.5rem">
+    <section class="panel">
+      <h2 class="panel-title">Calibration</h2>
+      <p class="panel-sub">Predicted risk against what actually happened. The diagonal is perfect.</p>
+      <svg class="chart" viewBox={`0 0 ${CW} ${CH}`} role="img"
+           aria-label="Calibration curve of the cross-instrument model against a 45 degree reference line.">
+        <line x1={cx(0)} y1={cy(0)} x2={cx(1)} y2={cy(1)} stroke="var(--ink-axis)" stroke-width="1" stroke-dasharray="4 4" />
+        <line x1={CPAD} y1={CH - CPAD} x2={CW - CPAD} y2={CH - CPAD} class="axis-line" />
+        <line x1={CPAD} y1={CPAD} x2={CPAD} y2={CH - CPAD} class="axis-line" />
+        <path d={calPath} fill="none" stroke="var(--series-health-score)" stroke-width="2" stroke-linejoin="round" />
+        {model.calibration.map((p) => (
+          <circle cx={cx(p.predicted)} cy={cy(p.observed)} r="4"
+                  fill="var(--series-health-score)" stroke="var(--ink-chart-surface)" stroke-width="2" />
+        ))}
+        <text x={CPAD} y={CH - 14} class="axis-label">0</text>
+        <text x={CW - CPAD} y={CH - 14} text-anchor="end" class="axis-label">1 — predicted risk</text>
+        <text x={CPAD - 8} y={CH - CPAD} text-anchor="end" class="axis-label">0</text>
+        <text x={CPAD - 8} y={CPAD + 4} text-anchor="end" class="axis-label">1</text>
+        <text x={CPAD - 8} y={CPAD - 12} text-anchor="start" class="axis-label">observed rate</text>
+      </svg>
+      <details class="table-view">
+        <summary>Table view</summary>
+        <div>
+          <table>
+            <thead><tr><th class="n">Predicted</th><th class="n">Observed</th></tr></thead>
+            <tbody>{model.calibration.map((p) => (
+              <tr><td class="n">{num(p.predicted, 4)}</td><td class="n">{num(p.observed, 4)}</td></tr>
+            ))}</tbody>
+          </table>
+        </div>
+      </details>
+      <p class="note" style="margin-top:0.75rem">
+        The curve sits above the diagonal at low predicted risk: the model is
+        <em>under</em>-confident there, flagging fewer games than actually turn out at risk.
+      </p>
+    </section>
+
+    <section class="panel" id="survivorship">
+      <h2 class="panel-title">Survivorship</h2>
+      <p class="panel-sub">Games that never left early access, scored with the same instrument.</p>
+      <table>
+        <thead><tr><th>Cohort</th><th class="n">Games</th><th class="n">Median health</th></tr></thead>
+        <tbody>
+          {model.survivorship.rows.map((r) => (
+            <tr>
+              <td>{r.cohort === 'launched' ? 'Left early access' : 'Never left early access'}</td>
+              <td class="n">{int(r.n)}</td>
+              <td class="n">{num(r.median_health, 2)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p style="margin-top:1rem;max-width:60ch">{model.survivorship.detail}</p>
+    </section>
+  </div>
+
+  <!-- ------------------------------------------------------------- bands -->
+  <h2>Where the band cutoffs come from</h2>
+  <p class="prose secondary">
+    At Risk is below <strong>{model.bands.at_risk_below}</strong>, Healthy is
+    {' '}<strong>{model.bands.healthy_at_or_above}</strong> and above. Source:
+    {' '}{model.bands.cutoff_source}. At that pre-committed cutoff the bands reach
+    {' '}<strong>precision {score(model.bands.test_precision, 3)}</strong> and recall
+    {' '}{score(model.bands.test_recall, 3)} against a base rate of {score(model.bands.test_base_rate, 3)}.
+  </p>
+  <p class="prose secondary">
+    An earlier version of this analysis picked the cutoff by maximising precision on the test
+    set. The curve above still shows why that fails: precision peaks at
+    {' '}<strong>{score(peakPrecision.precision, 3)}</strong> by flagging only
+    {' '}{int(peakPrecision.flagged)} games, everything below a score of
+    {' '}{int(peakPrecision.health_below)}. Perfect, and worthless — the cutoff was chosen on the
+    same games it was then scored against, and it leaves the rest of the corpus unbanded. That was
+    caught in review and replaced with training terciles. The honest number is the one above.
+  </p>
+
+  <details class="table-view">
+    <summary>Precision and recall at every threshold</summary>
+    <div class="scroll-x">
+      <table>
+        <thead><tr><th class="n">Flag below</th><th class="n">Games flagged</th><th class="n">Precision</th><th class="n">Recall</th></tr></thead>
+        <tbody>{model.threshold_curve.map((t) => (
+          <tr><td class="n">{t.health_below}</td><td class="n">{int(t.flagged)}</td>
+            <td class="n">{scorePct(t.precision)}</td><td class="n">{scorePct(t.recall)}</td></tr>
+        ))}</tbody>
+      </table>
+    </div>
+  </details>
+
+  <!-- ------------------------------------------------------- limitations -->
+  <h2 id="limitations">Limitations</h2>
+  <p class="prose secondary">Measured, not hedged. Each of these came out of the analysis, not a template.</p>
+  <div class="stack">
+    {model.limitations.map((l) => (
+      <div class="lim">
+        <h3 style="margin:0 0 0.25rem;font-size:0.9375rem">{l.limitation}</h3>
+        <p class="secondary" style="margin:0">{l.detail}</p>
+      </div>
+    ))}
+  </div>
+
+  <p class="footnote" style="margin-top:2rem">
+    Full method on the <a href={`${base}/methodology/`}>methodology page</a>.
+    Corpus and provenance on the <a href={`${base}/data/`}>data page</a>.
+  </p>
+</Base>
+
+<style>
+  .figures { display: flex; flex-wrap: wrap; gap: 2.5rem; }
+  .fig-value { font-size: 2rem; font-weight: 600; line-height: 1; }
+  .muted-value { color: var(--ink-secondary); }
+  .fig-label { font-size: var(--size-subtitle); color: var(--ink-secondary); margin-top: 0.35rem; max-width: 26ch; }
+  .tag { font-size: var(--size-tick); color: var(--ink-secondary); border: 1px solid var(--ink-axis); border-radius: 999px; padding: 0.1rem 0.5rem; white-space: nowrap; }
+  .tag-pred { border-color: var(--series-health-score); color: var(--ink-primary); font-weight: 600; }
+  tr.highlight td { background: var(--ink-chart-surface); }
+  .lim { border-left: 2px solid var(--ink-axis); padding-left: 0.875rem; }
+  .lim p { max-width: 74ch; font-size: var(--size-subtitle); }
+</style>

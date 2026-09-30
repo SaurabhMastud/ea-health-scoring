@@ -1,0 +1,134 @@
+---
+import { num, type GameDetail } from '../lib/data';
+
+interface Props { game: GameDetail; }
+const { game } = Astro.props;
+
+const TOP_N = 6;
+const shap = game.shap?.slice(0, TOP_N) ?? [];
+
+// Layout. Diverging from a centre line: "hurts" right in red, "helps" left in
+// blue. Polarity is pinned by Design.md §2.3 and by the sign check in the build —
+// a POSITIVE shap value pushes the game towards at-risk, so it renders red.
+// Values live in a fixed right-hand column rather than riding the bar ends. A
+// "helps" bar grows leftward, so its end-label used to land on top of the
+// feature name whenever the bar was long — measured collision, not a hypothetical.
+const W = 680, ROW = 34, PAD_T = 26, PAD_B = 30;
+const LABEL_W = 236, VALUE_W = 54, GUTTER = 14;
+const AXIS_W = W - LABEL_W - VALUE_W - GUTTER * 2;
+const CX = LABEL_W + GUTTER + AXIS_W / 2;
+const VALUE_X = W - 4;
+const H = PAD_T + shap.length * ROW + PAD_B;
+const maxAbs = Math.max(...shap.map((s) => Math.abs(s.value)), 0.1);
+const scale = (v: number) => (v / maxAbs) * (AXIS_W / 2 - 6);
+const BAR_H = 16;
+
+// The sentence this panel exists to produce.
+const worst = shap.find((s) => s.health_effect === 'hurts');
+const best = shap.find((s) => s.health_effect === 'helps');
+---
+<section class="panel" aria-labelledby="shap-title">
+  <h2 class="panel-title" id="shap-title">What's driving this score</h2>
+  <p class="panel-sub">
+    Each bar is one signal's contribution to this game's retention risk, in log-odds.
+  </p>
+
+  {shap.length > 0 ? (
+    <>
+      {worst && best && (
+        <p class="verdict">
+          The biggest drag is <strong>{worst.label.toLowerCase()}</strong>; the strongest thing
+          working in this game's favour is <strong>{best.label.toLowerCase()}</strong>.
+        </p>
+      )}
+
+      <svg class="chart" viewBox={`0 0 ${W} ${H}`} role="img"
+           aria-label={`Contribution of each signal to retention risk. ${shap.map((s) => `${s.label} ${s.health_effect}`).join('; ')}.`}>
+        {/* centre line at zero — the midpoint must read as "nothing", so it is
+            neutral axis ink, never a hue */}
+        <line x1={CX} y1={PAD_T - 8} x2={CX} y2={H - PAD_B + 4} class="axis-line" />
+
+        {shap.map((s, i) => {
+          const y = PAD_T + i * ROW;
+          const len = Math.abs(scale(s.value));
+          const hurts = s.health_effect === 'hurts';
+          const x = hurts ? CX : CX - len;
+          const fill = hurts ? 'var(--diverging-high)' : 'var(--diverging-low)';
+          return (
+            <g class="shap-row" data-label={s.label} data-value={s.value.toFixed(3)} data-effect={s.health_effect}>
+              {/* generous invisible hit area — the bar itself is 16px and hover
+                  targets should not require precision */}
+              <rect x={0} y={y - 2} width={W} height={ROW} fill="transparent" />
+              <text x={LABEL_W} y={y + BAR_H / 2 + 4} text-anchor="end" class="axis-label" style="fill:var(--ink-secondary)">
+                {s.label.length > 32 ? s.label.slice(0, 31) + '…' : s.label}
+              </text>
+              <rect x={x} y={y} width={Math.max(len, 1)} height={BAR_H} fill={fill} rx="3" />
+              <text x={VALUE_X} y={y + BAR_H / 2 + 4} text-anchor="end" class="data-label tabular">
+                {s.value > 0 ? '+' : ''}{s.value.toFixed(2)}
+              </text>
+            </g>
+          );
+        })}
+
+        <text x={CX - 10} y={H - 10} text-anchor="end" class="axis-label">← helps retention</text>
+        <text x={CX + 10} y={H - 10} text-anchor="start" class="axis-label">hurts retention →</text>
+      </svg>
+
+      <div class="legend">
+        <span class="legend-item"><span class="legend-key" style="background:var(--diverging-low)"></span> Pushes towards retained</span>
+        <span class="legend-item"><span class="legend-key" style="background:var(--diverging-high)"></span> Pushes towards at-risk</span>
+      </div>
+
+      <details class="table-view">
+        <summary>Table view</summary>
+        <div class="scroll-x">
+          <table>
+            <caption>SHAP contribution to predicted retention risk, log-odds. Positive pushes towards at-risk.</caption>
+            <thead><tr><th>Signal</th><th class="n">Contribution</th><th>Effect</th></tr></thead>
+            <tbody>
+              {(game.shap ?? []).map((s) => (
+                <tr>
+                  <td>{s.label}</td>
+                  <td class="n">{s.value > 0 ? '+' : ''}{num(s.value, 3)}</td>
+                  <td>{s.health_effect === 'hurts' ? 'Hurts retention' : 'Helps retention'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <p class="note" style="margin-top:1rem">
+        A positive contribution pushes this game <em>towards</em> being flagged at risk. The model
+        being explained predicts retention risk, so the sign reads the opposite way round from
+        the score itself.
+      </p>
+    </>
+  ) : (
+    <p class="empty">{game.shap_unavailable_reason}</p>
+  )}
+</section>
+
+<style>
+  .verdict { font-size: 1.0625rem; line-height: 1.5; margin: 0 0 1.25rem; max-width: 62ch; }
+  .shap-row rect[fill="transparent"] { cursor: default; }
+</style>
+
+<script>
+  // Hover/focus tooltip. Enhances only — every value is already in the table view
+  // and printed at the bar end, so nothing is gated behind a pointer.
+  const tip = document.getElementById('tip');
+  if (tip) {
+    document.querySelectorAll<SVGGElement>('.shap-row').forEach((row) => {
+      const show = (e: MouseEvent) => {
+        const effect = row.dataset.effect === 'hurts' ? 'pushes towards at-risk' : 'pushes towards retained';
+        tip.innerHTML = `<b>${row.dataset.label}</b><br>${row.dataset.value} log-odds — ${effect}`;
+        tip.setAttribute('data-show', '');
+        tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 280) + 'px';
+        tip.style.top = e.clientY + 14 + 'px';
+      };
+      row.addEventListener('mousemove', show);
+      row.addEventListener('mouseleave', () => tip.removeAttribute('data-show'));
+    });
+  }
+</script>

@@ -1,0 +1,122 @@
+# every path, threshold and colour i use lives here. the notebooks, the site and
+# the streamlit app all read this file, so a hex written anywhere else is a bug
+
+seed: 42
+collection_date: 2026-08-01        # the day i snapshotted playtime_forever. persistence is
+                                   # right-censored at this date, and by game age
+
+paths:
+  raw_reviews: data/raw/reviews
+  checkpoints: data/raw/_checkpoints
+  clean_reviews: data/processed/interim/reviews
+  toxicity: data/processed/interim/toxicity
+  game_features: data/processed/game_features.parquet
+  game_scores: data/processed/game_scores.parquet
+  figures: figures
+  tables: data/processed/tables
+  mlruns: data/ml_runs/mlruns
+  mlflow_db: data/ml_runs/mlflow.db   # mlflow 3.x dropped the file store, so sqlite
+
+# my modelling frame, defined once and used everywhere including the power statement.
+# counts are english cleaned reviews, because that is what i actually measure on.
+# cohorts split on timestamp_created against derived_launch_timestamp, never on the
+# steam flag and never on the collector's window label
+frame:
+  min_ea_reviews: 200
+  min_post_launch_reviews: 50
+  post_launch_window_days: 180
+  cohort: launched
+  survivorship_cohort: still_in_ea
+  n_expected: 545
+
+split:
+  method: temporal
+  key: launch_date
+  train_fraction: 0.70
+  cv_folds: 5
+
+outcomes:
+  retention_at_risk_quantile: 0.3333    # bottom tercile of post_prp_median_hours
+  toxicity_at_risk_quantile: 0.6667     # top tercile of post_toxicity_mean
+  # i fit these on training data only and apply them unchanged to test
+
+statistics:
+  alpha: 0.05
+  n_hypotheses: 3                        # RQ1, RQ2, RQ3
+  alpha_corrected: 0.01667               # Bonferroni
+
+# health_score_model.ipynb overwrites these from calibration and says so when it does
+bands:
+  at_risk_below: 43.6
+  healthy_at_or_above: 57.2
+  calibrated: true
+
+# series 1 to 3 have fixed meanings, so a reader who learns a colour once keeps it
+palette:
+  series:
+    health_score:    {light: "#2a78d6", dark: "#3987e5"}   # full model
+    review_baseline: {light: "#eb6834", dark: "#d95926"}   # EA positive-review-%
+    dummy:           {light: "#1baf7a", dark: "#199e70"}   # chance floor
+    boosting:        {light: "#eda100", dark: "#c98500"}
+    spare_magenta:   {light: "#e87ba4", dark: "#d55181"}
+    spare_green:     {light: "#008300", dark: "#008300"}
+    spare_violet:    {light: "#4a3aa7", dark: "#9085e9"}
+    spare_red:       {light: "#e34948", dark: "#e66767"}
+  status:
+    at_risk:          "#d03b3b"
+    needs_attention:  "#fab219"
+    healthy:          "#0ca30c"
+  status_marker:      {at_risk: "triangle", needs_attention: "circle", healthy: "check"}
+  sequential_blue: ["#cde2fb", "#86b6ef", "#3987e5", "#2a78d6", "#1c5cab", "#0d366b"]
+  diverging:
+    low: "#2a78d6"
+    mid: {light: "#f0efec", dark: "#383835"}
+    high: "#e34948"
+  ink:
+    chart_surface:   {light: "#fcfcfb", dark: "#1a1a19"}
+    page_plane:      {light: "#f9f9f7", dark: "#0d0d0d"}
+    primary:         {light: "#0b0b0b", dark: "#ffffff"}
+    secondary:       {light: "#52514e", dark: "#c3c2b7"}
+    muted:           {light: "#898781", dark: "#898781"}
+    gridline:        {light: "#e1e0d9", dark: "#2c2c2a"}
+    axis:            {light: "#c3c2b7", dark: "#383835"}
+
+figures:
+  latex_text_width_inches: 5.5
+  dpi: 300
+
+# an explicit list, never "every column minus the outcome". that is how a leaking
+# column comes back when i add a feature later
+predictors:
+  engagement:
+    - pct_never_played_again
+    - prp_median_hours
+    - prp_p75_hours
+    - playtime_at_review_median_hours
+    - ea_duration_days
+    - n_ea_reviews_collected
+    - ea_reviews_per_day_collected
+    - ea_positive_share
+    - ea_positive_share_trend
+  community:
+    - ea_toxicity_mean
+    - ea_toxicity_share_above_half
+    - ea_sentiment_mean
+    - ea_censored_rate
+    - ea_toxicity_trend
+  covariates:
+    - ea_author_games_owned_median
+    - ea_author_review_count_median
+    - ea_share_edited
+
+# a higher raw value means worse health, so i flip the sign before building the score
+lower_is_better:
+  - pct_never_played_again
+  - ea_toxicity_mean
+  - ea_toxicity_share_above_half
+  - ea_censored_rate
+  - ea_toxicity_trend
+
+health_score:
+  equal_weights: {engagement: 0.5, community: 0.5}
+  scale: [0, 100]

@@ -1,0 +1,178 @@
+---
+import { num, int, type GameDetail, type TrajectoryPoint } from '../lib/data';
+
+interface Props { game: GameDetail; }
+const { game } = Astro.props;
+const traj = game.trajectory;
+const pts = traj?.points ?? [];
+
+// Two measures on different scales — toxicity is a 0–1 rate, persistence is
+// hours. A dual axis would invent a correlation between them, so they get two
+// stacked plots sharing one x-axis instead (dataviz anti-patterns, entry 1).
+const MIN_POINTS_FOR_TREND = 3;
+const W = 680, PLOT_H = 92, GAP = 34, PAD_L = 46, PAD_R = 14, PAD_T = 12;
+const AXIS_H = 26;
+const innerW = W - PAD_L - PAD_R;
+const H = PAD_T + PLOT_H * 2 + GAP + AXIS_H;
+
+type Series = {
+  key: keyof TrajectoryPoint;
+  title: string;
+  unit: string;
+  colour: string;
+  fmt: (v: number) => string;
+};
+const series: Series[] = [
+  { key: 'toxicity_mean', title: 'Review toxicity', unit: 'mean score, 0–1', colour: 'var(--series-health-score)', fmt: (v) => v.toFixed(3) },
+  { key: 'persistence_median_hours', title: 'Post-Review Persistence', unit: 'median hours played after reviewing', colour: 'var(--series-health-score)', fmt: (v) => `${v.toFixed(0)} h` },
+];
+
+const x = (i: number) => PAD_L + (pts.length <= 1 ? innerW / 2 : (i / (pts.length - 1)) * innerW);
+
+function build(s: Series, top: number) {
+  const vals = pts.map((p) => p[s.key] as number | null);
+  const present = vals.filter((v): v is number => v !== null);
+  // A trend needs more than a couple of points. Games whose reviews are spread
+  // too thin (Train Frontier Classic has 1 usable bucket out of 49) otherwise
+  // render a near-empty plot with degenerate axis ticks — 0.003 against 0.003 —
+  // which is technically accurate and reads as a broken chart. Say so instead.
+  if (present.length < MIN_POINTS_FOR_TREND) return null;
+  const lo = Math.min(...present), hi = Math.max(...present);
+  // pad the range so a flat series does not sit on the axis line, but never pad
+  // below zero: both of these measures are non-negative, and an axis reading
+  // "-17 h" or "-0.016 toxicity" states something impossible
+  const span = hi - lo || Math.abs(hi) || 1;
+  const min = Math.max(0, lo - span * 0.15), max = hi + span * 0.15;
+  const y = (v: number) => top + PLOT_H - ((v - min) / (max - min)) * PLOT_H;
+
+  // nulls break the line rather than interpolating across them — drawing
+  // through a gap would fabricate data we explicitly declined to report
+  const segments: string[] = [];
+  let run: string[] = [];
+  vals.forEach((v, i) => {
+    if (v === null) { if (run.length > 1) segments.push(run.join(' ')); run = []; return; }
+    run.push(`${run.length ? 'L' : 'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`);
+  });
+  if (run.length > 1) segments.push(run.join(' '));
+
+  const lastIdx = vals.map((v, i) => (v === null ? -1 : i)).filter((i) => i >= 0).pop()!;
+  const firstIdx = vals.findIndex((v) => v !== null);
+  return { segments, y, min, max, lastIdx, firstIdx, vals, lo, hi };
+}
+
+const built = series.map((s, i) => ({ s, top: PAD_T + i * (PLOT_H + GAP), b: build(s, PAD_T + i * (PLOT_H + GAP)) }));
+const anyData = built.some((b) => b.b !== null);
+// full year, not '2-digit': "Jul 19" reads as the 19th of July, and these spans
+// are years long
+const dateLabel = (d: string) => new Date(d).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+---
+<section class="panel" aria-labelledby="traj-title">
+  <h2 class="panel-title" id="traj-title">Trajectory through early access</h2>
+  <p class="panel-sub">
+    {traj
+      ? `Each point is roughly ${Math.round(traj.bucket_days)} days of reviews, from ${dateLabel(traj.ea_start)} to ${dateLabel(traj.ea_end)}. Gaps are periods with too few reviews to average.`
+      : 'Not available for this game.'}
+  </p>
+
+  {anyData && traj ? (
+    <>
+      <svg class="chart" viewBox={`0 0 ${W} ${H}`} role="img"
+           aria-label={`Two stacked charts sharing a time axis: mean review toxicity and median post-review persistence across ${game.name}'s early-access period.`}>
+        {built.map(({ s, top, b }) => b && (
+          <g>
+            <text x={PAD_L} y={top - 1} class="data-label" style="font-weight:600;fill:var(--ink-primary)">{s.title}</text>
+            <text x={W - PAD_R} y={top - 1} text-anchor="end" class="axis-label">{s.unit}</text>
+
+            {/* hairline gridlines on one axis only, solid, one step off surface */}
+            <line x1={PAD_L} y1={top} x2={W - PAD_R} y2={top} class="gridline" />
+            <line x1={PAD_L} y1={top + PLOT_H} x2={W - PAD_R} y2={top + PLOT_H} class="axis-line" />
+
+            <text x={PAD_L - 8} y={top + 4} text-anchor="end" class="axis-label tabular">{s.fmt(b.max)}</text>
+            <text x={PAD_L - 8} y={top + PLOT_H + 3} text-anchor="end" class="axis-label tabular">{s.fmt(b.min)}</text>
+
+            {b.segments.map((d) => (
+              <path d={d} fill="none" stroke={s.colour} stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+            ))}
+
+            {/* end marker with a 2px surface ring so it stays legible over the line */}
+            {b.vals[b.lastIdx] !== null && (
+              <circle cx={x(b.lastIdx)} cy={b.y(b.vals[b.lastIdx] as number)} r="4"
+                      fill={s.colour} stroke="var(--ink-chart-surface)" stroke-width="2" />
+            )}
+            {/* label the endpoint only — never a number on every point */}
+            {b.vals[b.lastIdx] !== null && (
+              <text x={x(b.lastIdx) - 8} y={b.y(b.vals[b.lastIdx] as number) - 8} text-anchor="end" class="data-label">
+                {s.fmt(b.vals[b.lastIdx] as number)}
+              </text>
+            )}
+          </g>
+        ))}
+
+        <text x={PAD_L} y={H - 6} class="axis-label">{dateLabel(traj.ea_start)}</text>
+        <text x={W - PAD_R} y={H - 6} text-anchor="end" class="axis-label">{dateLabel(traj.ea_end)}</text>
+        <text x={PAD_L + innerW / 2} y={H - 6} text-anchor="middle" class="axis-label">early-access period →</text>
+      </svg>
+
+      <details class="table-view">
+        <summary>Table view ({pts.length} periods)</summary>
+        <div class="scroll-x" style="max-height:380px;overflow-y:auto">
+          <table>
+            <caption>Aggregates per period. Blank cells had fewer than 10 reviews.</caption>
+            <thead>
+              <tr>
+                <th>Period from</th><th class="n">Reviews</th><th class="n">Toxicity</th>
+                <th class="n">Persistence</th><th class="n">Positive</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pts.map((p) => (
+                <tr>
+                  <td class="tabular">{p.period_start}</td>
+                  <td class="n">{int(p.n_reviews)}</td>
+                  <td class="n">{p.toxicity_mean === null ? '—' : num(p.toxicity_mean, 3)}</td>
+                  <td class="n">{p.persistence_median_hours === null ? '—' : num(p.persistence_median_hours, 0) + ' h'}</td>
+                  <td class="n">{p.positive_share === null ? '—' : (p.positive_share * 100).toFixed(0) + '%'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </>
+  ) : traj ? (
+    <>
+      {/* the data exists, it is just too sparse to draw a line through. the
+          table still carries every period, so nothing is withheld */}
+      <p class="empty">
+        This game's reviews are spread too thinly across its early-access period to plot a
+        trend — only {pts.filter((p) => p.toxicity_mean !== null).length} of {pts.length} periods
+        had at least 10 reviews to average. The per-period counts are in the table below.
+      </p>
+      <details class="table-view">
+        <summary>Table view ({pts.length} periods)</summary>
+        <div class="scroll-x" style="max-height:380px;overflow-y:auto">
+          <table>
+            <caption>Aggregates per period. Blank cells had fewer than 10 reviews.</caption>
+            <thead>
+              <tr><th>Period from</th><th class="n">Reviews</th><th class="n">Toxicity</th>
+                <th class="n">Persistence</th><th class="n">Positive</th></tr>
+            </thead>
+            <tbody>
+              {pts.map((p) => (
+                <tr>
+                  <td class="tabular">{p.period_start}</td>
+                  <td class="n">{int(p.n_reviews)}</td>
+                  <td class="n">{p.toxicity_mean === null ? '—' : num(p.toxicity_mean, 3)}</td>
+                  <td class="n">{p.persistence_median_hours === null ? '—' : num(p.persistence_median_hours, 0) + ' h'}</td>
+                  <td class="n">{p.positive_share === null ? '—' : (p.positive_share * 100).toFixed(0) + '%'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </>
+  ) : (
+    <p class="empty">{game.trajectory_unavailable_reason ?? 'No trajectory available for this game.'}</p>
+  )}
+</section>

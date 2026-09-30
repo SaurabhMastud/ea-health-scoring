@@ -1,0 +1,95 @@
+---
+import { num, type GameDetail } from '../lib/data';
+
+interface Props { game: GameDetail; }
+const { game } = Astro.props;
+
+const rows = [
+  {
+    label: 'Engagement',
+    value: game.engagement,
+    what: 'Do players keep playing after they review? Persistence, review velocity, review-score trend.',
+  },
+  {
+    label: 'Community',
+    value: game.community,
+    what: 'How does the community talk to itself? Toxicity level and trend, sentiment, censored profanity.',
+  },
+];
+const available = game.engagement !== null && game.community !== null;
+---
+<section class="panel" aria-labelledby="components-title">
+  <h2 class="panel-title" id="components-title">Components</h2>
+  <p class="panel-sub">The two halves of the score, each 0–100. Equal weights.</p>
+
+  {available ? (
+    <div class="bars">
+      {rows.map((r) => (
+        <div class="bar-row">
+          <div class="bar-head">
+            <span class="bar-label">{r.label}</span>
+            {/* value sits at the tip, in ink not in the series colour */}
+            <span class="bar-value tabular">{num(r.value, 0)}</span>
+          </div>
+          {/* zero baseline always; track is a light step of the same hue so the
+              state reads across the whole bar */}
+          <div class="track" role="img" aria-label={`${r.label} ${num(r.value, 0)} out of 100`}>
+            <div class="fill" style={`width:${r.value}%`}></div>
+          </div>
+          <p class="bar-what">{r.what}</p>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <p class="empty">
+      This game never left early access, so it has no post-launch outcome to fit the component
+      split against. It still receives an overall score, which is what the survivorship analysis
+      compares across cohorts.
+    </p>
+  )}
+
+  {available && (
+    <details class="table-view">
+      <summary>Table view</summary>
+      <div>
+        <table>
+          <caption>Score components, 0–100</caption>
+          <thead><tr><th>Component</th><th class="n">Score</th></tr></thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr><td>{r.label}</td><td class="n">{num(r.value, 1)}</td></tr>
+            ))}
+            <tr><td><strong>Overall (equal weights)</strong></td><td class="n"><strong>{num(game.score, 1)}</strong></td></tr>
+            <tr><td>Overall (data-driven weights)</td><td class="n">{num(game.score_data_driven, 1)}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  )}
+
+  {game.score_data_driven !== null && (
+    <p class="note" style="margin-top:1rem">
+      Two weighting schemes are reported side by side, because neither is the single right
+      answer. <strong>Equal weights</strong> ({num(game.score, 1)}) treats engagement and community
+      as equally important. <strong>Data-driven weights</strong> ({num(game.score_data_driven, 1)})
+      uses coefficients fitted on training games only.
+    </p>
+  )}
+</section>
+
+<style>
+  .bars { display: grid; gap: 1.5rem; }
+  .bar-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
+  .bar-label { font-weight: 600; font-size: 0.9375rem; }
+  .bar-value { font-size: var(--size-stat); font-weight: 600; line-height: 1; }
+  .track {
+    height: 10px; border-radius: 999px; overflow: hidden;
+    background: var(--seq-0);
+  }
+  .fill {
+    height: 100%;
+    background: var(--series-health-score);
+    border-radius: 0 4px 4px 0; /* rounded data-end, square at the baseline */
+  }
+  .bar-what { font-size: var(--size-subtitle); color: var(--ink-secondary); margin: 0.5rem 0 0; max-width: 60ch; }
+</style>

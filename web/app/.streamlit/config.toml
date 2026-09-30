@@ -1,0 +1,16 @@
+# The theme is pinned, not detected.
+#
+# streamlit's `theme.base` reports what is CONFIGURED, while the browser renders
+# what prefers-color-scheme asks for. Reading the option to choose chart colours
+# therefore silently disagrees with the surface it paints on, which is how the
+# first version ended up drawing light-mode gridlines on a dark background.
+#
+# Pinning light makes the app deterministic on any machine, and matches the
+# report figures and the configuration-manual screenshots. No hex codes here:
+# chart colours come from config/settings.yaml, which is the only place a colour
+# is written in this project (Design.md 6).
+[theme]
+base = "light"
+
+[browser]
+gatherUsageStats = false

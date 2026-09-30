@@ -1,0 +1,64 @@
+---
+import BandChip from './BandChip.astro';
+import { int, pct, type GameDetail, type Meta } from '../lib/data';
+
+interface Props { game: GameDetail; meta: Meta; }
+const { game, meta } = Astro.props;
+
+const launched = game.cohort === 'launched';
+const eaStart = game.trajectory?.ea_start ?? null;
+const facts = [
+  game.n_ea_reviews !== null ? `${int(game.n_ea_reviews)} early-access reviews analysed` : null,
+  eaStart ? `Early access from ${new Date(eaStart).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}` : null,
+  launched && game.launch_date
+    ? `Left early access ${new Date(game.launch_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}`
+    : 'Never left early access',
+  game.english_share !== null ? `${pct(game.english_share)} of reviews in English` : null,
+].filter(Boolean) as string[];
+---
+<section class="hero panel" aria-labelledby="hero-score">
+  <div class="hero-top">
+    <div>
+      <h1 id="game-name">{game.name}</h1>
+      {game.developers.length > 0 && (
+        <p class="secondary" style="margin:0 0 0.75rem">{game.developers.join(', ')}</p>
+      )}
+      <ul class="facts">
+        {facts.map((f) => <li>{f}</li>)}
+      </ul>
+    </div>
+
+    <div class="hero-score">
+      {/* Exactly one hero figure per view, same sans as everything else,
+          proportional figures — tabular-nums would make it look loose. */}
+      <div class="score-value" id="hero-score">{game.score.toFixed(0)}</div>
+      <div class="score-scale muted">out of 100</div>
+      <BandChip band={game.band} />
+    </div>
+  </div>
+
+  {/* No confidence interval is shown because none was computed — bootstrap CIs
+      are future work. Stating that is honest; inventing a ± would not be. */}
+  <p class="note" style="margin-top:1.25rem">
+    <strong>How precise is this?</strong> The score has no confidence interval — interval
+    estimation is named as future work, not quietly omitted. Treat it as a rank among
+    {' '}{int(meta.corpus.n_games_scored)} games, not a precise measurement. The
+    {' '}{game.data_quality.length > 0 ? 'data-quality notes below' : 'method panel below'}
+    {' '}tell you how much weight this particular game's score can carry.
+  </p>
+</section>
+
+<style>
+  .hero { padding: 1.75rem; }
+  .hero-top { display: flex; gap: 2rem; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; }
+  .hero h1 { margin: 0 0 0.25rem; font-size: 1.75rem; }
+  .facts { list-style: none; margin: 0; padding: 0; color: var(--ink-secondary); font-size: var(--size-subtitle); }
+  .facts li { padding: 0.1rem 0; }
+  .hero-score { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem; }
+  .score-value { font-size: var(--size-hero); font-weight: 600; line-height: 1; letter-spacing: -0.03em; }
+  .score-scale { font-size: var(--size-subtitle); margin-bottom: 0.35rem; }
+  @media (max-width: 560px) {
+    .hero-top { flex-direction: column; }
+    .hero-score { align-items: flex-start; text-align: left; }
+  }
+</style>

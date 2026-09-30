@@ -1,0 +1,10 @@
+---
+import { BAND_META, type Band } from '../lib/data';
+
+interface Props { band: Band; }
+const { band } = Astro.props;
+const m = BAND_META[band];
+---
+{/* Colour + icon + word. Never a bare coloured dot — the amber band measures
+    1.79:1 against the light surface, so the word is what actually carries it. */}
+<span class="band" data-band={m.slug} data-icon={m.icon}>{band}</span>

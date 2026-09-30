@@ -1,0 +1,134 @@
+---
+import Base from '../layouts/Base.astro';
+import { getMeta, getGames, int, num, pct } from '../lib/data';
+
+const meta = getMeta();
+const games = getGames();
+const dq = meta.data_quality;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const withFlags = games.filter((g) => g.n_quality_flags > 0).length;
+const provenance = [
+  ['Reviews collected', int(meta.corpus.n_reviews_collected), 'Steam appreviews API, one pass, rate-limited and resumable'],
+  ['Games collected', int(meta.corpus.n_games_collected), 'Screened from the Steam catalogue for a documented early-access period'],
+  ['Games scored', int(meta.corpus.n_games_scored), 'Met the review-count floor and had usable text'],
+  ['Left early access', int(meta.corpus.n_launched), 'The modelling frame — these have a post-launch outcome'],
+  ['Never left early access', int(meta.corpus.n_died_in_early_access), 'The survivorship cohort — scored, but held out of the model'],
+  ['With a per-game explanation', int(meta.corpus.n_with_explanation), 'Temporal test split only, to avoid explaining a game to itself'],
+  ['English share of the corpus', pct(meta.corpus.english_share_overall), 'Only English text is scored for toxicity and sentiment'],
+];
+---
+<Base title="Data" section="data"
+      description="Where the data comes from, what was excluded, and what is published.">
+
+  <h1>Data &amp; provenance</h1>
+  <p class="prose secondary">
+    Everything here comes from Steam's public endpoints. No private telemetry, no scraping behind
+    a login, no personal data.
+  </p>
+
+  <div class="scroll-x">
+    <table>
+      <caption>Corpus as collected on {meta.collection_date}.</caption>
+      <thead><tr><th>Measure</th><th class="n">Value</th><th>Notes</th></tr></thead>
+      <tbody>
+        {provenance.map(([k, v, note]) => (
+          <tr><td><strong>{k}</strong></td><td class="n">{v}</td><td class="secondary">{note}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What is published, and what is not</h2>
+  <div class="grid-2">
+    <section class="panel">
+      <h3 class="panel-title" style="margin-top:0">Published</h3>
+      <ul class="secondary tight">
+        <li>Per-game scores, bands and component sub-scores</li>
+        <li>Aggregated features — persistence, toxicity and sentiment means and trends</li>
+        <li>Per-game SHAP attributions for the test split</li>
+        <li>Aggregated trajectories over the early-access period</li>
+        <li>Model metrics, calibration, threshold curves</li>
+        <li>The full collection and analysis pipeline as source</li>
+      </ul>
+    </section>
+    <section class="panel">
+      <h3 class="panel-title" style="margin-top:0">Deliberately not published</h3>
+      <ul class="secondary tight">
+        <li><strong>Raw review text.</strong> Steam's terms permit collecting it, not
+          redistributing it. The pipeline that rebuilds it is published instead.</li>
+        <li><strong>Any author identifier.</strong> Steam IDs are hashed at the cleaning stage
+          and no identifier of any kind reaches this site.</li>
+        <li><strong>Anything per-person.</strong> Every number here is an aggregate over
+          hundreds or thousands of reviews.</li>
+      </ul>
+    </section>
+  </div>
+
+  <h2>Known gaps in the data itself</h2>
+  <ul class="prose secondary">
+    <li>
+      <strong>{int(withFlags)} of {int(games.length)} games carry at least one data-quality
+      flag</strong> — a collection cap, a low English share, a small sample, or an uncertain
+      early-access boundary. Each game's page lists its own.
+    </li>
+    <li>
+      <strong>Review volume is not the collected row count.</strong> {pct(dq.cap_incidence, 1)} of
+      games hit a per-window collection cap, and for those games the row count understates true
+      volume by a median of {num(dq.cap_understatement_median, 1)}×. Volume is read from Steam's
+      own reported total instead.
+    </li>
+    <li>
+      <strong>The offline metadata join covers {pct(dq.mendeley_join_share, 1)} of games</strong>,
+      and its coverage is 2020–2024, so the missingness is not random.
+    </li>
+    <li>
+      <strong>Steam's store release date is wrong for {pct(dq.release_date_wrong_share, 1)} of the
+      {' '}{int(dq.release_date_n_comparable)} titles it can be checked against</strong> by more
+      than a week — and where it is wrong the error runs to a median of
+      {' '}{num(dq.release_date_median_error_days, 0)} days. This is a finding in its own right,
+      and the reason the boundary is derived rather than read.
+    </li>
+  </ul>
+
+  <h2>The data files this site reads</h2>
+  <p class="prose secondary">
+    The site is static. It loads these files and nothing else — no API, no database, no runtime
+    service. They are the same files the report is built on, and you can read them directly.
+  </p>
+  <div class="scroll-x">
+    <table>
+      <thead><tr><th>File</th><th>Contents</th></tr></thead>
+      <tbody>
+        <tr><td><a href={`${base}/data/v1/games.json`}><code>games.json</code></a></td>
+          <td class="secondary">Index of all {int(meta.corpus.n_games_scored)} scored games</td></tr>
+        <tr><td><code>games/&lt;appid&gt;.json</code></td>
+          <td class="secondary">Per-game detail — explanation, trajectory, comparables, quality flags</td></tr>
+        <tr><td><a href={`${base}/data/v1/model.json`}><code>model.json</code></a></td>
+          <td class="secondary">Every model run, calibration, thresholds, limitations</td></tr>
+        <tr><td><a href={`${base}/data/v1/meta.json`}><code>meta.json</code></a></td>
+          <td class="secondary">Provenance, band cutoffs, schema version</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="footnote" style="margin-top:1.5rem">
+    Bundle schema {meta.schema_version}, generated {meta.generated_at.slice(0, 10)}.
+    Regenerated from the pipeline with a single command; the site refuses to build against a
+    mismatched schema rather than rendering numbers it cannot verify.
+  </p>
+
+  <h2>Ethics</h2>
+  <p class="prose secondary">
+    Public secondary data only, no human participants, no personal data processed. Author
+    identifiers are pseudonymised by hashing — which is pseudonymisation, not anonymisation, and
+    is described as such. Named games are real commercial products and the bands attached to them
+    are research estimates from a proxy measure, which is why the framing appears on every
+    surface that shows a score rather than only here.
+  </p>
+</Base>
+
+<style>
+  .tight { padding-left: 1.1rem; margin: 0; }
+  .tight li { margin-bottom: 0.4rem; font-size: var(--size-subtitle); }
+</style>

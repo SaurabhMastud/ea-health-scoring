@@ -1,0 +1,296 @@
+---
+import Base from '../layouts/Base.astro';
+import { getGames, getMeta, int, num, pct } from '../lib/data';
+
+const games = getGames();
+const meta = getMeta();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const options = games.map((g) => ({ appid: g.appid, name: g.name })).sort((a, b) => a.name.localeCompare(b.name));
+
+// Band medians give a tester somewhere to stand — a score of 48 means nothing on its own, but
+// "48, against a median of 51 for the same band" is a sentence you can put in a report. Only the
+// index fields can be summarised here; the per-game measures live in the per-game files and are
+// fetched on selection, so those columns stay empty in the reference rows rather than being faked.
+const median = (xs: Array<number | null>) => {
+  const v = xs.filter((x): x is number => x !== null && x !== undefined).sort((a, b) => a - b);
+  if (!v.length) return null;
+  const mid = Math.floor(v.length / 2);
+  return v.length % 2 ? v[mid] : (v[mid - 1] + v[mid]) / 2;
+};
+
+const bandRows = (['At Risk', 'Needs Attention', 'Healthy'] as const).map((band) => {
+  const rows = games.filter((g) => g.band === band);
+  return {
+    band,
+    n: rows.length,
+    score: median(rows.map((g) => g.score)),
+    engagement: median(rows.map((g) => g.engagement)),
+    community: median(rows.map((g) => g.community)),
+  };
+});
+---
+<Base title="For testers" section="testers"
+      description="Compare several early-access games on the same measures and export a structured summary.">
+
+  <h1>For testers</h1>
+  <p class="prose big">
+    Put several games on one table, read them against their band peers, and print the result as a
+    summary a studio can act on.
+  </p>
+
+  <div class="panel notice" role="note">
+    <h2>What this surface does and does not do</h2>
+    <p class="secondary">
+      Everything here is computed from public Steam review data collected once, before this site
+      was built. <strong>Nothing on this page collects anything.</strong> There is no form, no
+      account and no submission — the study uses public secondary data only and has no human
+      participants. Read the <a href={`${base}/methodology/`}>methodology</a> for what the score
+      can and cannot carry.
+    </p>
+  </div>
+
+  <section aria-labelledby="pick-h">
+    <h2 id="pick-h">Build a selection</h2>
+    <div class="controls">
+      <div class="picker">
+        <label for="add-game">Add a game</label>
+        <select id="add-game">
+          <option value="">Choose a game…</option>
+          {options.map((o) => <option value={o.appid}>{o.name}</option>)}
+        </select>
+      </div>
+      <button type="button" id="clear" class="btn">Clear selection</button>
+      <button type="button" id="print" class="btn">Print summary</button>
+    </div>
+    <p class="footnote" id="status" role="status">
+      No games selected. {int(meta.corpus.n_games_scored)} available.
+    </p>
+  </section>
+
+  <div class="scroller">
+    <table class="cmp-table">
+      <caption class="visually-hidden">
+        Selected early-access games compared on health score, components and review measures,
+        with band medians across the whole scored corpus for reference.
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Game</th>
+          <th scope="col">Score</th>
+          <th scope="col">Band</th>
+          <th scope="col">Engagement</th>
+          <th scope="col">Community</th>
+          <th scope="col">Persistence, median</th>
+          <th scope="col">Toxicity, mean</th>
+          <th scope="col">Positive share</th>
+          <th scope="col">Never played again</th>
+          <th scope="col">EA reviews</th>
+          <th scope="col"><span class="sr-only-wide">Remove</span></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+      <tbody class="reference">
+        <tr><th scope="rowgroup" colspan="11" class="rowgroup-head">
+          Band medians across all {int(meta.corpus.n_games_scored)} scored games
+        </th></tr>
+        {bandRows.map((b) => (
+          <tr>
+            <th scope="row">{b.band} <span class="muted">(n = {int(b.n)})</span></th>
+            <td>{num(b.score, 0)}</td>
+            <td class="muted">—</td>
+            <td>{num(b.engagement, 0)}</td>
+            <td>{num(b.community, 0)}</td>
+            <td class="muted" colspan="5">Per-game measures only</td>
+            <td></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <section id="flags-out" hidden aria-labelledby="flags-h">
+    <h2 id="flags-h">Read these scores with care</h2>
+    <div id="flags-body"></div>
+  </section>
+
+  <p class="footnote" style="margin-top:2rem">
+    Band cutoffs are {num(meta.band_cutoffs.at_risk_below, 1)} and
+    {num(meta.band_cutoffs.healthy_at_or_above, 1)}, derived on the training partition only.
+    A comparison between games is not a ranking of their communities — see
+    <a href={`${base}/methodology/`}>methodology</a>.
+  </p>
+</Base>
+
+<script>
+  const base = document.querySelector<HTMLAnchorElement>('.brand')!.getAttribute('href')!.replace(/\/$/, '');
+  const add = document.getElementById('add-game') as HTMLSelectElement;
+  const rows = document.getElementById('rows')!;
+  const status = document.getElementById('status')!;
+  const flagsOut = document.getElementById('flags-out')!;
+  const flagsBody = document.getElementById('flags-body')!;
+
+  const BAND_ICON: Record<string, string> = { 'At Risk': '▲', 'Needs Attention': '●', 'Healthy': '✓' };
+  const BAND_SLUG: Record<string, string> = {
+    'At Risk': 'at-risk', 'Needs Attention': 'needs-attention', 'Healthy': 'healthy',
+  };
+
+  // a fetched game is kept, so removing and re-adding one costs no request
+  const cache = new Map<string, any>();
+  const selected: string[] = [];
+
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
+
+  // a missing measurement and a measurement of zero are different claims, so nulls
+  // are rendered as a phrase rather than a number (data.ts formatting note)
+  const cell = (v: number | null, digits = 1, suffix = '') =>
+    v === null || v === undefined
+      ? '<td class="muted">Not enough data</td>'
+      : `<td>${v.toFixed(digits)}${suffix}</td>`;
+
+  async function load(appid: string) {
+    if (cache.has(appid)) return cache.get(appid);
+    const r = await fetch(`${base}/data/v1/games/${appid}.json`);
+    if (!r.ok) throw new Error(`game ${appid} not found`);
+    const g = await r.json();
+    cache.set(appid, g);
+    return g;
+  }
+
+  function row(g: any) {
+    const m = g.measures;
+    return `<tr data-appid="${g.appid}">
+      <th scope="row"><a href="${base}/games/${g.appid}/">${esc(g.name)}</a></th>
+      <td class="strong">${g.score.toFixed(0)}</td>
+      <td><span class="band" data-band="${BAND_SLUG[g.band]}" data-icon="${BAND_ICON[g.band]}">${g.band}</span></td>
+      ${cell(g.engagement, 0)}
+      ${cell(g.community, 0)}
+      ${cell(m.prp_median_hours, 1, ' h')}
+      ${cell(m.ea_toxicity_mean, 3)}
+      ${m.ea_positive_share === null
+        ? '<td class="muted">Not enough data</td>'
+        : `<td>${(m.ea_positive_share * 100).toFixed(0)}%</td>`}
+      ${m.pct_never_played_again === null
+        ? '<td class="muted">Not enough data</td>'
+        : `<td>${(m.pct_never_played_again * 100).toFixed(0)}%</td>`}
+      <td>${g.n_ea_reviews === null ? '—' : g.n_ea_reviews.toLocaleString('en-GB')}</td>
+      <td class="no-print"><button type="button" class="remove" data-appid="${g.appid}"
+          aria-label="Remove ${esc(g.name)} from the selection">Remove</button></td>
+    </tr>`;
+  }
+
+  function renderFlags() {
+    const withFlags = selected
+      .map((id) => cache.get(id))
+      .filter((g) => g && g.data_quality.length);
+    if (!withFlags.length) { flagsOut.hidden = true; return; }
+    flagsBody.innerHTML = withFlags.map((g) => `
+      <div class="flag-block">
+        <h3>${esc(g.name)}</h3>
+        <ul>${g.data_quality.map((f: any) =>
+          `<li><strong>${esc(f.label)}</strong> — ${esc(f.detail)}</li>`).join('')}</ul>
+      </div>`).join('');
+    flagsOut.hidden = false;
+  }
+
+  function render() {
+    rows.innerHTML = selected.map((id) => row(cache.get(id))).join('');
+    status.textContent = selected.length
+      ? `${selected.length} game${selected.length === 1 ? '' : 's'} selected.`
+      : `No games selected. ${add.options.length - 1} available.`;
+    renderFlags();
+  }
+
+  add.addEventListener('change', async () => {
+    const id = add.value;
+    add.value = '';
+    if (!id || selected.includes(id)) return;
+    try {
+      await load(id);
+      selected.push(id);
+      render();
+    } catch {
+      status.textContent = 'Could not load that game.';
+    }
+  });
+
+  rows.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.remove') as HTMLElement | null;
+    if (!btn) return;
+    const i = selected.indexOf(btn.dataset.appid!);
+    if (i > -1) selected.splice(i, 1);
+    render();
+  });
+
+  document.getElementById('clear')!.addEventListener('click', () => {
+    selected.length = 0;
+    render();
+  });
+
+  // the browser already turns a page into a document. a PDF library would add a dependency
+  // to reproduce something the platform does natively, and print styling is a stylesheet.
+  document.getElementById('print')!.addEventListener('click', () => window.print());
+</script>
+
+<style>
+  .notice { margin: 2rem 0; }
+  .notice h2 { font-size: 0.9375rem; margin: 0 0 0.5rem; }
+  .notice p { margin: 0; font-size: var(--size-subtitle); }
+
+  .controls { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: flex-end; margin: 1.25rem 0 0.75rem; }
+  .picker { display: flex; flex-direction: column; gap: 0.3rem; }
+  .picker label { font-size: var(--size-tick); font-weight: 600; color: var(--ink-secondary); }
+  .picker select {
+    font: inherit; font-size: 0.9375rem; padding: 0.45rem 0.6rem; min-width: 280px; max-width: 100%;
+    border: 1px solid var(--ink-axis); border-radius: 6px;
+    background: var(--ink-chart-surface); color: var(--ink-primary);
+  }
+  .btn {
+    font: inherit; font-size: 0.875rem; padding: 0.45rem 0.9rem; cursor: pointer;
+    border: 1px solid var(--ink-axis); border-radius: 6px;
+    background: var(--ink-chart-surface); color: var(--ink-primary);
+  }
+  .btn:hover { border-color: var(--ink-secondary); }
+
+  /* a wide table must scroll inside its own box, never take the page with it */
+  .scroller { overflow-x: auto; margin: 0.5rem 0 1rem; }
+  .cmp-table { border-collapse: collapse; width: 100%; font-size: var(--size-subtitle); }
+  .cmp-table th, .cmp-table td {
+    text-align: right; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--ink-gridline);
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+  .cmp-table thead th { text-align: right; font-size: var(--size-tick); color: var(--ink-secondary); }
+  .cmp-table th[scope='row'], .cmp-table thead th:first-child { text-align: left; font-weight: 600; }
+  .cmp-table td.strong { font-weight: 600; }
+  /* .muted is global; only the weight needs overriding inside a bold row header */
+  .cmp-table .muted { font-weight: 400; }
+  .rowgroup-head {
+    text-align: left !important; padding-top: 1.5rem !important;
+    font-size: var(--size-tick); color: var(--ink-secondary); font-weight: 600;
+  }
+  .reference td, .reference th { border-bottom: 1px dashed var(--ink-gridline); }
+  .remove {
+    font: inherit; font-size: var(--size-tick); cursor: pointer; padding: 0.2rem 0.5rem;
+    border: 1px solid var(--ink-gridline); border-radius: 4px;
+    background: transparent; color: var(--ink-secondary);
+  }
+  .remove:hover { color: var(--ink-primary); border-color: var(--ink-secondary); }
+
+  .flag-block { margin-bottom: 1.25rem; }
+  .flag-block h3 { font-size: 0.9375rem; margin: 0 0 0.35rem; }
+  .flag-block ul { margin: 0; padding-left: 1.1rem; font-size: var(--size-subtitle); color: var(--ink-secondary); }
+  .flag-block li { margin-bottom: 0.25rem; }
+
+  .visually-hidden, .sr-only-wide {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+
+  /* global.css already hides the topbar, theme toggle and footer in print */
+  @media print {
+    .no-print, .controls { display: none !important; }
+    .scroller { overflow: visible; }
+    .cmp-table { font-size: 9pt; }
+  }
+</style>

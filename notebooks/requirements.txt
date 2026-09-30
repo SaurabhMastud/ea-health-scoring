@@ -1,0 +1,45 @@
+# Early-Access Health Scoring - pinned dependencies
+#
+# Every version below was read off the working kernel with importlib.metadata on
+# 2026-08-06, not copied from a doc. Install into a Python 3.11 environment:
+#
+#     py -3.11 -m venv .venv
+#     .venv\Scripts\activate
+#     pip install -r requirements.txt
+#
+# torch is the one line that is not plain pip. The CUDA 12.8 build does not come from
+# PyPI, so install it first from the PyTorch index and then run this file:
+#
+#     pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+#
+# A CPU-only torch will work for every stage except toxicity scoring, which needs
+# hours rather than minutes without a GPU.
+
+# data handling
+pandas==2.3.3
+numpy==2.4.6
+pyarrow==24.0.0
+PyYAML==6.0.3
+
+# collection
+requests==2.34.2
+
+# nlp scoring
+transformers==5.12.1
+detoxify==0.5.2
+vaderSentiment==3.3.2
+
+# modelling, explanation and tracking
+scikit-learn==1.9.0
+scipy==1.17.1
+shap==0.51.0
+mlflow==3.15.0
+
+# figures
+matplotlib==3.11.0
+
+# the demo application
+streamlit==1.60.0
+
+# notebook runtime
+ipykernel==7.3.0

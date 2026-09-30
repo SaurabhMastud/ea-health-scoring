@@ -1,0 +1,136 @@
+---
+import Base from '../layouts/Base.astro';
+import { getGames, getMeta, int } from '../lib/data';
+
+const games = getGames();
+const meta = getMeta();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Only the fields both cohorts always carry go in the picker payload; anything
+// cohort-specific is fetched from the per-game file on selection.
+const options = games.map((g) => ({ appid: g.appid, name: g.name, score: g.score, band: g.band }));
+---
+<Base title="Compare games" section="compare"
+      description="Put two early-access games side by side on the same measures.">
+
+  <h1>Compare</h1>
+  <p class="prose secondary">
+    Two games on the same measures. Both scores come from the same instrument, so the comparison
+    is fair in the one way that matters — but read the data-quality notes underneath, because a
+    score built on 220 reviews and one built on 40,000 are not equally solid.
+  </p>
+
+  <div class="pickers">
+    {['a', 'b'].map((slot) => (
+      <div class="picker">
+        <label for={`pick-${slot}`}>{slot === 'a' ? 'First game' : 'Second game'}</label>
+        <select id={`pick-${slot}`}>
+          <option value="">Choose a game…</option>
+          {options.map((o) => <option value={o.appid}>{o.name}</option>)}
+        </select>
+      </div>
+    ))}
+  </div>
+
+  <div id="out" class="cmp" hidden></div>
+  <p class="empty" id="prompt">Pick two games to compare them.</p>
+
+  <p class="footnote" style="margin-top:2rem">
+    {int(meta.corpus.n_games_scored)} games available. Comparison is between games, never a
+    ranking of communities — see <a href={`${base}/methodology/`}>methodology</a>.
+  </p>
+</Base>
+
+<script>
+  const base = document.querySelector<HTMLAnchorElement>('.brand')!.getAttribute('href')!.replace(/\/$/, '');
+  const a = document.getElementById('pick-a') as HTMLSelectElement;
+  const b = document.getElementById('pick-b') as HTMLSelectElement;
+  const out = document.getElementById('out')!;
+  const prompt = document.getElementById('prompt')!;
+
+  const BAND_ICON: Record<string, string> = {
+    'At Risk': '▲', 'Needs Attention': '●', 'Healthy': '✓',
+  };
+  const BAND_SLUG: Record<string, string> = {
+    'At Risk': 'at-risk', 'Needs Attention': 'needs-attention', 'Healthy': 'healthy',
+  };
+
+  const fmt = (v: number | null, digits = 1, suffix = '') =>
+    v === null || v === undefined ? '<span class="muted">Not enough data</span>'
+      : v.toFixed(digits) + suffix;
+
+  async function load(appid: string) {
+    const r = await fetch(`${base}/data/v1/games/${appid}.json`);
+    if (!r.ok) throw new Error(`game ${appid} not found`);
+    return r.json();
+  }
+
+  function card(g: any) {
+    const flags = g.data_quality.length
+      ? g.data_quality.map((f: any) => `<li>${f.label}</li>`).join('')
+      : '<li class="muted">No data-quality flags</li>';
+    return `
+      <div class="col">
+        <h2><a href="${base}/games/${g.appid}/">${g.name}</a></h2>
+        <div class="score">${g.score.toFixed(0)}</div>
+        <span class="band" data-band="${BAND_SLUG[g.band]}" data-icon="${BAND_ICON[g.band]}">${g.band}</span>
+        <dl>
+          <dt>Engagement</dt><dd>${fmt(g.engagement, 0)}</dd>
+          <dt>Community</dt><dd>${fmt(g.community, 0)}</dd>
+          <dt>Persistence, median</dt><dd>${fmt(g.measures.prp_median_hours, 1, ' h')}</dd>
+          <dt>Review toxicity, mean</dt><dd>${fmt(g.measures.ea_toxicity_mean, 3)}</dd>
+          <dt>Positive-review share</dt><dd>${g.measures.ea_positive_share === null
+            ? '<span class="muted">Not enough data</span>'
+            : (g.measures.ea_positive_share * 100).toFixed(0) + '%'}</dd>
+          <dt>Early-access reviews</dt><dd>${g.n_ea_reviews === null ? '—' : g.n_ea_reviews.toLocaleString('en-GB')}</dd>
+          <dt>Cohort</dt><dd>${g.cohort === 'launched' ? 'Left early access' : 'Never left early access'}</dd>
+        </dl>
+        <h3>Read this score with care</h3>
+        <ul class="flags">${flags}</ul>
+      </div>`;
+  }
+
+  async function refresh() {
+    if (!a.value || !b.value) { out.hidden = true; prompt.hidden = false; return; }
+    prompt.hidden = true;
+    try {
+      const [ga, gb] = await Promise.all([load(a.value), load(b.value)]);
+      out.innerHTML = card(ga) + card(gb);
+      out.hidden = false;
+    } catch (e) {
+      prompt.hidden = false;
+      prompt.textContent = 'Could not load one of those games.';
+      out.hidden = true;
+    }
+  }
+
+  a.addEventListener('change', refresh);
+  b.addEventListener('change', refresh);
+</script>
+
+<style>
+  .pickers { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+  .picker { display: flex; flex-direction: column; gap: 0.3rem; }
+  .picker label { font-size: var(--size-tick); font-weight: 600; color: var(--ink-secondary); }
+  .picker select {
+    font: inherit; font-size: 0.9375rem; padding: 0.45rem 0.6rem; min-width: 280px; max-width: 100%;
+    border: 1px solid var(--ink-axis); border-radius: 6px;
+    background: var(--ink-chart-surface); color: var(--ink-primary);
+  }
+  .cmp { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .cmp :global(.col) {
+    background: var(--ink-chart-surface); border: 1px solid var(--ink-gridline);
+    border-radius: 8px; padding: 1.25rem;
+  }
+  .cmp :global(.col h2) { font-size: 1.0625rem; margin: 0 0 0.5rem; }
+  .cmp :global(.score) { font-size: 3rem; font-weight: 600; line-height: 1; margin-bottom: 0.5rem; }
+  .cmp :global(dl) {
+    display: grid; grid-template-columns: 1fr auto; gap: 0.35rem 1rem;
+    margin: 1.25rem 0 0; font-size: var(--size-subtitle);
+  }
+  .cmp :global(dt) { color: var(--ink-secondary); }
+  .cmp :global(dd) { margin: 0; font-variant-numeric: tabular-nums; text-align: right; }
+  .cmp :global(h3) { font-size: 0.8125rem; margin: 1.5rem 0 0.35rem; }
+  .cmp :global(.flags) { margin: 0; padding-left: 1.1rem; font-size: var(--size-subtitle); color: var(--ink-secondary); }
+  .cmp :global(.flags li) { margin-bottom: 0.25rem; }
+</style>

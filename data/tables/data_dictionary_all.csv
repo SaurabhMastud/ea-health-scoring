@@ -1,0 +1,64 @@
+table,column,definition,notes,dtype
+game_features.parquet,pct_never_played_again,share of EA reviewers whose playtime_forever equals playtime_at_review exactly - they never played again after reviewing,"the churn signal itself. 22% of all rows corpus-wide. averaging this into a mean persistence destroys it, so it gets its own column",
+game_features.parquet,prp_median_hours,"median of (playtime_forever - playtime_at_review) over EA reviewers, hours",the novel retention proxy. median not mean - the distribution is violently right skewed and 22% of it sits at exactly zero,
+game_features.parquet,prp_p75_hours,"75th percentile of post-review persistence over EA reviewers, hours",keeps signal when the median is pinned at zero by the churn mass,
+game_features.parquet,playtime_at_review_median_hours,"median playtime_forever at the moment of reviewing, in hours",controls for prior investment - persistence means something different for a 2 hour player than a 200 hour one,
+game_features.parquet,ea_duration_days,days between first and last EA review,how long the game spent in early access - a confounder for every volume measure,
+game_features.parquet,n_ea_reviews_collected,EA rows actually collected for this game,"the sample size behind every aggregate here. NOT a volume measure - it is capped per window, so for popular games it is a collection budget",
+game_features.parquet,ea_reviews_per_day_collected,n_ea_reviews_collected divided by ea_duration_days,"activity rate. a lower bound where the cap binds, which is why collection_completeness travels with it",
+game_features.parquet,ea_positive_share,share of EA reviews with voted_up = true,THE baseline competitor - the one number a studio already has for free. the model has to beat this or it has not earned its complexity,
+game_features.parquet,ea_positive_share_trend,ea_positive_share in the second half of EA minus the first half,direction of travel. a game souring during EA is the pattern the score exists to catch early,
+game_features.parquet,ea_author_games_owned_median,median num_games_owned of EA reviewers,controls for reviewer type - a 900 game library is a different reviewer,
+game_features.parquet,ea_author_review_count_median,median num_reviews written by EA reviewers,the same control from the other direction,
+game_features.parquet,ea_share_edited,share of EA reviews edited after posting,edited reviews carry a recomputed EA flag - this quantifies that exposure and explains the flag/timestamp disagreement,
+game_features.parquet,ea_toxicity_mean,mean Detoxify toxicity over sampled EA reviews,the level of hostility during early access,
+game_features.parquet,ea_toxicity_share_above_half,share of sampled EA reviews scoring toxicity > 0.5,"a small permanently hostile core matters more than the average, and the mean hides it",
+game_features.parquet,ea_sentiment_mean,mean VADER compound over sampled EA reviews,tone independent of hostility - a review can be sad without being toxic,
+game_features.parquet,ea_censored_rate,share of sampled EA reviews where Steam redacted profanity,a profanity measure that survives Steam censoring the text,
+game_features.parquet,n_ea_reviews_scored,sampled EA reviews carrying toxicity scores,the sample size behind every tone feature above,
+game_features.parquet,ea_toxicity_trend,mean toxicity in the second half of EA minus the first half,a community souring during EA is the early warning the score is for,
+game_features.parquet,n_post_launch_reviews,reviews collected in the 180 days after the bisected launch date,the denominator behind every outcome below,
+game_features.parquet,post_positive_share,share of post-launch reviews with voted_up = true,RQ1 outcome - did the game land well with players after full release,
+game_features.parquet,post_prp_median_hours,"median post-review persistence of post-launch reviewers, in hours","RQ1 retention outcome, measured the same way as the EA predictor",
+game_features.parquet,post_toxicity_mean_uncontrolled,mean toxicity over all sampled post-launch reviews,RQ2 outcome without the cohort control - reported for comparison only,
+game_features.parquet,post_toxicity_mean,"mean toxicity over sampled post-launch reviews, EXCLUDING anyone who also reviewed during EA",RQ2 headline outcome - the circularity-controlled version,
+game_features.parquet,n_excluded_by_cohort_control,sampled post-launch reviews removed by the EA-reviewer exclusion,the control removes almost nobody - reporting the number is the honest version of applying it,
+game_features.parquet,total_reviews_reported,total review count Steam reports for the game via query_summary,"the only trustworthy volume measure. row counts are a collection budget, not a property of the game",
+game_features.parquet,collection_completeness,rows collected divided by total_reviews_reported,"how much of the game I hold. the cap binds non-randomly on popular titles, so this has to be visible to the model rather than hidden",
+game_features.parquet,flag_timestamp_disagreement,share of rows where the Steam EA flag disagrees with the timestamp split,quantifies the edited-review effect per game - the reason cohort membership is timestamp-based and only the text description is flag-based,
+game_scores.parquet,appid,Steam application ID. Join key to every other table.,,int
+game_scores.parquet,launch_date,"Bisected full-release date. NaT for the died-in-EA cohort, which never launched.",,datetime
+game_scores.parquet,cohort,launched | died_in_early_access. Determines whether an outcome exists at all.,,str
+game_scores.parquet,health_score_equal,"Health Score, equal weights (0.5 engagement / 0.5 community). The headline score.",,float 0-100
+game_scores.parquet,health_score_data_driven,"Health Score, weights from logistic coefficients fitted on training rows only.",,float 0-100
+game_scores.parquet,engagement_component,"Engagement half of the score before weighting - persistence, velocity, review trajectory.",,float 0-100
+game_scores.parquet,community_component,"Community half of the score before weighting - toxicity, sentiment, redaction rate.",,float 0-100
+game_scores.parquet,health_band,"At Risk | Needs Attention | Healthy. Cutoffs are terciles of the TRAINING score distribution, pre-committed.",,str
+game_scores.parquet,in_test_set,True if the game fell in the temporal test split. False = training. Absent for the survivorship cohort.,,bool
+game_scores.parquet,retention_at_risk,Outcome label: post-launch persistence in the bottom tercile of training. 1 = at risk.,,int 0/1
+game_scores.parquet,toxicity_at_risk,Outcome label: post-launch toxicity in the top tercile of training. 1 = at risk.,,int 0/1
+game_scores.parquet,ea_positive_share,EA positive-review share. Carried through because it is the free baseline.,,float 0-1
+game_scores.parquet,prp_median_hours,"Median Post-Review Persistence over EA reviewers, hours. Right-censored at the collection date.",,float
+game_scores.parquet,ea_toxicity_mean,Mean Detoxify toxicity over sampled EA reviews.,,float 0-1
+game_scores.parquet,post_prp_median_hours,"Outcome source: median persistence of post-launch reviewers, hours.",,float
+game_scores.parquet,post_toxicity_mean,"Outcome source: mean post-launch toxicity, EA reviewers excluded.",,float 0-1
+game_scores.parquet,post_positive_share,Outcome source: post-launch positive-review share.,,float 0-1
+game_scores.parquet,shap_pct_never_played_again,SHAP contribution of pct_never_played_again to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_prp_median_hours,SHAP contribution of prp_median_hours to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_prp_p75_hours,SHAP contribution of prp_p75_hours to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_playtime_at_review_median_hours,SHAP contribution of playtime_at_review_median_hours to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_duration_days,SHAP contribution of ea_duration_days to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_n_ea_reviews_collected,SHAP contribution of n_ea_reviews_collected to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_reviews_per_day_collected,SHAP contribution of ea_reviews_per_day_collected to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_positive_share,SHAP contribution of ea_positive_share to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_positive_share_trend,SHAP contribution of ea_positive_share_trend to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_toxicity_mean,SHAP contribution of ea_toxicity_mean to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_toxicity_share_above_half,SHAP contribution of ea_toxicity_share_above_half to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_sentiment_mean,SHAP contribution of ea_sentiment_mean to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_censored_rate,SHAP contribution of ea_censored_rate to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_toxicity_trend,SHAP contribution of ea_toxicity_trend to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_author_games_owned_median,SHAP contribution of ea_author_games_owned_median to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_author_review_count_median,SHAP contribution of ea_author_review_count_median to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_ea_share_edited,SHAP contribution of ea_share_edited to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_has_ea_positive_share_trend,SHAP contribution of has_ea_positive_share_trend to the retention prediction. Test-set games only.,,float (log-odds)
+game_scores.parquet,shap_has_ea_toxicity_trend,SHAP contribution of has_ea_toxicity_trend to the retention prediction. Test-set games only.,,float (log-odds)

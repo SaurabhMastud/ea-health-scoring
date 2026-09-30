@@ -1,0 +1,9 @@
+model,test_auc_roc
+free baseline,0.6019
+cross-instrument (community text),0.7489
+cross-instrument + accrual control,0.748
+accrual_days alone,0.5
+cross-instrument + free baseline,0.7428
+GAIN over baseline (bootstrap mean),0.1482
+gain 95% CI low,0.0559
+gain 95% CI high,0.2428

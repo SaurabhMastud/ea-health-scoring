@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import ScoreHero from '../../components/ScoreHero.astro';
+import ComponentBars from '../../components/ComponentBars.astro';
+import ShapWaterfall from '../../components/ShapWaterfall.astro';
+import Trajectory from '../../components/Trajectory.astro';
+import Comparables from '../../components/Comparables.astro';
+import MethodPanel from '../../components/MethodPanel.astro';
+import ToxicityEvidence from '../../components/ToxicityEvidence.astro';
+import { getGames, getGame, getMeta } from '../../lib/data';
+
+export async function getStaticPaths() {
+  return getGames().map((g) => ({ params: { appid: String(g.appid) } }));
+}
+
+const appid = Number(Astro.params.appid);
+const game = getGame(appid);
+const meta = getMeta();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base title={game.name} section="studios"
+      description={`Early-access community health score for ${game.name}: ${game.score.toFixed(0)} out of 100, banded ${game.band}.`}>
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href={`${base}/browse/`}>All games</a> <span aria-hidden="true">/</span> <span>{game.name}</span>
+  </nav>
+
+  <div class="stack-lg">
+    <ScoreHero game={game} meta={meta} />
+
+    <div class="grid-2">
+      <ComponentBars game={game} />
+      <ShapWaterfall game={game} />
+    </div>
+
+    <Trajectory game={game} />
+
+    <ToxicityEvidence game={game} />
+
+    <div class="grid-2">
+      <Comparables game={game} />
+      <MethodPanel game={game} meta={meta} />
+    </div>
+  </div>
+
+  <p class="footnote" style="margin-top:2.5rem">
+    Steam app ID {game.appid}. Scores regenerate from the pipeline;
+    bundle generated {meta.generated_at.slice(0, 10)}.
+  </p>
+</Base>
+
+<style>
+  .crumbs { font-size: var(--size-subtitle); color: var(--ink-muted); margin-bottom: 1.25rem; }
+  .crumbs a { color: var(--ink-secondary); }
+  .grid-2 { align-items: start; }
+</style>

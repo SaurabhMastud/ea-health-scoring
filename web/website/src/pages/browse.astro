@@ -1,0 +1,193 @@
+---
+import Base from '../layouts/Base.astro';
+import BandChip from '../components/BandChip.astro';
+import { getGames, getMeta, int, num, pct } from '../lib/data';
+
+const games = getGames();
+const meta = getMeta();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Genre facets, commonest first, capped so the filter row stays one row.
+const genreCounts = new Map<string, number>();
+for (const g of games) for (const gen of g.genres) genreCounts.set(gen, (genreCounts.get(gen) ?? 0) + 1);
+const genres = [...genreCounts.entries()].filter(([, n]) => n >= 12).sort((a, b) => b[1] - a[1]).map(([g]) => g);
+---
+<Base title="Browse games" section="players"
+      description="Every scored early-access game, ranked by community health.">
+
+  <h1>Browse</h1>
+  <p class="prose secondary">
+    All {int(meta.corpus.n_games_scored)} scored games, healthiest first. Ranking is by health
+    only — there is deliberately no "most toxic" ordering here, because that would be a
+    different product with a different ethics posture.
+  </p>
+
+  {/* One filter row above everything it scopes, never per-card filters. */}
+  <form class="filters panel" role="search" onsubmit="return false">
+    <div class="f">
+      <label for="q">Search</label>
+      <input type="search" id="q" placeholder="Game name or app ID" autocomplete="off" />
+    </div>
+    <div class="f">
+      <label for="band">Band</label>
+      <select id="band">
+        <option value="">All bands</option>
+        <option>At Risk</option><option>Needs Attention</option><option>Healthy</option>
+      </select>
+    </div>
+    <div class="f">
+      <label for="genre">Genre</label>
+      <select id="genre">
+        <option value="">All genres</option>
+        {genres.map((g) => <option>{g}</option>)}
+      </select>
+    </div>
+    <div class="f">
+      <label for="cohort">Cohort</label>
+      <select id="cohort">
+        <option value="">All games</option>
+        <option value="launched">Left early access</option>
+        <option value="died_in_early_access">Never left early access</option>
+      </select>
+    </div>
+    <div class="f">
+      <label for="sort">Sort</label>
+      <select id="sort">
+        <option value="score-desc">Health, high to low</option>
+        <option value="score-asc">Health, low to high</option>
+        <option value="reviews-desc">Most reviews</option>
+        <option value="name-asc">Name, A–Z</option>
+      </select>
+    </div>
+  </form>
+
+  <p class="count secondary" id="count" aria-live="polite">{games.length} games</p>
+
+  <div class="scroll-x">
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th>Game</th><th class="n">Health</th><th>Band</th>
+          <th class="n">EA reviews</th><th class="n">English</th><th>Cohort</th>
+        </tr>
+      </thead>
+      <tbody>
+        {games.map((g) => (
+          <tr data-name={g.name.toLowerCase()} data-appid={g.appid} data-band={g.band}
+              data-genres={g.genres.join('|')} data-cohort={g.cohort}
+              data-score={g.score} data-reviews={g.n_ea_reviews ?? 0}>
+            <td><a href={`${base}/games/${g.appid}/`}>{g.name}</a></td>
+            <td class="n">{num(g.score, 0)}</td>
+            <td><BandChip band={g.band} /></td>
+            <td class="n">{int(g.n_ea_reviews)}</td>
+            <td class="n">{g.english_share === null ? '—' : pct(g.english_share)}</td>
+            <td class="secondary">{g.cohort === 'launched' ? 'Launched' : 'Died in EA'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {/* hidden until JS runs — without JS every row is already shown */}
+  <button type="button" id="more" class="more" hidden>Show more</button>
+  <p class="empty" id="none" hidden>No games match those filters.</p>
+
+  <p class="footnote" style="margin-top:2rem">
+    "Died in EA" means the game never left early access. Those games have a score but no
+    post-launch outcome, so they are excluded from the modelling frame and analysed separately —
+    see <a href={`${base}/performance/#survivorship`}>survivorship</a>.
+  </p>
+</Base>
+
+<script>
+  // Rows are rendered server-side and filtered by hiding, so the full table is
+  // present and readable with JavaScript disabled. This only narrows it.
+  const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('#tbl tbody tr'));
+  const tbody = document.querySelector('#tbl tbody')!;
+  const q = document.getElementById('q') as HTMLInputElement;
+  const band = document.getElementById('band') as HTMLSelectElement;
+  const genre = document.getElementById('genre') as HTMLSelectElement;
+  const cohort = document.getElementById('cohort') as HTMLSelectElement;
+  const sort = document.getElementById('sort') as HTMLSelectElement;
+  const count = document.getElementById('count')!;
+  const none = document.getElementById('none')!;
+
+  // Every scored row is in the DOM so the table works with JavaScript off and so
+  // filtering never needs a fetch. But that is tens of thousands of pixels of
+  // scroll, so once JS is running we only reveal a page at a time.
+  const PAGE = 100;
+  let limit = PAGE;
+  const more = document.getElementById('more') as HTMLButtonElement;
+
+  function apply() {
+    const term = q.value.trim().toLowerCase();
+    let matched = 0, shown = 0;
+    for (const r of rows) {
+      const d = r.dataset;
+      const ok =
+        (!term || d.name!.includes(term) || d.appid! === term) &&
+        (!band.value || d.band === band.value) &&
+        (!genre.value || d.genres!.split('|').includes(genre.value)) &&
+        (!cohort.value || d.cohort === cohort.value);
+      if (ok) {
+        matched++;
+        const visible = shown < limit;
+        r.hidden = !visible;
+        if (visible) shown++;
+      } else {
+        r.hidden = true;
+      }
+    }
+    count.textContent = matched === shown
+      ? `${matched.toLocaleString('en-GB')} game${matched === 1 ? '' : 's'}`
+      : `Showing ${shown.toLocaleString('en-GB')} of ${matched.toLocaleString('en-GB')} games`;
+    none.hidden = matched > 0;
+    more.hidden = matched <= shown;
+    more.textContent = `Show ${Math.min(PAGE, matched - shown).toLocaleString('en-GB')} more`;
+  }
+
+  more.addEventListener('click', () => { limit += PAGE; apply(); });
+  // a new filter starts a new page
+  [q, band, genre, cohort].forEach((el) => el.addEventListener('input', () => { limit = PAGE; }));
+
+  function reorder() {
+    const [key, dir] = sort.value.split('-');
+    const sorted = [...rows].sort((a, b) => {
+      let d = 0;
+      if (key === 'score') d = Number(a.dataset.score) - Number(b.dataset.score);
+      else if (key === 'reviews') d = Number(a.dataset.reviews) - Number(b.dataset.reviews);
+      else d = a.dataset.name!.localeCompare(b.dataset.name!);
+      return dir === 'desc' ? -d : d;
+    });
+    const frag = document.createDocumentFragment();
+    sorted.forEach((r) => frag.appendChild(r));
+    tbody.appendChild(frag);
+  }
+
+  [q, band, genre, cohort].forEach((el) => el.addEventListener('input', apply));
+  sort.addEventListener('change', () => { reorder(); apply(); });
+
+  // run once on load, otherwise the row cap never takes effect and the page is
+  // every scored row on first paint
+  apply();
+</script>
+
+<style>
+  .filters { display: flex; flex-wrap: wrap; gap: 1rem; align-items: end; margin: 1.5rem 0 1rem; }
+  .f { display: flex; flex-direction: column; gap: 0.25rem; }
+  .f label { font-size: var(--size-tick); color: var(--ink-secondary); font-weight: 600; }
+  .f input, .f select {
+    font: inherit; font-size: 0.875rem; padding: 0.35rem 0.5rem;
+    border: 1px solid var(--ink-axis); border-radius: 6px;
+    background: var(--ink-chart-surface); color: var(--ink-primary); min-width: 150px;
+  }
+  .count { font-size: var(--size-subtitle); margin: 0 0 0.5rem; }
+  td a { text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  .more {
+    margin: 1.25rem 0 0; font: inherit; font-size: 0.875rem; cursor: pointer;
+    background: var(--ink-chart-surface); color: var(--ink-primary);
+    border: 1px solid var(--ink-axis); border-radius: 6px; padding: 0.5rem 1rem;
+  }
+  .more:hover { border-color: var(--ink-primary); }
+</style>

@@ -1,0 +1,175 @@
+---
+import Base from '../layouts/Base.astro';
+import BandChip from '../components/BandChip.astro';
+import { getGames, getMeta, getModel, int, num, pct, scorePct } from '../lib/data';
+
+const games = getGames();
+const meta = getMeta();
+const model = getModel();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const healthiest = games.filter((g) => g.cohort === 'launched').slice(0, 5);
+const bandCounts = {
+  'At Risk': games.filter((g) => g.band === 'At Risk').length,
+  'Needs Attention': games.filter((g) => g.band === 'Needs Attention').length,
+  'Healthy': games.filter((g) => g.band === 'Healthy').length,
+};
+
+// the survivorship finding, computed rather than quoted. these two rates were literals
+// here and went stale the moment the corpus grew.
+const atRiskShare = (cohort: string) => {
+  const sub = games.filter((g) => g.cohort === cohort);
+  return sub.filter((g) => g.band === 'At Risk').length / sub.length;
+};
+const diedAtRisk = atRiskShare('died_in_early_access');
+const launchedAtRisk = atRiskShare('launched');
+
+// the two same-instrument headline figures the note below points at, read from the runs
+// table so the aside cannot drift away from the results page it links to
+const fullModelAuc = (outcome: string) =>
+  model.runs.find((r) => r.outcome === outcome && r.run.includes('full features'))!.test_auc_roc;
+---
+<Base title="A health score for early-access games">
+
+  <section class="lede">
+    <h1>Can you tell, during early access, whether a game's community is heading for trouble?</h1>
+    <p class="big">
+      Sometimes. This project scored {int(meta.corpus.n_games_scored)} Steam early-access games
+      from {int(meta.corpus.n_reviews_collected)} public reviews, and found that
+      <strong>how a community writes during early access carries real information about whether
+      its players stay after launch</strong> — with the honest caveat that most of what looks
+      like prediction in this field isn't.
+    </p>
+  </section>
+
+  {/* The headline claim, stated once, with its baseline and its interval. */}
+  <section class="panel headline">
+    <p class="claim">{model.headline.claim}</p>
+    <div class="figures">
+      <div>
+        <div class="fig-value">{model.headline.auc.toFixed(3)}</div>
+        <div class="fig-pct">{scorePct(model.headline.auc)}</div>
+        <div class="fig-label">AUC, community text → retention</div>
+      </div>
+      <div>
+        <div class="fig-value muted-value">{model.headline.baseline_auc.toFixed(3)}</div>
+        <div class="fig-pct">{scorePct(model.headline.baseline_auc)}</div>
+        <div class="fig-label">the free baseline it beats</div>
+      </div>
+      <div>
+        <div class="fig-value">+{model.headline.gain.toFixed(3)}</div>
+        <div class="fig-pct">+{scorePct(model.headline.gain)}</div>
+        <div class="fig-label">
+          gain, 95% CI [{model.headline.gain_ci[0].toFixed(3)}, {model.headline.gain_ci[1].toFixed(3)}]
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin:1.25rem 0 0">
+      <strong>Why this one number and not a bigger one.</strong> {model.headline.why_it_matters}
+      {' '}Other models in this study score {fullModelAuc('retention').toFixed(2)} and
+      {' '}{fullModelAuc('toxicity').toFixed(2)}, and those are
+      {' '}<em>not</em> reported as predictions — they measure a signal against itself.
+      {' '}<a href={`${base}/performance/`}>The results page shows all of them, including where the model loses.</a>
+    </p>
+  </section>
+
+  <section class="grid-3" style="margin-top:2.5rem">
+    <a class="card" href={`${base}/browse/`}>
+      <h2>Browse every game</h2>
+      <p class="secondary">All {int(meta.corpus.n_games_scored)} scored games, ranked by health, filterable by genre and band.</p>
+    </a>
+    <a class="card" href={`${base}/studios/`}>
+      <h2>For studios</h2>
+      <p class="secondary">What the score says about your game, which signal is dragging it, and what it cannot tell you.</p>
+    </a>
+    <a class="card" href={`${base}/methodology/`}>
+      <h2>How it works</h2>
+      <p class="secondary">The metric, the data, the model, and the eight alternatives that were tested and rejected.</p>
+    </a>
+  </section>
+
+  <section>
+    <h2>How the {int(meta.corpus.n_games_scored)} games fall</h2>
+    <p class="secondary prose">
+      Band cutoffs are terciles of the <em>training</em> score distribution, fixed before any
+      test game was looked at — so roughly even thirds among modelled games is by construction,
+      not a finding. What is a finding is that the same cutoffs flag
+      {' '}<strong>{pct(diedAtRisk)} of games that died in early access</strong> against
+      {' '}{pct(launchedAtRisk)} of games that launched, having never seen that cohort.
+    </p>
+    <div class="bandgrid">
+      {(Object.entries(bandCounts) as Array<[keyof typeof bandCounts, number]>).map(([b, n]) => (
+        <div class="bandbox">
+          <BandChip band={b} />
+          <div class="bandnum">{int(n)}</div>
+          <div class="footnote">{pct(n / games.length)} of scored games</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>Highest scoring launched games</h2>
+    <div class="scroll-x">
+      <table>
+        <thead><tr><th>Game</th><th class="n">Health</th><th>Band</th><th class="n">EA reviews</th></tr></thead>
+        <tbody>
+          {healthiest.map((g) => (
+            <tr>
+              <td><a href={`${base}/games/${g.appid}/`}>{g.name}</a></td>
+              <td class="n">{num(g.score, 0)}</td>
+              <td><BandChip band={g.band} /></td>
+              <td class="n">{int(g.n_ea_reviews)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote" style="margin-top:0.75rem">
+      Ranked by health only. There is no "most toxic" ranking on this site, by design.
+    </p>
+  </section>
+</Base>
+
+<style>
+  /* .lede used to carry max-width:46ch, which clamped everything inside it --
+     including .big, whose own 62ch measure could therefore never apply. The
+     heading wrapped to four lines and the lead paragraph read at roughly 45
+     characters instead of the 62 it asks for. The container now sets no width;
+     each child owns its own measure. */
+  .lede { margin: 1.5rem 0 3rem; }
+  .lede h1 { max-width: var(--measure-lede); line-height: 1.15; margin-bottom: 1rem; }
+  .big { font-size: 1.0625rem; line-height: 1.65; max-width: 62ch; color: var(--ink-secondary); }
+  .big strong { color: var(--ink-primary); }
+
+  .headline { padding: 2rem 2rem 1.75rem; }
+  .claim { font-size: 1.0625rem; max-width: 66ch; margin: 0 0 1.75rem; }
+
+  /* Three equal columns rather than a left-hugging flex row: these are the
+     study's headline numbers and they should occupy the panel they sit in.
+     The rules between them carry the grouping so the gap can stay generous. */
+  .figures {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.75rem; padding: 1.5rem 0; margin: 0;
+    border-top: 1px solid var(--ink-gridline);
+    border-bottom: 1px solid var(--ink-gridline);
+  }
+  .figures > * + * { border-left: 1px solid var(--ink-gridline); padding-left: 1.75rem; }
+  .fig-value { font-size: 2.5rem; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+  .muted-value { color: var(--ink-secondary); }
+  .fig-pct { font-size: 1rem; font-weight: 600; color: var(--ink-secondary); margin-top: 0.25rem; font-variant-numeric: tabular-nums; }
+  .fig-label { font-size: var(--size-subtitle); color: var(--ink-secondary); margin-top: 0.5rem; max-width: 26ch; }
+
+  .card {
+    display: block; text-decoration: none;
+    background: var(--ink-chart-surface); border: 1px solid var(--ink-gridline);
+    border-radius: 8px; padding: 1.25rem;
+  }
+  .card:hover { border-color: var(--ink-axis); }
+  .card h2 { font-size: 1rem; margin: 0 0 0.35rem; }
+  .card p { margin: 0; font-size: var(--size-subtitle); }
+
+  .bandgrid { display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 1rem; }
+  .bandbox { display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-start; }
+  .bandnum { font-size: var(--size-stat); font-weight: 600; line-height: 1; }
+</style>

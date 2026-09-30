@@ -1,0 +1,118 @@
+---
+import type { GameDetail } from '../lib/data';
+import { int, pct } from '../lib/data';
+
+interface Props { game: GameDetail }
+const { game } = Astro.props;
+const e = game.toxicity_evidence;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// widest band drives the bar scale, so a game whose reviews are almost all
+// negligible does not render four invisible slivers
+const maxBand = e ? Math.max(...e.bands.map((b) => b.n), 1) : 1;
+---
+{e && (
+  <section class="panel" style="margin-top:1.5rem">
+    <h2 class="panel-title">What is behind this toxicity score</h2>
+    <p class="panel-sub">
+      Every one of this game's {int(e.n_scored)} scored early-access reviews, placed by the
+      toxicity the model gave it. Select a band to see how many reviews sit there.
+    </p>
+
+    <div class="bands" role="group" aria-label="Filter by toxicity score">
+      {e.bands.map((b, i) => (
+        <button type="button" class="band-btn" data-i={i} data-n={b.n}
+                data-share={(b.n / e.n_scored).toFixed(4)}
+                data-label={b.label} data-from={b.from} data-to={b.to}
+                aria-pressed={i === 3 ? 'true' : 'false'}>
+          <span class="band-name">{b.label}</span>
+          <span class="band-range">{b.from.toFixed(1)}–{b.to.toFixed(1)}</span>
+          <span class="band-bar" style={`--w:${(b.n / maxBand) * 100}%`}></span>
+          <span class="band-n">{int(b.n)}</span>
+        </button>
+      ))}
+    </div>
+
+    <p class="selected" id={`sel-${game.appid}`} aria-live="polite">
+      <strong>{int(e.bands[3].n)}</strong> reviews scored <strong>high</strong> (0.5–0.8),
+      {' '}{pct(e.bands[3].n / e.n_scored, 1)} of this game's early-access reviews.
+    </p>
+
+    {e.categories.length > 0 && (
+      <>
+        <h3>Which signals fire, above 0.5</h3>
+        <table>
+          <caption class="visually-hidden">Detoxify categories scoring above 0.5, with counts.</caption>
+          <thead><tr><th scope="col">Category</th><th scope="col" class="n">Reviews</th><th scope="col" class="n">Share</th></tr></thead>
+          <tbody>
+            {e.categories.map((c) => (
+              <tr>
+                <th scope="row" style="font-weight:400;text-transform:capitalize">{c.category}</th>
+                <td class="n">{int(c.n)}</td>
+                <td class="n">{pct(c.share, 1)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    )}
+
+    {e.censored_runs_total > 0 && (
+      <p class="note" style="margin-top:1.25rem">
+        <strong>Steam had already censored profanity in {pct(e.censored_share, 1)} of these
+        reviews</strong> — {int(e.censored_runs_total)} separate runs of characters replaced
+        before the API returned the text. The score is therefore measured on redacted text and
+        understates the real rate.
+      </p>
+    )}
+
+    <p class="footnote" style="margin-top:1.25rem">
+      The review text itself is not published here. Steam's terms permit collecting it, not
+      redistributing it, so this site carries the counts and the
+      {' '}<a href={`${base}/methodology/`}>method</a> instead. The reviews are public on
+      {' '}<a href={`https://steamcommunity.com/app/${game.appid}/reviews/`} rel="noopener">
+      this game's Steam review page</a>.
+    </p>
+  </section>
+)}
+
+<script>
+  // one handler for the page; each panel owns its own buttons and readout
+  document.querySelectorAll('.bands').forEach((group) => {
+    const out = group.parentElement!.querySelector('.selected')!;
+    group.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.band-btn') as HTMLElement | null;
+      if (!btn) return;
+      group.querySelectorAll('.band-btn').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      const n = Number(btn.dataset.n);
+      const share = Number(btn.dataset.share);
+      out.innerHTML =
+        `<strong>${n.toLocaleString('en-GB')}</strong> reviews scored ` +
+        `<strong>${btn.dataset.label}</strong> (${btn.dataset.from}–${btn.dataset.to}), ` +
+        `${(share * 100).toFixed(1)}% of this game's early-access reviews.`;
+    });
+  });
+</script>
+
+<style>
+  .bands { display: grid; gap: 0.4rem; margin: 1.25rem 0 1rem; }
+  .band-btn {
+    display: grid; grid-template-columns: 8.5rem 4.5rem 1fr auto;
+    align-items: center; gap: 0.75rem; width: 100%;
+    font: inherit; font-size: var(--size-subtitle); text-align: left;
+    background: none; border: 1px solid transparent; border-radius: 6px;
+    padding: 0.4rem 0.6rem; cursor: pointer; color: var(--ink-primary);
+  }
+  .band-btn:hover { border-color: var(--ink-gridline); }
+  .band-btn[aria-pressed='true'] { border-color: var(--ink-axis); background: var(--ink-page-plane); }
+  .band-name { font-weight: 600; text-transform: capitalize; }
+  .band-range { color: var(--ink-secondary); font-variant-numeric: tabular-nums; }
+  .band-bar { height: 10px; border-radius: 3px; background: var(--seq-2); width: var(--w); min-width: 2px; }
+  .band-n { font-variant-numeric: tabular-nums; color: var(--ink-secondary); }
+  .selected { font-size: var(--size-subtitle); margin: 0 0 0.5rem; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+</style>

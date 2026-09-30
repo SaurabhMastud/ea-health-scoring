@@ -1,0 +1,79 @@
+---
+import { int, pct, type GameDetail, type Meta } from '../lib/data';
+
+interface Props { game?: GameDetail; meta: Meta; }
+const { game, meta } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const flags = game?.data_quality ?? [];
+---
+{/* Permanent panel, never a footnote. The site names real commercial games and
+    labels them At Risk; the framing has to sit where a reader will actually
+    meet it, not on a methodology page nobody opens. */}
+<section class="panel" aria-labelledby="method-title">
+  <h2 class="panel-title" id="method-title">Method &amp; limitations</h2>
+  <p class="panel-sub">What this score is, and what it cannot tell you.</p>
+
+  {flags.length > 0 && (
+    <div class="flags">
+      <h3 style="margin:0 0 0.25rem;font-size:0.9375rem">Specific to this game</h3>
+      {flags.map((f) => (
+        <div class="flag">
+          <span class="flag-mark" aria-hidden="true">●</span>
+          <span><strong>{f.label}.</strong> <span class="secondary">{f.detail}</span></span>
+        </div>
+      ))}
+    </div>
+  )}
+
+  <h3 style="font-size:0.9375rem">What the score measures</h3>
+  <p class="secondary">
+    Two things, from public data only: whether reviewers kept playing after they reviewed
+    (<em>Post-Review Persistence</em>), and how the community writes about the game in its
+    reviews. It is computed on {int(meta.corpus.n_games_scored)} early-access games from
+    {' '}{int(meta.corpus.n_reviews_collected)} reviews.
+  </p>
+
+  <h3 style="font-size:0.9375rem">What it is not</h3>
+  <p class="secondary">
+    {meta.proxy_statement}
+  </p>
+
+  <h3 style="font-size:0.9375rem">Known failure modes, measured not guessed</h3>
+  <ul class="secondary caveats">
+    <li>
+      <strong>The toxicity model reads register, not hostility.</strong> "You're going to suck
+      for a long time… and love it" scores 0.995 toxic — it is a positive review about
+      difficulty. Gaming slang and banter are systematically over-scored.
+    </li>
+    <li>
+      <strong>Steam censors profanity before we ever see it</strong>, replacing it with heart
+      characters. Toxicity is therefore measured on pre-redacted text and is understated.
+    </li>
+    <li>
+      <strong>Only {pct(meta.corpus.english_share_overall)} of reviews are in English</strong>,
+      and only English text is scored. For a game with an international community, the score
+      reflects a minority of its players.
+    </li>
+    <li>
+      <strong>Persistence is right-censored.</strong> Playtime is a single snapshot taken on
+      {' '}{meta.collection_date}, so newer games have had less time to accrue it.
+    </li>
+    <li>
+      <strong>No confidence interval.</strong> Interval estimation is future work. Read the
+      score as a rank, not a measurement.
+    </li>
+  </ul>
+
+  <p class="footnote" id="corrections" style="margin-top:1.25rem">
+    Think a score is wrong, or that this misrepresents your game?
+    {' '}<a href={`${base}/methodology/#corrections`}>How to request a correction</a>.
+    {' '}Full method on the <a href={`${base}/methodology/`}>methodology page</a>;
+    {' '}where the model loses is on the <a href={`${base}/performance/`}>results page</a>.
+  </p>
+</section>
+
+<style>
+  .caveats { padding-left: 1.1rem; margin: 0.5rem 0 0; }
+  .caveats li { margin-bottom: 0.5rem; max-width: 66ch; }
+  .flags { margin-bottom: 1.5rem; }
+</style>

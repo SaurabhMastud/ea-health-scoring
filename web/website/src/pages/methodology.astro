@@ -1,0 +1,141 @@
+---
+import Base from '../layouts/Base.astro';
+import { getMeta, getModel, int, num, pct } from '../lib/data';
+
+const meta = getMeta();
+const model = getModel();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Options tested and rejected, each with the measurement that decided it. An
+// untested assertion is worth nothing; a tested rejection is worth reporting.
+const alternatives = [
+  ['Cursor pagination inside a date window', 'Rejected', 'The cursor does not advance — page 2 returns an identical cursor and 0 new rows. Verified on two games.'],
+  ['Cursor-then-split hybrid collection', 'Rejected', '26.0 reviews per request against 32.7 for splitting alone. The confirming request per window costs more than it saves.'],
+  ['Size-routed cursor / window collection', 'Adopted', '99.9 reviews per request on small games; time windows only where a full history walk cannot reach the early-access period.'],
+  ['Steam\'s store release date as the EA boundary', 'Rejected', `Wrong for ${pct(meta.data_quality.release_date_wrong_share, 1)} of the titles it can be checked against by more than 7 days, with a median error of ${num(meta.data_quality.release_date_median_error_days, 0)} days. Replaced with a bisect on the per-review early-access flag.`],
+  ['Multilingual toxicity model (XLM-RoBERTa)', 'Rejected', 'Would raise coverage to ~71%, but two differently-calibrated models across games injects a model artefact into the between-game comparison the score is made of.'],
+  ['Raw review text vs cleaned text for scoring', 'Adopted cleaned', 'Both scored; the delta is reported. Markup, emoji and foreign script removed, punctuation and casing kept because both scorers read them.'],
+  ['Min–max normalisation', 'Rejected', 'Playtime and owner distributions are extremely heavy-tailed. Replaced with percentile/robust scaling, fitted inside the training fold only.'],
+  ['Random train/test split', 'Rejected', 'Leaks the future. Replaced with a temporal split on the derived launch date, which is what deployment actually looks like.'],
+  ['SteamSpy owner estimates', 'Rejected', 'Unreachable behind Cloudflare, and unreliable since Valve\'s 2018 privacy change. Replaced with official Valve data.'],
+  ['Perspective API as the toxicity scorer', 'Deferred', 'A ~1 QPS quota makes a full-corpus pass a multi-day job. Named as future work: a 1–2k stratified agreement subsample.'],
+];
+---
+<Base title="Methodology" section="methodology"
+      description="How the Early-Access Health Score is built, and the alternatives tested and rejected.">
+
+  <h1>Methodology</h1>
+  <p class="prose secondary">
+    The short version: collect every early-access review a game has, measure whether the people
+    who wrote them kept playing, measure how they wrote, and check whether either predicts what
+    happened after launch.
+  </p>
+
+  <h2>The metric this study contributes</h2>
+  <p class="prose">
+    <strong>Post-Review Persistence</strong> is a reviewer's total playtime minus their playtime
+    at the moment they reviewed — how much longer they kept playing after writing. Steam returns
+    both numbers on every review, so it costs nothing to compute and needs no private telemetry.
+    Aggregated per game it is a public-data retention proxy, and it does not appear in the
+    existing literature.
+  </p>
+  <p class="note">
+    It is <strong>right-censored</strong>. Playtime is a single snapshot taken on
+    {' '}{meta.collection_date}, so a game that launched recently has had less time to accrue it
+    than one that launched in 2018. That is a real limitation, not a rounding issue, and it is
+    why the correlation with the post-launch outcome (ρ={model.persistence_rho.toFixed(3)}) is described as association
+    rather than prediction.
+  </p>
+
+  <h2>How the score is built</h2>
+  <ol class="prose steps">
+    <li><strong>Collect.</strong> Every review for {int(meta.corpus.n_games_collected)} qualifying
+      games — {int(meta.corpus.n_reviews_collected)} in total — rate-limited and resumable.</li>
+    <li><strong>Find the real boundary.</strong> Steam's store release date is wrong for most
+      early-access titles, so the early-access → launch boundary is found by binary-searching the
+      point where the per-review early-access flag flips. Accurate to about a fortnight.</li>
+    <li><strong>Clean.</strong> English-only ({pct(meta.corpus.english_share_overall)} of the
+      corpus), markup and emoji stripped, authors hashed. Steam's own profanity redaction is
+      mapped to a token rather than deleted — the redaction is itself the signal.</li>
+    <li><strong>Score the text.</strong> Detoxify for toxicity, VADER for sentiment, capped at a
+      stratified 2,000 reviews per game.</li>
+    <li><strong>Aggregate to one row per game.</strong> Persistence, velocity, review-score
+      trajectory, toxicity level and trend, sentiment. Raw values only — no scaling at this
+      stage, so scaling cannot leak across the split.</li>
+    <li><strong>Fit and evaluate.</strong> Temporal split on the derived launch date. All
+      normalisation and weights fitted inside the training fold. Baselines first, then the score.</li>
+  </ol>
+
+  <h2>Two weighting schemes, both reported</h2>
+  <p class="prose">
+    The score is an equal-weight average of an engagement half and a community half. A
+    data-driven weighting from logistic coefficients is computed alongside it and reported next
+    to it everywhere. Neither is presented as the single right answer, because choosing one
+    silently would hide a real modelling decision.
+  </p>
+
+  <h2>Inclusion criteria</h2>
+  <p class="prose secondary">
+    A documented early-access period, multiplayer, at least
+    {' '}{meta.frame.min_ea_reviews} early-access reviews, and — for the modelling frame — a full
+    release at least {meta.frame.post_launch_window_days} days before collection with at least
+    {' '}{meta.frame.min_post_launch_reviews} post-launch reviews. The outcome window is fixed at
+    {' '}{meta.frame.post_launch_window_days} days so a 2018 launch and a 2024 launch are measured
+    on the same clock.
+  </p>
+  <p class="prose secondary">
+    Games that <em>never</em> left early access fail those criteria by construction — which is
+    exactly the survivorship problem. They are collected and scored anyway, kept out of the
+    modelling frame, and analysed separately on the
+    {' '}<a href={`${base}/performance/#survivorship`}>results page</a>.
+  </p>
+
+  <h2 id="alternatives">Alternatives tested and rejected</h2>
+  <p class="prose secondary">
+    Each row was measured before it was decided. The measurement is the reason.
+  </p>
+  <div class="scroll-x">
+    <table>
+      <thead><tr><th>Option</th><th>Outcome</th><th>Why</th></tr></thead>
+      <tbody>
+        {alternatives.map(([opt, verdict, why]) => (
+          <tr>
+            <td><strong>{opt}</strong></td>
+            <td class="verdict-cell">{verdict}</td>
+            <td class="secondary">{why}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What this cannot tell you</h2>
+  <p class="prose">{meta.proxy_statement}</p>
+  <ul class="prose secondary">
+    <li>It says nothing about in-game behaviour. Chat and voice are private; reviews are what is public.</li>
+    <li>It says nothing about game quality, and a low score is not a claim that a game is bad.</li>
+    <li>It is measured on the {pct(meta.corpus.english_share_overall)} of reviews written in English.</li>
+    <li>The toxicity model systematically over-scores gaming slang and banter. Worked examples are on the <a href={`${base}/performance/#limitations`}>results page</a>.</li>
+  </ul>
+
+  <h2 id="corrections">Requesting a correction</h2>
+  <p class="prose">
+    If you develop or publish a game listed here and believe its score misrepresents it, that is
+    worth knowing and worth fixing. The most useful things to send are the app ID, what looks
+    wrong, and anything about the game's early-access history the public data would get wrong —
+    a relaunch, an app-ID change, a review-bombing episode, a long dormant period.
+  </p>
+  <p class="prose secondary">
+    This is a student research artefact rather than a service, so corrections are handled by
+    re-running the pipeline rather than by editing a number by hand. Contact details are in the
+    report and the project repository. Every score here regenerates from public data with one
+    command, so a correction to the method fixes every affected game at once.
+  </p>
+</Base>
+
+<style>
+  .steps { padding-left: 1.2rem; }
+  .steps li { margin-bottom: 0.6rem; max-width: 70ch; }
+  .verdict-cell { white-space: nowrap; font-weight: 600; }
+  td.secondary { max-width: 46ch; }
+</style>

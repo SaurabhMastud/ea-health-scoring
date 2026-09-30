@@ -1,0 +1,5 @@
+run,n_features,train_auc_roc,test_auc_roc,test_auc_pr,test_brier
+retention · without accrual control,19,0.9479,0.9008,0.9036,0.1554
+retention · with accrual control,20,0.9494,0.899,0.902,0.1479
+toxicity · without accrual control,19,0.9001,0.9305,0.8478,0.0996
+toxicity · with accrual control,20,0.8998,0.9328,0.8502,0.1003
