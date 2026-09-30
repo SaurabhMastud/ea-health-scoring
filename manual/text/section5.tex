@@ -1,0 +1,109 @@
+\section{Running the pipeline}
+\label{sec:pipeline}
+
+Eight notebooks run in the order in Table~\ref{tab:stages}, which is not the alphabetical order the
+folder shows. Each stage reads the previous stage's files from disk and writes its own; nothing is
+passed in memory, which is what makes the sequence safe to stop and restart.
+
+\begin{table}[htbp]
+\centering
+\caption{The eight stages, in run order, with what to expect on time.}
+\label{tab:stages}
+\small
+\begin{tabular}{|c|p{3.2cm}|p{4.6cm}|p{2.6cm}|p{2.4cm}|}
+\hline
+\textbf{\#} & \textbf{Notebook} & \textbf{Writes} & \textbf{From nothing} & \textbf{On this
+folder} \\
+\hline
+1 & steam\_catalogue & the screened candidate list & 45 min & not needed \\
+\hline
+2 & review\_collection & a review file and checkpoint per game & 2 h 15 m & skipped \\
+\hline
+3 & auxiliary\_sources & per-game metadata & a few min & under a min \\
+\hline
+4 & review\_cleaning & cleaned English reviews & 30 min & under a min \\
+\hline
+5 & toxicity\_scoring & toxicity and sentiment scores & 1 to 2 h on GPU & under a min \\
+\hline
+6 & feature\_engineering & one row per game & 10 min & 10 min \\
+\hline
+7 & health\_score\_model & scores, bands, result tables & 2 to 3 min & 2 to 3 min \\
+\hline
+8 & figures & the eleven charts & 1 min & 1 min \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Stages 1 to 3 do not need running.} Their output ships in the folder and they account for
+almost all the time. Starting at stage 4 reproduces every number in the research report. Run them
+only to collect a fresh corpus, in which case the results will differ, because Steam has moved on
+since 1 August 2026.
+
+\textbf{To run a stage:} open the notebook, confirm the kernel reads \textbf{Python 3.11 (EA
+Health)}, then choose \textbf{Restart Kernel and Run All Cells}. Do not run cells individually and
+out of order, which is the one habit that produces plausible wrong numbers with no error. Every
+notebook ends with an assertion cell checking its own output; if that cell prints its summary
+without raising, the stage finished.
+
+\subsection*{Stage 1: the candidate list}
+
+Enumerates every multiplayer game on the store and screens each for an early-access history and
+enough reviews to measure. Of 21,330 titles it keeps 1,887.
+
+\subsection*{Stage 2: collecting the reviews}
+
+The long one: 628,389 requests over about two and a quarter hours with eight workers. It is
+rate-limited and backs off when the endpoint asks, so do not raise the worker count. It is also
+resumable, because the checkpoint is written before the review file is renamed into place. The
+shipped corpus was in fact collected across an interruption.
+
+\shotpair{catalogue_screen}{The stage 1 screening result. Most of the catalogue is rejected for
+too few reviews.}{collection_run}{Collection in progress, one game per line. A game already on
+disk is skipped.}
+
+
+\textbf{Trap.} Steam's own \texttt{app\_release\_date} is not the date a game left early access; it
+differs by over a week for 74.8 per cent of launched titles. Stage 2 derives the real transition by
+binary search over the review stream, and every later stage uses that derived date.
+
+\subsection*{Stages 3 and 4: metadata and cleaning}
+
+Stage 3 fetches app details, skipping anything already on disk. Stage 4 strips markup and links,
+drops non-English reviews, hashes the author identifier, and keeps Steam's profanity mask as a
+countable token rather than deleting it. From 3,504,533 collected reviews it keeps 1,865,234
+English ones. Games already cleaned are skipped.
+
+\shotpair{checkpoint_json}{One checkpoint. Besides the counts it records the derived launch date
+and the binary-search probes the later stages read.}{cleaning_run}{Cleaning, one game per line.
+Dropped rows are counted, never silently discarded.}
+
+\subsection*{Stage 5: toxicity and sentiment scoring}
+
+The stage that needs the graphics card. Detoxify scores toxicity, VADER scores sentiment, and
+1,512,547 rows are written. The first run downloads the model weights once. Scoring is capped at
+2,000 reviews per game, spread across eight time periods within each of the early-access and
+post-launch phases so a quiet stretch keeps its representation; the cap binds on 318 of 1,793
+games.
+
+\noindent The first cell of this stage prints whether the card is visible. \texttt{cuda available :
+False} still runs, on the processor, in hours rather than minutes. The resulting score distribution
+skews hard to zero, as a healthy result should: about three per cent of reviews score above 0.5.
+
+\subsection*{Stages 6 to 8: features, models and figures}
+
+Stage 6 reduces the scored reviews to one row per game, 1,793 rows and 35 columns, and computes the
+retention measure as the gap between a reviewer's lifetime playtime and their playtime when
+writing. Stage 7 narrows to the 545 games with enough reviews either side of launch, splits them by
+launch date into 381 training and 164 test, fits the models and writes the nineteen result tables.
+Stage 8 draws the eleven charts.
+
+Everything fitted, including the scaling and the band cutoffs, is fitted on the training partition
+only, and the test partition is scored once at the end.
+
+\shotpair{feature_table}{The finished feature table, one row per
+game.}{model_comparison}{The results table as the notebook prints it. The baseline row is the
+number the project has to beat; the gain column is the claim the research report makes.}
+
+\shotpair{assertion_cell}{The closing assertion cell, re-checking that the split really was
+temporal before declaring the stage complete.}{figure_inline}{A chart rendered in the notebook.
+Each is also written to \texttt{figures} at 300 dots per inch.}

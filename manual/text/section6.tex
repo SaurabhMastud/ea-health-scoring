@@ -1,0 +1,55 @@
+\section{Data artefacts}
+\label{sec:artefacts}
+
+Table~\ref{tab:artefacts} lists what the pipeline leaves on disk. A full run comes to about
+8 GB, almost all of it the raw review layer, which is not redistributed in this repository.
+
+\begin{table}[htbp]
+\centering
+\caption{Files produced, with counts and sizes from a full run.}
+\label{tab:artefacts}
+\small
+\begin{tabular}{|p{5.4cm}|p{3.0cm}|p{1.8cm}|p{3.0cm}|}
+\hline
+\textbf{Path, under the project folder} & \textbf{Count} & \textbf{Size} & \textbf{Written by} \\
+\hline
+data\textbackslash raw\textbackslash reviews and \_checkpoints & 1,793 + 1,965 files & 4.5 GB &
+stage 2 \\
+\hline
+\ldots\textbackslash interim\textbackslash reviews and toxicity & 1,793 + 1,793 files & 1.2 GB &
+stages 4, 5 \\
+\hline
+\ldots\textbackslash game\_features.parquet & 1,793 rows, 35 cols & 326 KB & stage 6 \\
+\hline
+\ldots\textbackslash game\_scores.parquet & 969 rows, 36 cols & 107 KB & stage 7 \\
+\hline
+\ldots\textbackslash processed\textbackslash tables & 19 CSV files & small & stages 5, 7 \\
+\hline
+data\textbackslash ml\_runs & 1 database & 914 KB & stage 7 \\
+\hline
+figures & 11 charts & 1.2 MB & stage 8 \\
+\hline
+web\textbackslash website\textbackslash dist & 977 pages & 48 MB & Section~\ref{sec:web} \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{The two tables worth opening.} \texttt{game\_features.parquet} has one row per collected
+game and holds the measures the model may see. \texttt{game\_scores.parquet} has one row per scored
+game, 545 modelled plus 424 held out for the survivorship comparison, and holds the score under
+both weightings, the two components, the band and the per-game attributions. It is the file the
+website reads. Both are parquet rather than CSV so column types travel with the data:
+
+\begin{cmd}
+python -c "import pandas as pd; print(pd.read_parquet('data/processed/game_scores.parquet').head())"
+\end{cmd}
+
+\textbf{The result tables.} The nineteen CSV files in
+\texttt{data\textbackslash processed\textbackslash tables} are one per reported analysis, and every
+number in the research report traces to one of them. Three data dictionaries alongside them
+document every column in both parquet files.
+
+\textbf{What is not redistributed.} Collected review text stays in \texttt{data\textbackslash raw}
+and is not published. Steam's terms permit collecting review data, not republishing the corpus, so
+any public release carries derived game-level features and the collection code only. Author
+identifiers are hashed at the cleaning stage, which is pseudonymisation rather than anonymisation.

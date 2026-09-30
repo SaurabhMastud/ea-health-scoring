@@ -1,0 +1,84 @@
+
+\section{Installing the environment}
+\label{sec:install}
+
+Six steps, in order. Each ends with a check; do not move on until it passes. Step 6 is only needed
+if you want the website as well as the analysis.
+
+\subsection*{1. Install Python 3.11}
+
+Take the Windows 64-bit installer for \textbf{3.11.9} from
+\url{https://www.python.org/downloads/release/python-3119/} and tick \textbf{Add python.exe to
+PATH} on the first screen. If a newer Python is already present, install 3.11 alongside it; the
+\texttt{py -3.11} launcher below picks the right one.
+
+\begin{cmd}
+py -3.11 --version
+\end{cmd}
+
+\noindent \textbf{Check:} prints \texttt{Python 3.11.9}. If \texttt{py} is not recognised, the PATH
+box was missed; re-run the installer and choose Modify.
+
+\subsection*{2. Create the environment}
+
+\begin{cmd}
+cd D:\ea-health-scoring
+py -3.11 -m venv .venv
+.venv\Scripts\activate
+\end{cmd}
+
+\noindent \textbf{Check:} the prompt gains a \texttt{(.venv)} prefix. It must be activated in every
+new terminal.
+
+\subsection*{3. Install PyTorch with CUDA}
+
+PyTorch comes first and from its own index, because the CUDA build is not on the ordinary one.
+
+\begin{cmd}
+pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+\end{cmd}
+
+\noindent \textbf{Check:} prints \texttt{2.11.0+cu128 True}. Around 2.5 GB downloads. With no
+NVIDIA card, use \texttt{pip install torch==2.11.0} instead; everything still runs, but scoring
+takes hours rather than minutes.
+
+\subsection*{4. Install everything else}
+
+\begin{cmd}
+pip install -r notebooks\requirements.txt
+\end{cmd}
+
+\shot{python_and_gpu}{0.8}{Confirming the interpreter and the graphics card. The CUDA version
+\texttt{nvidia-smi} reports is the highest the driver supports, not the one PyTorch uses; a 13.2
+driver runs the 12.8 build without complaint, so the two differing is expected.}
+
+\subsection*{5. Register the notebook kernel}
+
+The notebooks are pinned to a named kernel so they cannot run under the wrong Python by accident.
+
+\begin{cmd}
+python -m ipykernel install --user --name ea-health-py311 --display-name "Python 3.11 (EA Health)"
+\end{cmd}
+
+\noindent Install Visual Studio Code from \url{https://code.visualstudio.com/}, add its
+\textbf{Python} and \textbf{Jupyter} extensions, then open the \texttt{final\_thesis} folder.
+
+\noindent \textbf{Check:} open any notebook, click the kernel name at the top right, and confirm
+\textbf{Python 3.11 (EA Health)} is selected.
+
+\shot{kernel_picker}{0.72}{The kernel picker. The entries named \texttt{python3} or
+\texttt{python3.13} point at a different interpreter with no GPU build of PyTorch, and stage 5
+fails under them.}
+
+\subsection*{6. Install Node.js, for the website only}
+
+Node.js 22 or newer from \url{https://nodejs.org/}, LTS installer, defaults accepted.
+
+\begin{cmd}
+cd web\website
+npm install
+\end{cmd}
+
+\noindent \textbf{Check:} \texttt{node --version} prints \texttt{v22.20.0} or higher and
+\texttt{npm install} ends without an error block.

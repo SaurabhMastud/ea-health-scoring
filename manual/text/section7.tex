@@ -1,0 +1,47 @@
+\section{Model training and experiment tracking}
+\label{sec:mlflow}
+
+Stage 7 does all the training. Table~\ref{tab:training} records the settings, all read from
+\texttt{config.yaml} rather than typed into the notebook.
+
+\begin{table}[htbp]
+\centering
+\caption{Training configuration.}
+\label{tab:training}
+\small
+\begin{tabular}{|p{4.0cm}|p{10.0cm}|}
+\hline
+\textbf{Setting} & \textbf{Value} \\
+\hline
+Modelling frame & 545 games, at least 200 English early-access reviews and 50 post-launch \\
+\hline
+Held-out cohort & 424 games still in early access, never used for training \\
+\hline
+Split & temporal on launch date: 381 train, 164 test \\
+\hline
+Random seed & 42 \\
+\hline
+Predictors & 19, an explicit list rather than every column minus the outcome \\
+\hline
+Significance level & 0.01667, Bonferroni-corrected over three hypotheses \\
+\hline
+Band cutoffs & 43.6 and 57.2, from training terciles, written back to \texttt{config.yaml} \\
+\hline
+\end{tabular}
+\end{table}
+
+Every fitted run is logged to MLflow. Version 3 dropped the plain file store, so the record is a
+SQLite database rather than a folder of files, which changes only the command used to open it:
+
+\begin{cmd}
+mlflow ui --backend-store-uri sqlite:///data/ml_runs/mlflow.db
+\end{cmd}
+
+\noindent Then open \url{http://127.0.0.1:5000}; Ctrl+C stops it. Note the forward slashes. The
+\texttt{sqlite:///} prefix is a URI, not a Windows path, and backslashes are rejected there even on
+Windows.
+
+\shot{mlflow_runs}{0.98}{The run list. Each row is one fitted model with the metrics it scored.}
+
+\shot{mlflow_run_detail}{0.72}{One run in detail. The parameters record the frame, the split and
+the seed; the metrics record what it scored. Together they are enough to reproduce the run.}

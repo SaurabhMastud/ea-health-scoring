@@ -1,0 +1,118 @@
+\documentclass[12pt,a4paper]{article}
+
+
+
+\newif\ifindustry
+
+\industryfalse
+
+
+\usepackage[british,UKenglish]{babel}  
+\usepackage[a4paper, margin=1in]{geometry} 
+\usepackage{natbib} 
+\usepackage{graphicx} 
+\usepackage[export]{adjustbox}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{tikz}
+\usepackage{algorithm} 
+\usepackage{algorithmic} 
+
+\usepackage{amsmath,amsfonts,amssymb}	
+\usepackage{lastpage}
+\usepackage{array}   
+\usepackage{multirow}  
+\usepackage{longtable}
+\usepackage{datetime}
+\usepackage{fancyvrb}  
+\usepackage[strings]{underscore}
+\usepackage[bookmarks=true, colorlinks=false, hidelinks]{hyperref} % Links - must be last
+\usepackage{url}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{./figures/}} 
+
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\belowcaptionskip}{4pt}
+
+\setlength{\emergencystretch}{3em}
+
+
+\DefineVerbatimEnvironment{cmd}{Verbatim}{fontsize=\small,frame=single,framesep=4pt,
+                                          xleftmargin=0pt,samepage=false}
+
+
+\newcommand{\shot}[3]{%
+  \begin{figure}[htbp]\centering
+  \IfFileExists{figures/#1.png}%
+    {\includegraphics[width=#2\textwidth]{#1.png}}%
+    {\fbox{\parbox[c][3.2cm][c]{#2\textwidth}{\centering\textbf{SCREENSHOT PENDING}\\[2pt]
+      \small\texttt{figures/#1.png}}}}%
+  \caption{#3}\label{fig:#1}
+  \end{figure}}
+
+
+\newcommand{\shotpair}[4]{%
+  \begin{figure}[htbp]
+  \begin{minipage}[t]{0.48\textwidth}\centering
+    \includegraphics[width=\linewidth]{#1.png}
+    \caption{#2}\label{fig:#1}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\textwidth}\centering
+    \includegraphics[width=\linewidth]{#3.png}
+    \caption{#4}\label{fig:#3}
+  \end{minipage}
+  \end{figure}}
+
+
+
+\newcommand{\myname}{Saurabh Ganesh Mastud}
+\newcommand{\mytitle}{Early-Access Health Scoring: Predicting Post-Launch
+Retention and Community Climate from Public Steam Data}
+
+\newcommand{\myyear}{2026}
+
+
+
+\hypersetup{
+ pdfauthor={\myname},
+ pdftitle={\mytitle\ -- Configuration Manual},
+ pdfsubject={Configuration Manual},
+ pdfkeywords={early access, Steam reviews, player retention, reproducibility}
+}
+
+\setlength{\marginparwidth}{20mm}
+
+\newcommand{\margtodo}
+{\marginpar{\textbf{\textcolor{red}{ToDo}}}{}}
+
+\newcommand{\todo}[1]
+{{\textbf{\textcolor{red}{(\margtodo{}#1)}}}{}}
+
+
+\begin{document}
+
+\title{\mytitle \\ \vspace{0.4cm} \large Configuration Manual}%
+\author{\myname}%
+\date{}
+\maketitle
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+
+\input{text/section1}
+\input{text/section2}
+\input{text/section3}
+\input{text/section4}
+\input{text/section5}
+\input{text/section6}
+\input{text/section7}
+\input{text/section8}
+
+
+
+\end{document}

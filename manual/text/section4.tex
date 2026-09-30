@@ -1,0 +1,58 @@
+\section{The project folder and its configuration}
+\label{sec:folder}
+
+Nothing needs moving or renaming: every path in the code is relative to the \texttt{final\_thesis}
+folder. \texttt{notebooks\textbackslash} holds the eight pipeline notebooks,
+\texttt{config.yaml} and \texttt{requirements.txt}. \texttt{data\textbackslash raw\textbackslash}
+holds the collected review histories and a checkpoint per game;
+\texttt{data\textbackslash processed\textbackslash} holds everything derived from them, and
+\texttt{data\textbackslash ml\_runs\textbackslash} the MLflow database.
+\texttt{web\textbackslash} holds the Astro site, the Streamlit application and the script that
+builds the data bundle both read. \texttt{figures\textbackslash} and
+\texttt{reports\textbackslash} hold the charts and the two documents.
+
+
+Every path, threshold, band cutoff and chart colour lives in
+\texttt{notebooks\textbackslash config.yaml}, which the notebooks, the website and the demo
+application all read. A value written anywhere else would be a defect, and that is why the report,
+the site and the model cannot disagree about a cutoff. Table~\ref{tab:config} covers the blocks
+worth knowing before you run anything.
+
+\begin{table}[htbp]
+\centering
+\caption{The settings that matter in \texttt{config.yaml}.}
+\label{tab:config}
+\small
+\begin{tabular}{|p{2.6cm}|p{11.4cm}|}
+\hline
+\textbf{Block} & \textbf{What it controls} \\
+\hline
+\texttt{seed} & fixed at 42, used by every random step so a re-run reproduces the same numbers \\
+\hline
+\texttt{collection\_date} & 2026-08-01, the day playtime was snapshotted. Changing it re-collects
+nothing \\
+\hline
+\texttt{paths} & where each stage reads and writes \\
+\hline
+\texttt{frame} & which games are modelled: at least 200 English early-access reviews and 50 after
+launch, giving 545 \\
+\hline
+\texttt{split} & temporal, on launch date, 70 per cent training \\
+\hline
+\texttt{bands} & the At Risk and Healthy cutoffs, 43.6 and 57.2, written back by stage 7 from the
+training data. Never type these by hand \\
+\hline
+\texttt{predictors} & the explicit list of columns the model may use \\
+\hline
+\texttt{palette} & every colour used in the charts, the site and the application \\
+\hline
+\end{tabular}
+\end{table}
+
+\shot{config_yaml}{0.85}{\texttt{config.yaml}, showing the paths, the modelling frame and the
+calibrated band cutoffs. The notebooks run in the order given in
+Section~\ref{sec:pipeline}, not the alphabetical order the folder shows.}
+
+\textbf{One thing not to change.} \texttt{data\textbackslash raw\textbackslash} is written once and
+never edited. Every correction happens downstream of it, so any result traces back to the bytes
+that came off the endpoint.

@@ -13,7 +13,7 @@
 
 **Saurabh Ganesh Mastud**
 
-📄 **[Read the full report (PDF)](paper/EA_Health_Scoring_Report.pdf)**
+📄 **[Read the full report (PDF)](paper/EA_Health_Scoring_Report.pdf)** · 🔧 **[Configuration manual (PDF)](manual/Configuration_Manual.pdf)**
 
 </div>
 
@@ -165,6 +165,7 @@ carry the honest cross-instrument forecast.
 
 ```
 paper/        the report as PDF, with its LaTeX source and bibliography
+manual/       the configuration manual: step-by-step setup and reproduction, with source
 notebooks/    the eight pipeline stages, config.yaml, requirements.txt
 figures/      the 11 charts, PNG at 300 dpi
 data/         derived game-level outputs and the 19 result tables
@@ -207,6 +208,9 @@ python -m ipykernel install --user --name ea-health-py311 --display-name "Python
 ```
 
 A GPU is the only hardware that matters. Toxicity scoring on CPU alone turns minutes into hours.
+
+The [configuration manual](manual/Configuration_Manual.pdf) is the long version of this section,
+with screenshots, version numbers and a check to run after every step.
 
 Open a notebook, check the kernel reads **Python 3.11 (EA Health)**, then Restart Kernel and Run
 All Cells. Running cells individually and out of order is the one habit that produces a plausible

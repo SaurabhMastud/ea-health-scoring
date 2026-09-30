@@ -1,0 +1,72 @@
+\section{Hardware and software environment}
+\label{sec:hardware}
+
+Table~\ref{tab:hardware} gives the machine the reported results were produced on. Only the graphics
+card really matters: toxicity scoring runs on it, and on a processor alone that stage takes hours
+instead of minutes. Memory is not a constraint because no stage loads the whole corpus at once.
+Windows is not required either, though the paths here use backslashes.
+
+\begin{table}[htbp]
+\centering
+\caption{The development machine.}
+\label{tab:hardware}
+\small
+\begin{tabular}{|p{4.0cm}|p{10.0cm}|}
+\hline
+\textbf{Component} & \textbf{Specification} \\
+\hline
+Operating system & Windows 11 Home Single Language, build 26200, 64-bit \\
+\hline
+Processor & Intel Core i7-14700HX, 20 cores, 28 threads \\
+\hline
+Memory & 15.7 GB RAM \\
+\hline
+Graphics & NVIDIA GeForce RTX 4050 Laptop GPU, 6.4 GB VRAM \\
+\hline
+Free disk space & about 8 GB for a full run, including the raw review layer \\
+\hline
+\end{tabular}
+\end{table}
+
+\shot{system_about}{0.62}{Windows system information for the development machine.}
+
+Four pieces of software are needed: \textbf{Python 3.11.9}, \textbf{Visual Studio Code} for the
+notebooks, \textbf{Node.js 22.20.0} for the website, and the \textbf{CUDA build of PyTorch
+2.11.0+cu128}, which installs separately from the rest.
+
+\textbf{The Python version is not a suggestion.} It must be 3.11. Version 3.13 is the current
+default on most machines and PyTorch publishes no CUDA build for it, so the toxicity stage fails
+there with a missing-module error that does not point at the version.
+
+Table~\ref{tab:packages} lists every package the project imports directly. These are pinned in
+\texttt{notebooks\textbackslash requirements.txt}, so they install with one command.
+
+\begin{table}[htbp]
+\centering
+\caption{Direct dependencies, read from the working environment on 6 August 2026.}
+\label{tab:packages}
+\small
+\begin{tabular}{|p{2.9cm}|p{1.9cm}|p{2.9cm}|p{1.9cm}|p{2.4cm}|}
+\hline
+\textbf{Package} & \textbf{Version} & \textbf{Package} & \textbf{Version} & \textbf{Purpose} \\
+\hline
+pandas & 2.3.3 & numpy & 2.4.6 & tables and maths \\
+\hline
+pyarrow & 24.0.0 & PyYAML & 6.0.3 & files and settings \\
+\hline
+requests & 2.34.2 & & & collection \\
+\hline
+torch & 2.11.0+cu128 & transformers & 5.12.1 & the toxicity model \\
+\hline
+detoxify & 0.5.2 & vaderSentiment & 3.3.2 & text scoring \\
+\hline
+scikit-learn & 1.9.0 & scipy & 1.17.1 & models and tests \\
+\hline
+shap & 0.51.0 & mlflow & 3.15.0 & attribution, tracking \\
+\hline
+matplotlib & 3.11.0 & streamlit & 1.60.0 & figures, demo app \\
+\hline
+ipykernel & 7.3.0 & & & notebook runtime \\
+\hline
+\end{tabular}
+\end{table}

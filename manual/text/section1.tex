@@ -1,0 +1,24 @@
+\section{Introduction and scope}
+\label{sec:intro}
+
+This manual sets out how to reproduce the Early-Access Health Scoring project from this repository:
+the machine it was built on, what to install, the order the notebooks run in, and how to
+view the results. It assumes no prior Python experience.
+
+The report in \texttt{paper/} is a separate document and carries the findings. If a number appears
+in both, the report is the authority.
+
+The pipeline collects public Steam review histories for early-access games, scores the review text
+for toxicity and sentiment, reduces everything to one row per game, and fits models that anticipate
+post-launch retention and community climate. The output is a health score from 0 to 100 per game, a
+risk band, and a static website presenting both.
+
+You need a Windows machine, a local clone of this repository, and an internet connection for the
+install. Anything you type appears in a box like this:
+
+\begin{cmd}
+python --version
+\end{cmd}
+
+\noindent Each step states what a success looks like, so a silent failure is visible before you
+move on.

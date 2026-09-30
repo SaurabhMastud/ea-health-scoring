@@ -1,0 +1,37 @@
+\section{The website and the demo application}
+\label{sec:web}
+
+Two surfaces present the results and both read the same JSON bundle, so neither can disagree with
+the other about a score. Neither recomputes anything and neither writes anything back.
+
+Build the bundle first, then the site:
+
+\begin{cmd}
+python web\build_site_data.py
+cd web\website
+npm run build
+npm run preview
+\end{cmd}
+
+\noindent The first command reads \texttt{game\_scores.parquet} and \texttt{config.yaml} and writes
+one JSON file per game plus an index; re-run it after any re-run of stage 7 or the site will show
+the previous numbers. The build writes 977 pages into
+\texttt{web\textbackslash website\textbackslash dist}, and \texttt{npm run preview} serves them at
+\url{http://localhost:4321}. The built site is plain HTML, so there is no server to cold-start and
+it works offline.
+
+\noindent The closing line of the build is the one to check: 977 pages, one per scored game plus
+the fixed pages.
+
+\shotpair{site_home}{The site as it opens. The corpus size and collection date are stated on the
+page rather than left implicit.}{site_browse}{The browse view. Per-game pages reachable from here
+show the two components, the attribution, and the limitations applying to that title.}
+
+The Streamlit application presents the same bundle on one screen, which suits a walkthrough:
+
+\begin{cmd}
+streamlit run web\app\app.py
+\end{cmd}
+
+\shot{streamlit_run}{0.98}{The demo application, reading the same bundle as the static site.}
+
