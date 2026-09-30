@@ -147,6 +147,47 @@ carry the honest cross-instrument forecast.
 
 ---
 
+## What it ships as
+
+The score is not a number in a notebook. It is a 977-page site, one page per scored game, plus a
+Streamlit demo. Both read the same JSON bundle, so no surface can disagree with another about a
+score, a band cutoff or a colour.
+
+<div align="center">
+
+![Site home](figures/fig15_site_home.png)
+
+</div>
+
+Each game page carries the score, the two components behind it, and the individual signals pushing
+it up or down — not a bare number with no account of itself.
+
+<div align="center">
+
+![Per-game page](figures/fig12_site_game_page.png)
+
+</div>
+
+Every page also publishes what the score *cannot* tell you, per game: where collection hit its cap,
+where the early-access boundary is uncertain, that the toxicity model reads register rather than
+hostility, that Steam censors profanity before anyone sees it, and that there is no confidence
+interval. These are measured, not guessed, and they ship next to the score rather than in an
+appendix.
+
+<div align="center">
+
+![Published limitations](figures/fig13_site_game_limitations.png)
+
+</div>
+
+<div align="center">
+
+![Streamlit demo](figures/fig14_streamlit.png)
+
+</div>
+
+---
+
 ## Scale
 
 | | |
